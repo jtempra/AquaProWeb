@@ -1,0 +1,23 @@
+﻿@page "/zonescarrer"
+
+
+<MudTable Items="@ZonesCarrer" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+    <ToolBarContent>
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddZonaCarrerAsync())"></MudFab>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Zona</MudTh>
+        <MudTh>Descripció</MudTh>
+        <MudTh>Observacions</MudTh>
+        <MudTh>Accions</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Zona">@context.Zona</MudTd>
+        <MudTd DataLabel="Descripcio">@context.Descripcio</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="Accions">
+            <MudFab Color="Color.Success" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateZonaCarrerAsync(context.Id))"></MudFab>
+            <MudFab Color="Color.Warning" StartIcon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteZonaCarrerAsync(context.Id, context.Zona))"></MudFab>
+        </MudTd>
+    </RowTemplate>
+</MudTable>

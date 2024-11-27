@@ -1,0 +1,29 @@
+﻿@page "/canalscobrament"
+
+
+<MudTable Items="@CanalsCobrament" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+    <ToolBarContent>
+        <MudFab Color = "Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddCanalCobramentAsync())"></MudFab>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Canal</MudTh>
+        <MudTh>Forma Pagament</MudTh>
+        <MudTh>Descripcio</MudTh>
+        <MudTh>Observacions</MudTh>
+        <MudTh>BIC</MudTh>
+        <MudTh>Acciones</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Canal">@context.Canal</MudTd>
+        <MudTd DataLabel="Forma Pagament">@context.FormaPagament</MudTd>
+        <MudTd DataLabel="Descripció">@context.Descripcio</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="BIC">@context.BIC</MudTd>
+        <MudTd DataLabel="Accions">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateCanalCobramentAsync(context.Id))"></MudIconButton>
+                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteCanalCobramentAsync(context.Id, context.Canal))"></MudIconButton>
+            </MudButtonGroup>
+        </MudTd>
+    </RowTemplate>
+</MudTable>

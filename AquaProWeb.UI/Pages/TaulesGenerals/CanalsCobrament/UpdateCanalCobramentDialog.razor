@@ -1,0 +1,38 @@
+﻿@using AquaProWeb.Common.Enums
+<MudForm @ref="@_form" Model="UpdateCanalCobramentDto">
+    <MudDialog>
+        <TitleContent>
+            Editar Canal de Cobro
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="UpdateCanalCobramentDto.Canal"
+                          Label="Canal"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Canal</MudTextField>
+            
+            <MudSelect T="FormaPagament" Label="Forma de pagament" @bind-Value="UpdateCanalCobramentDto.FormaPagament">
+                @foreach (var cat in Enum.GetValues(typeof(FormaPagament)).Cast<FormaPagament>())
+                {
+                    <MudSelectItem Value="@cat">@cat.ToString()</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudTextField @bind-Value="UpdateCanalCobramentDto.Descripcio"
+                          Label="Descripció"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Descripcio</MudTextField>
+            <MudTextField @bind-Value="UpdateCanalCobramentDto.Observacions"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+            <MudTextField @bind-Value="UpdateCanalCobramentDto.BIC"
+                          Label="BIC"
+                          Immediate="true"
+                          Variant="Variant.Outlined">BIC</MudTextField>
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>

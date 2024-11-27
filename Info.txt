@@ -1,0 +1,9 @@
+add-migration inicial -context AppDbContext -o Migrations
+add-migration inicial -context ConfigDbContext -o MigrationsConfig
+
+update-database -context AppDbContext
+update-database -context ConfigDbContext
+
+// reiniciar la clau a 1
+delete from rebuts
+DBCC CHECKIDENT ('rebuts', RESEED, 0)

@@ -1,0 +1,9 @@
+﻿@page "/roles"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles="admin")]
+
+<h3> Gestió de roles (només admins)</h3>
+
+@code {
+
+}

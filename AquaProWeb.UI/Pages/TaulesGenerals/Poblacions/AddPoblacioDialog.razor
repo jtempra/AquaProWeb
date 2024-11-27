@@ -1,0 +1,30 @@
+﻿@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Requests
+@using FluentValidation
+
+<MudForm @ref="@_form" Model="CreatePoblacioDto">
+    <MudDialog>
+        <TitleContent>
+            Crear Explotacio
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="CreatePoblacioDto.Nom"
+                          Label="Nom"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Nom</MudTextField>
+            <MudTextField @bind-Value="CreatePoblacioDto.CodiINE"
+                          Label="Codi INE"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Codi</MudTextField>
+
+            <MudTextField @bind-Value="CreatePoblacioDto.Observacions"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>

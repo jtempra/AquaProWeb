@@ -1,0 +1,307 @@
+[
+  {
+    "Codi": "AC",
+    "Descripcio": "Acera",
+    "Observacions": ""
+  },
+  {
+    "Codi": "AD",
+    "Descripcio": "Aldea",
+    "Observacions": ""
+  },
+  {
+    "Codi": "AL",
+    "Descripcio": "Alameda",
+    "Observacions": ""
+  },
+  {
+    "Codi": "AV",
+    "Descripcio": "Avinguda",
+    "Observacions": ""
+  },
+  {
+    "Codi": "BO",
+    "Descripcio": "Barri",
+    "Observacions": ""
+  },
+  {
+    "Codi": "CJ",
+    "Descripcio": "Callejon",
+    "Observacions": ""
+  },
+  {
+    "Codi": "CL",
+    "Descripcio": "Carrer",
+    "Observacions": ""
+  },
+  {
+    "Codi": "CM",
+    "Descripcio": "Cami",
+    "Observacions": ""
+  },
+  {
+    "Codi": "CT",
+    "Descripcio": "Carretera",
+    "Observacions": ""
+  },
+  {
+    "Codi": "PP",
+    "Descripcio": "Passeig",
+    "Observacions": ""
+  },
+  {
+    "Codi": "PZ",
+    "Descripcio": "Plaza",
+    "Observacions": ""
+  },
+  {
+    "Codi": "RD",
+    "Descripcio": "Ronda",
+    "Observacions": ""
+  },
+  {
+    "Codi": "RB",
+    "Descripcio": "Rambla",
+    "Observacions": ""
+  },
+  {
+    "Codi": "TR",
+    "Descripcio": "Travesia",
+    "Observacions": ""
+  },
+  {
+    "Codi": "UR",
+    "Descripcio": "Urbanitzacio",
+    "Observacions": ""
+  },
+  {
+    "Codi": "VI",
+    "Descripcio": "Via",
+    "Observacions": ""
+  },
+  {
+    "Codi": "AA",
+    "Descripcio": "AAAAAAAAAAA",
+    "Observacions": ""
+  },
+  {
+    "Codi": "BB",
+    "Descripcio": "BBBBBBBBBBBBB",
+    "Observacions": ""
+  },
+  {
+    "Codi": "CC",
+    "Descripcio": "CCCCCCCCCCC",
+    "Observacions": ""
+  },
+  {
+    "Codi": "DD",
+    "Descripcio": "DDDDDDDDD",
+    "Observacions": ""
+  },
+  {
+    "Codi": "EE",
+    "Descripcio": "EEEEEEEE",
+    "Observacions": ""
+  },
+  {
+    "Codi": "FF",
+    "Descripcio": "FFFFFFFF",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  },
+  {
+    "Codi": "GG",
+    "Descripcio": "GGGG",
+    "Observacions": ""
+  }
+]

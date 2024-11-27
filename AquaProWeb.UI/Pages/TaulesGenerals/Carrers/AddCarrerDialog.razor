@@ -1,0 +1,65 @@
+﻿@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Requests
+@using FluentValidation
+
+<MudForm @ref="@_form" Model ="ReadCarrerDto">
+    <MudDialog>
+        <TitleContent>
+            Crear Carrer
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="ReadCarrerDto.Nom"
+                          Label ="Nom"
+                          Immediate="true" 
+                          Variant="Variant.Outlined">Nom</MudTextField>
+
+            <MudTextField @bind-Value="ReadCarrerDto.Observacions"
+                          Label ="Observacions"
+                          Immediate="true" 
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+
+            <MudTextField @bind-Value="ReadCarrerDto.CodiPostal"
+                          Label ="Codi Postal"
+                          Immediate="true" 
+                          Variant="Variant.Outlined">Codi Postal</MudTextField>
+
+            <MudStack Spacing="6">
+
+                <MudSelect Label="Població" MultiSelection="false" @bind-Value="ReadCarrerDto.Poblacio.Id">
+                    @foreach (var poblacio in Poblacions)
+                    {
+                        <MudSelectItem Value="@poblacio.Id">@poblacio.Nom</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Label="Zona" MultiSelection="false" @bind-Value="ReadCarrerDto.ZonaCarrer.Id">
+                    @foreach (var zona in ZonesCarrers)
+                    {
+                        <MudSelectItem Value="@zona.Id">@zona.Zona</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Label="Tipus Via" MultiSelection="false" @bind-Value="ReadCarrerDto.TipusVia.Id">
+                    @foreach (var tipus in TipusVies)
+                    {
+                        <MudSelectItem Value="@tipus.Id">@tipus.Codi</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect T="CategoriaVia" Label="Categoria Via" @bind-Value="CategoriesVia">
+                    @foreach (var cat in Enum.GetValues(typeof(CategoriaVia)).Cast<CategoriaVia>())
+                    {
+                        <MudSelectItem Value="@cat">@cat.ToString()</MudSelectItem>
+                    }
+                </MudSelect>
+            </MudStack>
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>
+
+

@@ -1,0 +1,45 @@
+﻿@using AquaProWeb.Common.Enums
+@using FluentValidation
+
+
+<MudDialog>
+    <TitleContent>
+        Agregar Canal de Cobro
+    </TitleContent>
+    <DialogContent>
+        <MudForm @ref="@_form" Model="CreateCanalCobramentDto" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit"  Validation="canalCobramentValidator.ValidateValue">
+            <MudTextField @bind-Value="CreateCanalCobramentDto.Canal" For="@(() => CreateCanalCobramentDto.Canal)"
+                          Label="Canal de Cobro"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Canal</MudTextField>            
+            @* <MudTextField @bind-Value="CreateCanalCobramentDto.FormaPagament" For="@(() => CreateCanalCobramentDto.FormaPagament)"
+                          Label="Forma de Pago"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Nom</MudTextField> *@
+            
+            <MudSelect T="FormaPagament" Label="Forma de pagament" @bind-Value="FormesPagament">
+                @foreach (var cat in Enum.GetValues(typeof(FormaPagament)).Cast<FormaPagament>())
+                {
+                    <MudSelectItem Value="@cat">@cat.ToString()</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudTextField @bind-Value="CreateCanalCobramentDto.Descripcio" For="@(() => CreateCanalCobramentDto.Descripcio)"
+                          Label="Descripcio"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Descripcio</MudTextField>
+            <MudTextField @bind-Value="CreateCanalCobramentDto.Observacions" For="@(() => CreateCanalCobramentDto.Observacions)"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+            <MudTextField @bind-Value="CreateCanalCobramentDto.BIC" For="@(() => CreateCanalCobramentDto.BIC)"
+                          Label="BIC"
+                          Immediate="true"
+                          Variant="Variant.Outlined">BIC</MudTextField>
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancelar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="@(async () => await Submit())">Guardar</MudButton>
+    </DialogActions>
+</MudDialog>

@@ -1,0 +1,26 @@
+﻿<MudForm @ref="@_form" Model="UpdateTipusViaDto">
+    <MudDialog>
+        <TitleContent>
+            Editar Tipo de Via
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="UpdateTipusViaDto.Codi"
+                          Label="Codi"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Codi</MudTextField>
+            <MudTextField @bind-Value="UpdateTipusViaDto.Descripcio"
+                          Label="Nom"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Nom</MudTextField>
+
+            <MudTextField @bind-Value="UpdateTipusViaDto.Observacions"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>

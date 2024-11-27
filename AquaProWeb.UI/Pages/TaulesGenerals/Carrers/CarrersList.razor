@@ -1,0 +1,34 @@
+﻿@page "/carrers"
+@using AquaProWeb.Common.Responses
+
+
+<MudTable Items="@Carrers" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading"  RowClass="cursor-pointer"> 
+    <ToolBarContent>
+        <MudFab Color = "Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddCarrerAsync())"></MudFab>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Nom</MudTh>
+        <MudTh>CP</MudTh>
+        <MudTh>Observacions</MudTh>
+        <MudTh>Poblacio</MudTh>
+        <MudTh>Zona</MudTh>
+        <MudTh>TipusVia</MudTh>
+        <MudTh>Categoria</MudTh>
+        <MudTh>Acciones</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Nom">@context.Nom</MudTd>
+        <MudTd DataLabel="CP">@context.CodiPostal</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="Poblacio">@context.Poblacio.Nom</MudTd>
+        <MudTd DataLabel="Zona">@context.ZonaCarrer.Zona</MudTd>
+        <MudTd DataLabel="TipusVia">@context.TipusVia.Codi</MudTd>
+        <MudTd DataLabel="Categoria">@context.CategoriaVia</MudTd>
+        <MudTd DataLabel="Accions">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateCarrerAsync(context.Id))"></MudIconButton>
+                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteCarrerAsync(context.Id, context.Nom))"></MudIconButton>
+            </MudButtonGroup>
+        </MudTd>
+    </RowTemplate>
+</MudTable>

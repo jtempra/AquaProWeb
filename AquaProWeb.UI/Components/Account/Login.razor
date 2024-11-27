@@ -1,0 +1,71 @@
+﻿@page "/login"
+@using System.ComponentModel.DataAnnotations
+@using AquaProWeb.Common.Models
+@using AquaProWeb.UI.Authentication
+@using Severity = MudBlazor.Severity
+
+@inject IAccountService accountService
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager NavMgr
+
+<EditForm Model="@model" OnValidSubmit="HandleLogin">
+    <AuthorizeView>
+        <Authorized Context="authContext">
+            @if (!errors)
+            {
+                _snackbar.Add($"Ya estás logeado en el sistema como {@authContext.User.Identity?.Name}!", Severity.Warning);
+
+            }
+        </Authorized>
+        <NotAuthorized Context="EditContext">
+            @if (errors)
+            {
+                _snackbar.Add(errorMessage, Severity.Error);
+            }
+
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+
+            <MudItem xs="12" sm="7">
+                <MudCard>
+                    <MudCardContent>
+                        <MudTextField Label="Email" Class="mt-3"
+                        @bind-Value="model.Email" For="@(() => model.Email)" />
+                        <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
+                        @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password" />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Login</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+
+        </NotAuthorized>
+    </AuthorizeView>
+</EditForm>
+
+
+@code 
+{
+    private LoginModel model { get; set; } = new ();
+    bool errors;
+    string errorMessage;
+
+
+    private async Task HandleLogin()
+    {
+        errors = false;
+        var result = await accountService.LoginAsync(model);
+        if (result.Flag == true)
+        {
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+            await customAuthStateProvider.UpdateAuthenticationState(result.UserSession);
+            NavMgr.NavigateTo("/", replace: true);
+        }
+        else
+        {
+            errors = true;
+            errorMessage = result.Message;
+        }
+    }
+
+}

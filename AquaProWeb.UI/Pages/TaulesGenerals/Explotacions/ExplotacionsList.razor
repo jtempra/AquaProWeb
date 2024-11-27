@@ -1,0 +1,26 @@
+﻿@page "/explotacions"
+@using AquaProWeb.Common.Responses
+
+
+<MudTable Items="@Explotacions" Hover="true" Breakpoint="Breakpoint.Sm"  Loading="@_loading" LoadingProgressColor="Color.Info" RowClass="cursor-pointer" >
+    <ToolBarContent>
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddExplotacioAsync())"></MudFab>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Codi</MudTh>
+        <MudTh>Nom</MudTh>
+        <MudTh>Observacions</MudTh>
+        <MudTh>Accions</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Codi">@context.Codi</MudTd>
+        <MudTd DataLabel="Nom">@context.Nom</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="Accions">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateExplotacioAsync(context.Id))"></MudIconButton>
+                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteExplotacioAsync(context.Id, context.Nom))"></MudIconButton>
+            </MudButtonGroup>
+        </MudTd>
+    </RowTemplate>
+</MudTable>

@@ -1,0 +1,52 @@
+﻿@using AquaProWeb.Common.Models
+@using AquaProWeb.UI.Authentication
+@using MudBlazor
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager navManager
+
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" @onclick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3">AquaProWeb</MudText>
+        <MudSpacer />
+        <AuthorizeView>
+            <Authorized>
+                <span>@context.User.Identity?.Name</span>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="HandleLogout">Logout</MudButton>
+            </Authorized>
+            <NotAuthorized>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="login">Login</MudButton>
+                <MudIconButton Icon="@Icons.Material.Filled.AppRegistration" Color="Color.Inherit" Edge="Edge.End" Href="register"/>
+            </NotAuthorized>
+        </AuthorizeView>
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <MyMudNavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    public async Task HandleLogout()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(new UserSession());
+        navManager.NavigateTo("/");
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "Marca": "Marca1", 
+    "Fabricant": "Fabricant 1",
+    "Observacions": "In est risus, auctor sed, tristique in, tempus sit amet, sem."
+  },
+  {
+    "Marca": "Marca2", 
+    "Fabricant": "Fabricant 2",
+    "Observacions": "Aliquam sit amet diam in magna bibendum imperdiet."
+  },
+  {
+    "Marca": "Marca3",
+    "Fabricant": "Fabricant 3",
+    "Observacions": "Vivamus tortor."
+  },
+  {
+    "Marca": "Marca4",
+    "Fabricant": "Fabricant 4",
+    "Observacions": "Curabitur gravida nisi at nibh."
+  },
+  {
+    "Marca": "Marca5",
+    "Fabricant": "Fabricant 5",
+    "Observacions": "Donec semper sapien a libero."
+  }
+]

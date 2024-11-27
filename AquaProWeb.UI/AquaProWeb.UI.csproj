@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageReference Include="MudBlazor" Version="7.15.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AquaProWeb.Application\AquaProWeb.Application.csproj" />
+    <ProjectReference Include="..\AquaProWeb.Common\AquaProWeb.Common.csproj" />
+    <ProjectReference Include="..\AquaProWeb.Domain\AquaProWeb.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Abonats\Solicituds\Alta\" />
+    <Folder Include="Pages\Abonats\Solicituds\Baixa\" />
+    <Folder Include="Pages\Abonats\Solicituds\CanviNom\" />
+    <Folder Include="Pages\Abonats\Solicituds\CanviBanc\" />
+    <Folder Include="Pages\Abonats\Solicituds\CanviTarifa\" />
+    <Folder Include="Pages\Lectures\" />
+    <Folder Include="Pages\Facturacio\" />
+    <Folder Include="Pages\Cobraments\" />
+    <Folder Include="Pages\Impagats\" />
+    <Folder Include="Pages\Incidencies\" />
+    <Folder Include="Pages\Estocs\" />
+    <Folder Include="Pages\Declaracions\" />
+    <Folder Include="Pages\GIS\" />
+    <Folder Include="Pages\Llistats\" />
+    <Folder Include="Pages\Grafics\" />
+    <Folder Include="Pages\OficinaVirtual\" />
+    <Folder Include="Pages\Tarifes\" />
+    <Folder Include="Pages\TaulesGenerals\ComptesRemesaBanc\" />
+    <Folder Include="Pages\TaulesGenerals\ComptesTransferenciaClient\" />
+    <Folder Include="Pages\TaulesGenerals\ConceptesCobrament\" />
+    <Folder Include="Pages\TaulesGenerals\ConceptesFactura\" />
+    <Folder Include="Pages\TaulesGenerals\Empreses\" />
+    <Folder Include="Pages\TaulesGenerals\FamiliesConcepteFactura\" />
+    <Folder Include="Pages\TaulesGenerals\FamiliesContracte\" />
+    <Folder Include="Pages\TaulesGenerals\MarquesComptador\" />
+    <Folder Include="Pages\TaulesGenerals\MotiusBaixaComptador\" />
+    <Folder Include="Pages\TaulesGenerals\MotiusBaixaCompte\" />
+    <Folder Include="Pages\TaulesGenerals\MotiusBaixaContracte\" />
+    <Folder Include="Pages\TaulesGenerals\MotiusBaixaTitular\" />
+    <Folder Include="Pages\TaulesGenerals\ZonesUbicacio\" />
+    <Folder Include="Pages\TaulesGenerals\ZonesOT\" />
+    <Folder Include="Pages\TaulesGenerals\ZonesFacturacio\" />
+    <Folder Include="Pages\TaulesGenerals\Usos\" />
+    <Folder Include="Pages\TaulesGenerals\TipusUbicacio\" />
+    <Folder Include="Pages\TaulesGenerals\TipusSuggeriment\" />
+    <Folder Include="Pages\TaulesGenerals\TipusReclamacio\" />
+    <Folder Include="Pages\TaulesGenerals\TipusQueixa\" />
+    <Folder Include="Pages\TaulesGenerals\TipusOT\" />
+    <Folder Include="Pages\TaulesGenerals\TipusIncidenciaUbicacio\" />
+    <Folder Include="Pages\TaulesGenerals\TipusIncidenciaTecnica\" />
+    <Folder Include="Pages\TaulesGenerals\TipusIncidenciaLectura\" />
+    <Folder Include="Pages\TaulesGenerals\TipusIncidenciaContracte\" />
+    <Folder Include="Pages\TaulesGenerals\TipusIncidenciaClient\" />
+    <Folder Include="Pages\TaulesGenerals\TipusFactura\" />
+    <Folder Include="Pages\TaulesGenerals\TipusDocument\" />
+    <Folder Include="Pages\TaulesGenerals\TipusComptador\" />
+    <Folder Include="Pages\TaulesGenerals\TipusCampanya\" />
+    <Folder Include="Pages\TaulesGenerals\TipusBaixaClient\" />
+    <Folder Include="Pages\TaulesGenerals\SituacionsAdministrativesOT\" />
+    <Folder Include="Pages\TaulesGenerals\SituacionsRebut\" />
+    <Folder Include="Pages\TaulesGenerals\SituacionsFactura\" />
+    <Folder Include="Pages\TaulesGenerals\SeriesRebut\" />
+    <Folder Include="Pages\TaulesGenerals\SeriesFactura\" />
+    <Folder Include="Pages\TaulesGenerals\Paisos\" />
+    <Folder Include="Pages\TaulesGenerals\Operaris\" />
+    <Folder Include="Pages\TaulesGenerals\TipusClient\" />
+    <Folder Include="Pages\TaulesGenerals\TipusConcepteFactura\" />
+    <Folder Include="Services\Configuracio\Parametros\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+﻿@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Requests
+@using FluentValidation
+
+<MudForm @ref="@_form" Model="CreateTipusViaDto">
+    <MudDialog>
+        <TitleContent>
+            Crear Tipus de Via
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="CreateTipusViaDto.Codi"
+                          Label="Codi"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Codi</MudTextField>
+            <MudTextField @bind-Value="CreateTipusViaDto.Descripcio"
+                          Label="Descripcio"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Descripcio</MudTextField>
+            <MudTextField @bind-Value="CreateTipusViaDto.Observacions"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>

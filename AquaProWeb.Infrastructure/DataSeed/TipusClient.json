@@ -1,0 +1,22 @@
+[
+  {
+    "Tipus": "Normal",
+    "Observacions": "Client normal"
+  },
+  {
+    "Tipus": "Organisme Públic",
+    "Observacions": "Client organisme public"
+  },
+  {
+    "Tipus": "Empresa",
+    "Observacions": "Client empresa"
+  },
+  {
+    "Tipus": "Escola",
+    "Observacions": "Client escola"
+  },
+  {
+    "Tipus": "Residencia",
+    "Observacions": "Client residencia"
+  }
+]

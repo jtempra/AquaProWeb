@@ -1,0 +1,32 @@
+[
+  {
+    "Nom": "Mozirje",
+    "ExplotacioId": 1,
+    "CodiINE": "0811517",
+    "Observacions": "In est risus, auctor sed, tristique in, tempus sit amet, sem."
+  },
+  {
+    "Nom": "Morropón",
+    "ExplotacioId": 1,
+    "CodiINE": "0822861",
+    "Observacions": "Aliquam sit amet diam in magna bibendum imperdiet."
+  },
+  {
+    "Nom": "Hongkou",
+    "ExplotacioId": 1,
+    "CodiINE": "0835172",
+    "Observacions": "Vivamus tortor."
+  },
+  {
+    "Nom": "Čížkovice",
+    "ExplotacioId": 1,
+    "CodiINE": "0812989",
+    "Observacions": "Curabitur gravida nisi at nibh."
+  },
+  {
+    "Nom": "Пласница",
+    "ExplotacioId": 1,
+    "CodiINE": "0827386",
+    "Observacions": "Donec semper sapien a libero."
+  }
+]
