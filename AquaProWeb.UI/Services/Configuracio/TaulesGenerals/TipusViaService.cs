@@ -1,7 +1,7 @@
 ﻿using AquaProWeb.Common.Requests.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.EndPoints;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;

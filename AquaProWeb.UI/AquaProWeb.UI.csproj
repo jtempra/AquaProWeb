@@ -81,7 +81,7 @@
     <Folder Include="Pages\TaulesGenerals\Operaris\" />
     <Folder Include="Pages\TaulesGenerals\TipusClient\" />
     <Folder Include="Pages\TaulesGenerals\TipusConcepteFactura\" />
-    <Folder Include="Services\Configuracio\Parametros\" />
+    <Folder Include="Services\Configuracio\Parametres\" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
 ﻿using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.EndPoints;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
 using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
 using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
