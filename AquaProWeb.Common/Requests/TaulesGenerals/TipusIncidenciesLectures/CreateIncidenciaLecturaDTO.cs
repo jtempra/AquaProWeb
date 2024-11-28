@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesLectures
 {
-    public class CreateIncidenciaLecturaDTO
+    public class CreateTipusIncidenciaLecturaDTO
     {
         public string Tipus { get; set; }
         public Boolean ConsumApte { get; set; }

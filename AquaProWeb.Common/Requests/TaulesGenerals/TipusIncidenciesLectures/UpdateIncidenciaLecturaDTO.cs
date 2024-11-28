@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesLectures
 {
-    public class UpdateIncidenciaLecturaDTO
+    public class UpdateTipusIncidenciaLecturaDTO
     {
         public int Id { get; set; }
         public string Tipus { get; set; }

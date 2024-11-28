@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesTecniques
 {
-    public class CreateIncidenciaTecnicaDTO
+    public class CreateTipusIncidenciaTecnicaDTO
     {
         public string Tipus { get; set; }
         public string Descripcio { get; set; }

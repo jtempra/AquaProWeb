@@ -1,4 +1,5 @@
-﻿using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
+﻿using AquaProWeb.Common.Responses.Parametres;
+using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
 using FluentValidation;
 
 namespace AquaProWeb.UI.Validations

@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Responses.TaulesGenerals.TipusIncidenciesTecniques
 {
-    public class ReadIncidenciaTecnicaDTO
+    public class ReadTipusIncidenciaTecnicaDTO
     {
         public int Id { get; set; }
         public string Tipus { get; set; }

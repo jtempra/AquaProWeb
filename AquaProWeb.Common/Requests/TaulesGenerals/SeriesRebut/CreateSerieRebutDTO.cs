@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Requests.TaulesGenerals.SeriesRebut
 {
-    public class CrearSerieFacturaDTO
+    public class CrearSerieRebutDTO
     {
         public string Serie { get; set; }
         public int Comptador { get; set; } = 1;
