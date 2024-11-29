@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.Common.Requests.TaulesGenerals.MotiusBaixaComptador
 {
-    public class UpdateMotiuBaixaContacteDTO
+    public class UpdateMotiuBaixaComptadorDTO
     {
         public int Id { get; set; }
         public string Motiu { get; set; }

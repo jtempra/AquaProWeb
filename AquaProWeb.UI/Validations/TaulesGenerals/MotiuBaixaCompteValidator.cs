@@ -1,4 +1,5 @@
 ﻿using AquaProWeb.Common.Responses.TaulesGenerals.MotiusBaixaComptador;
+using AquaProWeb.Common.Responses.TaulesGenerals.MotiusBaixaCompte;
 using FluentValidation;
 
 namespace AquaProWeb.UI.Validations.TaulesGenerals

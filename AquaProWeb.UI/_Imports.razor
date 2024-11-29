@@ -16,9 +16,14 @@
 @using AquaProWeb.UI.Pages.Shared
 @using Microsoft.AspNetCore.Components.Authorization
 @using FluentValidation
-@inject ICarrerService _carrerService
-@inject ICanalCobramentService _canalCobramentService
+
 @inject IExplotacioService _explotacioService
+@inject IParametreService _parametreService
+
+@inject ICanalCobramentService _canalCobramentService
+@inject ICarrerService _carrerService
+@inject ICompteRemesaBancService _compteRemesaBancService
+
 @inject IPoblacioService _poblacioService
 @inject ITipusViaService _tipusViaService
 @inject IZonaCarrerService _zonaCarrerService

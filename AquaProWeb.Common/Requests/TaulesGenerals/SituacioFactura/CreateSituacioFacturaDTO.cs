@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AquaProWeb.Common.Requests.TaulesGenerals.SituacioFactura
 {
-	public class CreateSituacioRebutDTO
+	public class CreateSituacioFacturaDTO
 	{
 		public EstatFactura Estat { get; set; }
 		public string Situacio { get; set; }

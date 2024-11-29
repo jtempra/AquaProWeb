@@ -41,7 +41,6 @@
     <Folder Include="Pages\Grafics\" />
     <Folder Include="Pages\OficinaVirtual\" />
     <Folder Include="Pages\Tarifes\" />
-    <Folder Include="Pages\TaulesGenerals\ComptesRemesaBanc\" />
     <Folder Include="Pages\TaulesGenerals\ComptesTransferenciaClient\" />
     <Folder Include="Pages\TaulesGenerals\ConceptesCobrament\" />
     <Folder Include="Pages\TaulesGenerals\ConceptesFactura\" />
@@ -81,7 +80,12 @@
     <Folder Include="Pages\TaulesGenerals\Operaris\" />
     <Folder Include="Pages\TaulesGenerals\TipusClient\" />
     <Folder Include="Pages\TaulesGenerals\TipusConcepteFactura\" />
-    <Folder Include="Services\Configuracio\Parametres\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\TaulesGenerals\ComptesRemesaBanc\ComptesRemesaBancList.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using AquaProWeb.Common.Responses.TaulesGenerals.MotiusBaixaTitularCompte;
+﻿
 using AquaProWeb.Common.Responses.TaulesGenerals.Operaris;
 using FluentValidation;
 

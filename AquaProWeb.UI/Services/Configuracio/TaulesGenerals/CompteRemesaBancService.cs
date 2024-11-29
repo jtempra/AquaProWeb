@@ -8,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class CompteRemesaBancService
+    public class CompteRemesaBancService : ICompteRemesaBancService
     {
         private readonly HttpClient _httpClient;
 
