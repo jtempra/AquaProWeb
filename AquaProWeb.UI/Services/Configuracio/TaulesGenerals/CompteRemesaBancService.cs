@@ -1,9 +1,9 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
-using AquaProWeb.Common.Requests.TaulesGenerals.ComptesRemesaBanc;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.ComptesRemesaBanc;
 using AquaProWeb.Common.Responses.TaulesGenerals.ComptesRemesaBanc;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
+using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCompteRemesaBancAsync(UpdateCarrerDTO updateCompteRemesaBancDTO)
+        public async Task<ResponseWrapper<int>> UpdateCompteRemesaBancAsync(UpdateCompteRemesaBancDTO updateCompteRemesaBancDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ComptesRemesaBancEndPoints.Update, updateCompteRemesaBancDTO);
             return await response.ToResponse<int>();

@@ -1,16 +1,14 @@
-﻿using AquaProWeb.Common.Wrapper;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.Empreses;
+using AquaProWeb.Common.Responses.TaulesGenerals.Empreses;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
-using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
-using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.Empreses;
-using AquaProWeb.Common.Responses.TaulesGenerals.Empreses;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class EmpresaService 
+    public class EmpresaService : IEmpresaService
     {
         private readonly HttpClient _httpClient;
 

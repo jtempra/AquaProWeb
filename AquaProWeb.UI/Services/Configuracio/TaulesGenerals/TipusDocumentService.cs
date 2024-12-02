@@ -1,7 +1,5 @@
 ﻿using AquaProWeb.Common.Requests.TaulesGenerals.TipusDocuments;
-using AquaProWeb.Common.Requests.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusDocuments;
-using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
@@ -10,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class TipusDocumentService 
+    public class TipusDocumentService : ITipusDocumentService
     {
         private readonly HttpClient _httpClient;
 

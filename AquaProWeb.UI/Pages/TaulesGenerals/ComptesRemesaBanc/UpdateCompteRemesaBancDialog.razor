@@ -1,0 +1,45 @@
+﻿<MudForm @ref="@_form" Model="ReadCompteRemesaBancDto">
+    <MudDialog>
+        <TitleContent>
+            Crear Compte Remesa Banc
+        </TitleContent>
+        <DialogContent>
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.Id"
+                          Label="Descripció"
+                          Immediate="true"
+                          Disabled="true"
+                          Variant="Variant.Outlined">Descripcio</MudTextField>
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.Descripcio"
+                          Label="Descripció"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Descripcio</MudTextField>
+
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.IBAN"
+                          Label="IBAN"
+                          Immediate="true"
+                          Variant="Variant.Outlined">IBAN</MudTextField>
+
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.BIC"
+                          Label="BIC"
+                          Immediate="true"
+                          Variant="Variant.Outlined">BIC</MudTextField>
+
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.Sufixe"
+                          Label="Sufixe"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Sufixe</MudTextField>
+
+            <MudSwitch @bind-Value="ReadCompteRemesaBancDto.Activa" Label="Activa" Color="Color.Info"/>
+
+            <MudTextField @bind-Value="ReadCompteRemesaBancDto.Observacions"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="SaveAsync">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>

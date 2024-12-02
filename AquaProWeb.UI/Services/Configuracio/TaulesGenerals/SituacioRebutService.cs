@@ -1,15 +1,23 @@
-﻿using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.Extensions;
-using AquaProWeb.UI.Services.Contracts;
-using System.Net.Http.Json;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.SituacioRebut;
-using AquaProWeb.Common.Responses.TaulesGenerals.SituacionsFactura;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.SituacioRebut;
 using AquaProWeb.Common.Responses.TaulesGenerals.SituacionsRebut;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
+using AquaProWeb.UI.Extensions;
+using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class SituacioRebutService 
+    public interface ISituacioRebutService
+    {
+        Task<ResponseWrapper<int>> AddSituacioRebutAsync(CreateSituacioRebutDTO createSituacioRebutDTO);
+        Task<ResponseWrapper<int>> DeleteSituacioRebutAsync(int id);
+        Task<ResponseWrapper<List<ReadSituacioRebutDTO>>> GetAllSituacionsFacturasAsync();
+        Task<ResponseWrapper<ReadSituacioRebutDTO>> GetSituacioRebutByIdAsync(int id);
+        Task<ResponseWrapper<List<ReadSituacioRebutDTO>>> GetSituacionsFacturasByTextAsync(string text);
+        Task<ResponseWrapper<int>> UpdateSituacioRebutAsync(UpdateSituacioRebutDTO updateSituacioRebutDTO);
+    }
+
+    public class SituacioRebutService : ISituacioRebutService
     {
         private readonly HttpClient _httpClient;
 

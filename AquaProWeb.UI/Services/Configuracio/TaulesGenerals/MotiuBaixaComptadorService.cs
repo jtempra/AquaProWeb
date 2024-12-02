@@ -1,13 +1,13 @@
-﻿using AquaProWeb.Common.Wrapper;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.MotiusBaixaComptador;
+using AquaProWeb.Common.Responses.TaulesGenerals.MotiusBaixaComptador;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using System.Net.Http.Json;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.MotiusBaixaComptador;
-using AquaProWeb.Common.Responses.TaulesGenerals.MotiusBaixaComptador;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class MotiuBaixaComptadorService 
+    public class MotiuBaixaComptadorService : IMotiuBaixaComptadorService
     {
         private readonly HttpClient _httpClient;
 

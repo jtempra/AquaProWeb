@@ -1,16 +1,13 @@
-﻿using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.Extensions;
-using AquaProWeb.UI.Services.Contracts;
-using System.Net.Http.Json;
-using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
-using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.MarquesComptador;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.MarquesComptador;
 using AquaProWeb.Common.Responses.TaulesGenerals.MarquesComptador;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
+using AquaProWeb.UI.Extensions;
+using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class MarcaComptadorService 
+    public class MarcaComptadorService : IMarcaComptadorService
     {
         private readonly HttpClient _httpClient;
 

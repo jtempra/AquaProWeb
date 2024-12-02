@@ -1,6 +1,4 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.ZonesCarrers;
-using AquaProWeb.Common.Requests.TaulesGenerals.ZonesFacturacio;
-using AquaProWeb.Common.Responses.TaulesGenerals.ZonesCarrers;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.ZonesFacturacio;
 using AquaProWeb.Common.Responses.TaulesGenerals.ZonesFacturacio;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
@@ -10,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class ZonaFacturacioService 
+    public class ZonaFacturacioService : IZonaFacturacioService
     {
         private readonly HttpClient _httpClient;
 

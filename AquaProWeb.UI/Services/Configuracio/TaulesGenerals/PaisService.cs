@@ -1,14 +1,13 @@
-﻿using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.Extensions;
-using AquaProWeb.UI.Services.Contracts;
-using System.Net.Http.Json;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.Paisos;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.Paisos;
 using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
+using AquaProWeb.UI.Extensions;
+using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class PaisService 
+    public class PaisService : IPaisService
     {
         private readonly HttpClient _httpClient;
 

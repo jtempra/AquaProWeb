@@ -12,7 +12,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ComptesRemesaBanc
         private bool _loading = true;
         protected override async Task OnInitializedAsync()
         {
-	        await LoadComptesRemesaBancAsync();
+            await LoadComptesRemesaBancAsync();
         }
 
         private async Task LoadComptesRemesaBancAsync()
@@ -20,7 +20,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ComptesRemesaBanc
             var response = await _compteRemesaBancService.GetAllComptesRemesaBancAsync();
             if (response.IsSuccessful)
             {
-	            ComptesRemesaBanc = response.Data;
+                ComptesRemesaBanc = response.Data;
             }
             else
             {
@@ -33,7 +33,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ComptesRemesaBanc
             _loading = false;
         }
 
-        private async Task AddCompteRemesaAsync()
+        private async Task AddCompteRemesaBancAsync()
         {
             var parameters = new DialogParameters();
             var options = new DialogOptions

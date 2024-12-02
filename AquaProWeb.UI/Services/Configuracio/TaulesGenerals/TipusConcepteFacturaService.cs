@@ -9,7 +9,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class TipusConcepteFacturaService 
+    public class TipusConcepteFacturaService : ITipusConcepteFacturaService
     {
         private readonly HttpClient _httpClient;
 

@@ -1,6 +1,4 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.ZonesCarrers;
-using AquaProWeb.Common.Requests.TaulesGenerals.ZonesOrdresTreball;
-using AquaProWeb.Common.Responses.TaulesGenerals.ZonesCarrers;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.ZonesOrdresTreball;
 using AquaProWeb.Common.Responses.TaulesGenerals.ZonesOrdresTreball;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
@@ -10,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class ZonaOrdreTreballService 
+    public class ZonaOrdreTreballService : IZonaOrdreTreballService
     {
         private readonly HttpClient _httpClient;
 

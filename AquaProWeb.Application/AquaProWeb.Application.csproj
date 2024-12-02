@@ -16,4 +16,49 @@
     <ProjectReference Include="..\AquaProWeb.Domain\AquaProWeb.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Parametres\Commands\" />
+    <Folder Include="Features\Parametres\Queries\" />
+    <Folder Include="Features\TaulesGenerals\ComptesTransferenciaClient\Commands\" />
+    <Folder Include="Features\TaulesGenerals\ComptesTransferenciaClient\Queries\" />
+    <Folder Include="Features\TaulesGenerals\ConceptesCobrament\" />
+    <Folder Include="Features\TaulesGenerals\ConceptesFactura\" />
+    <Folder Include="Features\TaulesGenerals\Empreses\" />
+    <Folder Include="Features\TaulesGenerals\FamiliesConcepteFactura\" />
+    <Folder Include="Features\TaulesGenerals\FamiliesContracte\" />
+    <Folder Include="Features\TaulesGenerals\MarquesComptador\" />
+    <Folder Include="Features\TaulesGenerals\MotiusBaixaComptador\" />
+    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitular\" />
+    <Folder Include="Features\TaulesGenerals\MotiusBaixaContacte\" />
+    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitularCompte\" />
+    <Folder Include="Features\TaulesGenerals\ZonesUbicacio\" />
+    <Folder Include="Features\TaulesGenerals\ZonesOrdreTreball\" />
+    <Folder Include="Features\TaulesGenerals\ZonesFacturacio\" />
+    <Folder Include="Features\TaulesGenerals\UsosContracte\" />
+    <Folder Include="Features\TaulesGenerals\TipusUbicacio\" />
+    <Folder Include="Features\TaulesGenerals\TipusReclamacio\" />
+    <Folder Include="Features\TaulesGenerals\TipusSuggeriment\" />
+    <Folder Include="Features\TaulesGenerals\TipusQueixa\" />
+    <Folder Include="Features\TaulesGenerals\TipusOrdreTreball\" />
+    <Folder Include="Features\TaulesGenerals\TipusIncidenciaUbicacio\" />
+    <Folder Include="Features\TaulesGenerals\TipusIncidenciaTecnica\" />
+    <Folder Include="Features\TaulesGenerals\TipusIncidenciaLectura\" />
+    <Folder Include="Features\TaulesGenerals\TipusIncidenciaContracte\" />
+    <Folder Include="Features\TaulesGenerals\TipusIncidenciaClient\" />
+    <Folder Include="Features\TaulesGenerals\TipusFactura\" />
+    <Folder Include="Features\TaulesGenerals\TipusDocument\" />
+    <Folder Include="Features\TaulesGenerals\TipusConcepteFactura\" />
+    <Folder Include="Features\TaulesGenerals\TipusComptador\" />
+    <Folder Include="Features\TaulesGenerals\TipusClient\" />
+    <Folder Include="Features\TaulesGenerals\TipusCampanya\" />
+    <Folder Include="Features\TaulesGenerals\TipusBaixaClient\" />
+    <Folder Include="Features\TaulesGenerals\SituacionsRebut\" />
+    <Folder Include="Features\TaulesGenerals\SituacionsFactura\" />
+    <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\" />
+    <Folder Include="Features\TaulesGenerals\SeriesRebut\" />
+    <Folder Include="Features\TaulesGenerals\SeriesFactura\" />
+    <Folder Include="Features\TaulesGenerals\Paisos\" />
+    <Folder Include="Features\TaulesGenerals\Operaris\" />
+  </ItemGroup>
+
 </Project>

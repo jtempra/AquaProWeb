@@ -1,14 +1,13 @@
-﻿using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.Extensions;
-using AquaProWeb.UI.Services.Contracts;
-using System.Net.Http.Json;
-using AquaProWeb.Common.Requests.TaulesGenerals.Operaris;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.Operaris;
 using AquaProWeb.Common.Responses.TaulesGenerals.Operaris;
+using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
+using AquaProWeb.UI.Extensions;
+using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class OperariService 
+    public class OperariService : IOperariService
     {
         private readonly HttpClient _httpClient;
 

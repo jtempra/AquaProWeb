@@ -1,9 +1,9 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
+﻿using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
 using FluentValidation;
 
 namespace AquaProWeb.UI.Validations
 {
-    public class CarrerValidator : AbstractValidator<CreateCarrerDTO>
+    public class CarrerValidator : AbstractValidator<ReadCarrerDTO>
     {
         // regles de validació + missatges error
         public CarrerValidator()
@@ -24,7 +24,7 @@ namespace AquaProWeb.UI.Validations
         // funció de validació
         public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
         {
-            var result = await ValidateAsync(ValidationContext<CreateCarrerDTO>.CreateWithOptions((CreateCarrerDTO)model, x => x.IncludeProperties(propertyName)));
+            var result = await ValidateAsync(ValidationContext<ReadCarrerDTO>.CreateWithOptions((ReadCarrerDTO)model, x => x.IncludeProperties(propertyName)));
             if (result.IsValid)
                 return Array.Empty<string>();
             return result.Errors.Select(e => e.ErrorMessage);

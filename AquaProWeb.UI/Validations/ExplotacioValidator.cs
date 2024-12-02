@@ -1,10 +1,9 @@
-﻿
-using AquaProWeb.Common.Requests.Explotacions;
+﻿using AquaProWeb.Common.Responses.Explotacions;
 using FluentValidation;
 
 
 namespace AquaProWeb.UI.Validations;
-public class ExplotacioValidator : AbstractValidator<CreateExplotacioDTO>
+public class ExplotacioValidator : AbstractValidator<ReadExplotacioDTO>
 {
     // regles de validació + missatges error
     public ExplotacioValidator()
@@ -22,7 +21,7 @@ public class ExplotacioValidator : AbstractValidator<CreateExplotacioDTO>
     // funció de validació
     public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
     {
-        var result = await ValidateAsync(ValidationContext<CreateExplotacioDTO>.CreateWithOptions((CreateExplotacioDTO)model, x => x.IncludeProperties(propertyName)));
+        var result = await ValidateAsync(ValidationContext<ReadExplotacioDTO>.CreateWithOptions((ReadExplotacioDTO)model, x => x.IncludeProperties(propertyName)));
         if (result.IsValid)
             return Array.Empty<string>();
         return result.Errors.Select(e => e.ErrorMessage);

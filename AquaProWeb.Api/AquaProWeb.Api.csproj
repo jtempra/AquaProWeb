@@ -22,4 +22,8 @@
     <ProjectReference Include="..\AquaProWeb.Infrastructure\AquaProWeb.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Configuracio\Parametres\" />
+  </ItemGroup>
+
 </Project>

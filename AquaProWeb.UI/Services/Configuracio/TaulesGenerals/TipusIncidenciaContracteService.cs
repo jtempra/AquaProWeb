@@ -1,9 +1,5 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesClients;
-using AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesContractes;
-using AquaProWeb.Common.Requests.TaulesGenerals.TipusVies;
-using AquaProWeb.Common.Responses.TaulesGenerals.TipusIncidenciesClients;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.TipusIncidenciesContractes;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusIncidenciesContractes;
-using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
@@ -12,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class TipusIncidenciaContracteService 
+    public class TipusIncidenciaContracteService : ITipusIncidenciaContracteService
     {
         private readonly HttpClient _httpClient;
 

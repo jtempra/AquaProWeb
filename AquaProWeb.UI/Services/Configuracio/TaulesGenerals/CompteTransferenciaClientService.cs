@@ -1,14 +1,14 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
-using AquaProWeb.Common.Requests.TaulesGenerals.ComptesTransferenciaClient;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.ComptesTransferenciaClient;
 using AquaProWeb.Common.Responses.TaulesGenerals.ComptesTransferenciaClient;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
+using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class CompteTransferenciaClientService
+    public class CompteTransferenciaClientService : ICompteTransferenciaClientService
     {
         private readonly HttpClient _httpClient;
 
@@ -28,7 +28,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<int>();
         }
 
-        public async Task<ResponseWrapper<List<ReadCompteTransferenciaClientDTO>>> GetAllComptesRemesaBancAsync()
+        public async Task<ResponseWrapper<List<ReadCompteTransferenciaClientDTO>>> GetAllComptesTransferenciaClientAsync()
         {
             var response = await _httpClient.GetAsync(ComptesTransferenciaClientEndPoints.GetAll);
             return await response.ToResponse<List<ReadCompteTransferenciaClientDTO>>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(UpdateCarrerDTO updateCompteTransferenciaClientDTO)
+        public async Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(UpdateCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ComptesTransferenciaClientEndPoints.Update, updateCompteTransferenciaClientDTO);
             return await response.ToResponse<int>();

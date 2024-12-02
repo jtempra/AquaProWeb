@@ -15,15 +15,16 @@
         <MudTh>Acciones</MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Canal">@context.Canal</MudTd>
-        <MudTd DataLabel="Forma Pagament">@context.FormaPagament</MudTd>
-        <MudTd DataLabel="Descripció">@context.Descripcio</MudTd>
-        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="Descripcio">@context.Descripcio</MudTd>
+        <MudTd DataLabel="IBAN">@context.IBAN</MudTd>
         <MudTd DataLabel="BIC">@context.BIC</MudTd>
+        <MudTd DataLabel="Sufixe">@context.Sufixe</MudTd>
+        <MudTd DataLabel="Activa">@context.Activa</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
         <MudTd DataLabel="Accions">
             <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
                 <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateCompteRemesaBancAsync(context.Id))"></MudIconButton>
-                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteCompteRemesaBancAsync(context.Id, context.Canal))"></MudIconButton>
+                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteCompteRemesaBancAsync(context.Id, context.Descripcio))"></MudIconButton>
             </MudButtonGroup>
         </MudTd>
     </RowTemplate>

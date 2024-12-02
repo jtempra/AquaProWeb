@@ -1,7 +1,5 @@
 ﻿using AquaProWeb.Common.Requests.TaulesGenerals.UsosContracte;
-using AquaProWeb.Common.Requests.TaulesGenerals.ZonesCarrers;
 using AquaProWeb.Common.Responses.TaulesGenerals.UsosContracte;
-using AquaProWeb.Common.Responses.TaulesGenerals.ZonesCarrers;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
@@ -10,7 +8,7 @@ using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class UsContracteService 
+    public class UsContracteService : IUsContracteService
     {
         private readonly HttpClient _httpClient;
 

@@ -1,16 +1,13 @@
-﻿using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesFactura;
-using AquaProWeb.Common.Requests.TaulesGenerals.FamiliesConcepteFactura;
-using AquaProWeb.Common.Responses.TaulesGenerals.ConceptesFactura;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.FamiliesConcepteFactura;
 using AquaProWeb.Common.Responses.TaulesGenerals.FamiliesConcepteFactura;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
-using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class FamiliaConcepteFacturaService 
+    public class FamiliaConcepteFacturaService : IFamiliaConcepteFacturaService
     {
         private readonly HttpClient _httpClient;
 

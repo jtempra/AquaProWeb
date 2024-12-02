@@ -1,10 +1,9 @@
-﻿
-using AquaProWeb.Common.Requests.TaulesGenerals.CanalsCobrament;
+﻿using AquaProWeb.Common.Responses.TaulesGenerals.CanalsCobrament;
 using FluentValidation;
 
 namespace AquaProWeb.UI.Validations
 {
-    public class CanalCobramentValidator : AbstractValidator<CreateCanalCobramentDTO>
+    public class CanalCobramentValidator : AbstractValidator<ReadCanalCobramentDTO>
     {
         // regles de validació + missatges error
         public CanalCobramentValidator()
@@ -26,7 +25,7 @@ namespace AquaProWeb.UI.Validations
         // funció de validació
         public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
         {
-            var result = await ValidateAsync(ValidationContext<CreateCanalCobramentDTO>.CreateWithOptions((CreateCanalCobramentDTO)model, x => x.IncludeProperties(propertyName)));
+            var result = await ValidateAsync(ValidationContext<ReadCanalCobramentDTO>.CreateWithOptions((ReadCanalCobramentDTO)model, x => x.IncludeProperties(propertyName)));
             if (result.IsValid)
                 return Array.Empty<string>();
             return result.Errors.Select(e => e.ErrorMessage);

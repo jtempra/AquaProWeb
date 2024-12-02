@@ -1,16 +1,14 @@
-﻿using AquaProWeb.Common.Wrapper;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.SeriesRebut;
+using AquaProWeb.Common.Responses.TaulesGenerals.SeriesRebut;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.SeriesFactura;
-using AquaProWeb.Common.Responses.TaulesGenerals.SeriesFactura;
-using AquaProWeb.Common.Requests.TaulesGenerals.SeriesRebut;
-using AquaProWeb.Common.Responses.TaulesGenerals.SeriesRebut;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class SerieRebutService 
+    public class SerieRebutService : ISerieRebutService
     {
         private readonly HttpClient _httpClient;
 

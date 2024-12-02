@@ -1,14 +1,14 @@
-﻿using AquaProWeb.Common.Wrapper;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.SituacioFactura;
+using AquaProWeb.Common.Responses.TaulesGenerals.SituacionsFactura;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
-using AquaProWeb.Common.Requests.TaulesGenerals.SituacioFactura;
-using AquaProWeb.Common.Responses.TaulesGenerals.SituacionsFactura;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-    public class SituacioFacturaService 
+    public class SituacioFacturaService : ISituacioFacturaService
     {
         private readonly HttpClient _httpClient;
 

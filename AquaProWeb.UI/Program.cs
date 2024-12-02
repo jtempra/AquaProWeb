@@ -1,6 +1,7 @@
-
-using AquaProWeb.Common.Requests.Explotacions;
-using AquaProWeb.Common.Requests.TaulesGenerals.CanalsCobrament;
+using AquaProWeb.Common.Responses.Explotacions;
+using AquaProWeb.Common.Responses.Parametres;
+using AquaProWeb.Common.Responses.TaulesGenerals.CanalsCobrament;
+using AquaProWeb.Common.Responses.TaulesGenerals.ComptesRemesaBanc;
 using AquaProWeb.UI;
 using AquaProWeb.UI.Authentication;
 using AquaProWeb.UI.Services.Account;
@@ -38,17 +39,61 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 // registrem els serveis
 
-builder.Services.AddScoped<ICarrerService, CarrerService>();
 builder.Services.AddScoped<IExplotacioService, ExplotacioService>();
-builder.Services.AddScoped<IPoblacioService, PoblacioService>();
-builder.Services.AddScoped<IZonaCarrerService, ZonaCarrerService>();
-builder.Services.AddScoped<ITipusViaService, TipusViaService>();
+builder.Services.AddScoped<IParametreService, ParametreService>();
+
 builder.Services.AddScoped<ICanalCobramentService, CanalCobramentService>();
+builder.Services.AddScoped<ICarrerService, CarrerService>();
+builder.Services.AddScoped<ICompteRemesaBancService, CompteRemesaBancService>();
+builder.Services.AddScoped<ICompteTransferenciaClientService, CompteTransferenciaClientService>();
+builder.Services.AddScoped<IConcepteCobramentService, ConcepteCobramentService>();
+builder.Services.AddScoped<IConcepteFacturaService, ConcepteFacturaService>();
+builder.Services.AddScoped<IEmpresaService, EmpresaService>();
+builder.Services.AddScoped<IFamiliaConcepteFacturaService, FamiliaConcepteFacturaService>();
+builder.Services.AddScoped<IFamiliaContracteService, FamiliaContracteService>();
+builder.Services.AddScoped<IMarcaComptadorService, MarcaComptadorService>();
+builder.Services.AddScoped<IMotiuBaixaComptadorService, MotiuBaixaComptadorService>();
+builder.Services.AddScoped<IMotiuBaixaCompteService, MotiuBaixaCompteService>();
+builder.Services.AddScoped<IMotiuBaixaContacteService, MotiuBaixaContacteService>();
+builder.Services.AddScoped<IMotiuBaixaTitularService, MotiuBaixaTitularService>();
+builder.Services.AddScoped<IOperariService, OperariService>();
+builder.Services.AddScoped<IPaisService, PaisService>();
+builder.Services.AddScoped<IPoblacioService, PoblacioService>();
+builder.Services.AddScoped<ISerieFacturaService, SerieFacturaService>();
+builder.Services.AddScoped<ISerieRebutService, SerieRebutService>();
+builder.Services.AddScoped<ISituacioFacturaService, SituacioFacturaService>();
+builder.Services.AddScoped<ISituacioRebutService, SituacioRebutService>();
+builder.Services.AddScoped<ITipusBaixaClientService, TipusBaixaClientService>();
+builder.Services.AddScoped<ITipusCampanyaService, TipusCampanyaService>();
+builder.Services.AddScoped<ITipusClientService, TipusClientService>();
+builder.Services.AddScoped<ITipusComptadorService, TipusComptadorService>();
+builder.Services.AddScoped<ITipusConcepteFacturaService, TipusConcepteFacturaService>();
+builder.Services.AddScoped<ITipusDocumentService, TipusDocumentService>();
+builder.Services.AddScoped<ITipusFacturaService, TipusFacturaService>();
+builder.Services.AddScoped<ITipusIncidenciaClientService, TipusIncidenciaClientService>();
+builder.Services.AddScoped<ITipusIncidenciaContracteService, TipusIncidenciaContracteService>();
+builder.Services.AddScoped<ITipusIncidenciaLecturaService, TipusIncidenciaLecturaService>();
+builder.Services.AddScoped<ITipusIncidenciaTecnicaService, TipusIncidenciaTecnicaService>();
+builder.Services.AddScoped<ITipusIncidenciaUbicacioService, TipusIncidenciaUbicacioService>();
+builder.Services.AddScoped<ITipusOrdreTreballService, TipusOrdreTreballService>();
+builder.Services.AddScoped<ITipusQueixaService, TipusQueixaService>();
+builder.Services.AddScoped<ITipusSuggerimentService, TipusSuggerimentService>();
+builder.Services.AddScoped<ITipusReclamacioService, TipusReclamacioService>();
+builder.Services.AddScoped<ITipusUbicacioService, TipusUbicacioService>();
+builder.Services.AddScoped<ITipusViaService, TipusViaService>();
+builder.Services.AddScoped<IUsContracteService, UsContracteService>();
+builder.Services.AddScoped<IZonaCarrerService, ZonaCarrerService>();
+builder.Services.AddScoped<IZonaFacturacioService, IZonaFacturacioService>();
+builder.Services.AddScoped<IZonaOrdreTreballService, ZonaOrdreTreballService>();
+builder.Services.AddScoped<IZonaUbicacioService, IZonaUbicacioService>();
+
 
 // validadors
 
-builder.Services.AddScoped<IValidator<CreateExplotacioDTO>, ExplotacioValidator>();
-builder.Services.AddScoped<IValidator<CreateCanalCobramentDTO>, CanalCobramentValidator>();
+builder.Services.AddScoped<IValidator<ReadExplotacioDTO>, ExplotacioValidator>();
+builder.Services.AddScoped<IValidator<ReadParametreDTO>, ParametreValidator>();
+builder.Services.AddScoped<IValidator<ReadCanalCobramentDTO>, CanalCobramentValidator>();
+builder.Services.AddScoped<IValidator<ReadCompteRemesaBancDTO>, CompteRemesaBancValidator>();
 
 
 // registrem els serveis de Mudblazor
