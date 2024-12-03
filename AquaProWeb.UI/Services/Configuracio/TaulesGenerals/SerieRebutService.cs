@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddSerieRebutAsync(CrearSerieRebutDTO createSerieRebutDTO)
+        public async Task<ResponseWrapper<int>> AddSerieRebutAsync(CreateSerieRebutDTO createSerieRebutDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(SeriesFacturaEndPoints.Add, createSerieRebutDTO);
             return await response.ToResponse<int>();
