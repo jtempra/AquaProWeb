@@ -36,7 +36,7 @@ namespace AquaProWeb.Domain.Entities
         {
             get; set;
         }
-        public MotiuBaixaTitularCompte MotiuBaixa
+        public MotiuBaixaCompte MotiuBaixa
         {
             get; set;
         }

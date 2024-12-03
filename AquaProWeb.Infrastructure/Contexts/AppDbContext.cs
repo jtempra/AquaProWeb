@@ -290,7 +290,7 @@ public class AppDbContext : DbContext
     {
         get; set;
     }
-    public DbSet<MotiuBaixaTitularCompte> MotiusBaixaCompte
+    public DbSet<MotiuBaixaCompte> MotiusBaixaCompte
     {
         get; set;
     }

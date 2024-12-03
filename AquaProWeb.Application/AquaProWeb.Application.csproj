@@ -17,26 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\TaulesGenerals\FamiliesContracte\Commands\" />
-    <Folder Include="Features\TaulesGenerals\FamiliesContracte\Queries\" />
-    <Folder Include="Features\TaulesGenerals\MarquesComptador\Commands\" />
-    <Folder Include="Features\TaulesGenerals\MarquesComptador\Queries\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaComptador\Commands\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaComptador\Queries\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaContacte\Commands\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaContacte\Queries\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitularCompte\Commands\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitularCompte\Queries\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitular\Commands\" />
-    <Folder Include="Features\TaulesGenerals\MotiusBaixaTitular\Queries\" />
-    <Folder Include="Features\TaulesGenerals\Operaris\Commands\" />
-    <Folder Include="Features\TaulesGenerals\Operaris\Queries\" />
-    <Folder Include="Features\TaulesGenerals\Paisos\Commands\" />
-    <Folder Include="Features\TaulesGenerals\Paisos\Queries\" />
-    <Folder Include="Features\TaulesGenerals\SeriesFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\SeriesFactura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\SeriesRebut\Commands\" />
-    <Folder Include="Features\TaulesGenerals\SeriesRebut\Queries\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
     <Folder Include="Features\TaulesGenerals\SituacionsFactura\Commands\" />

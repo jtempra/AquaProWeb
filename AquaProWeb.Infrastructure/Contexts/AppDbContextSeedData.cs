@@ -1168,14 +1168,14 @@ namespace AquaProWeb.Infrastructure.Contexts
                 // Motius Baixa Titulars Compte
                 if (!context.MotiusBaixaCompte!.Any())
                 {
-                    var motiusBaixaCompteData = new List<MotiuBaixaTitularCompte>()
+                    var motiusBaixaCompteData = new List<MotiuBaixaCompte>()
                     {
-                        new MotiuBaixaTitularCompte() { Motiu = "Voluntaria", Observacions = "" },
-                        new MotiuBaixaTitularCompte() { Motiu = "Defunció", Observacions = "" },
-                        new MotiuBaixaTitularCompte() { Motiu = "Tecnica", Observacions = "" },
-                        new MotiuBaixaTitularCompte() { Motiu = "Baixa Contracte", Observacions = "" },
-                        new MotiuBaixaTitularCompte() { Motiu = "Canvi Compte", Observacions = "" },
-                        new MotiuBaixaTitularCompte() { Motiu = "Impagament", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Voluntaria", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Defunció", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Tecnica", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Baixa Contracte", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Canvi Compte", Observacions = "" },
+                        new MotiuBaixaCompte() { Motiu = "Impagament", Observacions = "" },
                     };
                     await context.MotiusBaixaCompte!.AddRangeAsync(motiusBaixaCompteData!);
                     await context.SaveChangesAsync();

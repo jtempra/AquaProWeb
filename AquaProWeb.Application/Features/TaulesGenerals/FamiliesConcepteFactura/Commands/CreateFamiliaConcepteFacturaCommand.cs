@@ -24,13 +24,13 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Empreses.Commands
         {
             // convertim les dades del DTO a les dades de la entitat del domini
 
-            var empresa = request.CreateEmpresa.Adapt<Empresa>();
+            var familiaConcepteFactura = request.CreateEmpresa.Adapt<FamiliaConcepteFactura>();
 
-            await _unitOfWork.WriteRepositoryFor<Empresa>().AddAsync(empresa);
+            await _unitOfWork.WriteRepositoryFor<FamiliaConcepteFactura>().AddAsync(familiaConcepteFactura);
 
             await _unitOfWork.CommitAsync(cancellationToken);
 
-            return new ResponseWrapper<int>().Success(empresa.Id, "Empresa creat correctament!");
+            return new ResponseWrapper<int>().Success(familiaConcepteFactura.Id, "Empresa creat correctament!");
         }
     }
 }
