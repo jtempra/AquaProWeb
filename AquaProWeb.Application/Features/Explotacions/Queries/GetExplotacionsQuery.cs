@@ -7,11 +7,11 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.Explotacions.Queries
 {
-    public class GetExplotacionsQuery : IRequest<ResponseWrapper<List<ReadExplotacioDTO>>>
+    public class GetParametreQuery : IRequest<ResponseWrapper<List<ReadExplotacioDTO>>>
     {
     }
 
-    public class GetExplotacionsQueryHandler : IRequestHandler<GetExplotacionsQuery, ResponseWrapper<List<ReadExplotacioDTO>>>
+    public class GetExplotacionsQueryHandler : IRequestHandler<GetParametreQuery, ResponseWrapper<List<ReadExplotacioDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,7 +19,7 @@ namespace AquaProWeb.Application.Features.Explotacions.Queries
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<List<ReadExplotacioDTO>>> Handle(GetExplotacionsQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<List<ReadExplotacioDTO>>> Handle(GetParametreQuery request, CancellationToken cancellationToken)
         {
             var explotacionsDb = await _unitOfWork.ReadRepositoryFor<Explotacio>().GetAllAsync();
 

@@ -2,7 +2,7 @@
 {
     public class UpdateEmpresaDTO
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string NomEmpresa { get; set; }
         public string CIF { get; set; }
         public string Direccio { get; set; }

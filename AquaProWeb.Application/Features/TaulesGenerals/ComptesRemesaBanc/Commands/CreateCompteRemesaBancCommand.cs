@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Commands
 {
-    public class CreateCompteRemesaBancCommand : IRequest<ResponseWrapper<int>>
+    public class CreateCompteTransferenciaClientCommand : IRequest<ResponseWrapper<int>>
     {
         public CreateCompteRemesaBancDTO CreateCompteRemesaBanc { get; set; }
     }
 
-    public class CreateCompteRemesaBancCommandHandler : IRequestHandler<CreateCompteRemesaBancCommand, ResponseWrapper<int>>
+    public class CreateCompteRemesaBancCommandHandler : IRequestHandler<CreateCompteTransferenciaClientCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Comma
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<int>> Handle(CreateCompteRemesaBancCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(CreateCompteTransferenciaClientCommand request, CancellationToken cancellationToken)
         {
             // convertim les dades del DTO a les dades de la entitat del domini
 

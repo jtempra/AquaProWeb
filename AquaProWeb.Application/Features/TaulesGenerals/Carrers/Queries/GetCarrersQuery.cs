@@ -7,11 +7,11 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Queries
 {
-    public class GetCarrersQuery : IRequest<ResponseWrapper<List<ReadCarrerDTO>>>
+    public class GetConceptesCobramentQuery : IRequest<ResponseWrapper<List<ReadCarrerDTO>>>
     {
     }
 
-    public class GetCarrersQueryHandler : IRequestHandler<GetCarrersQuery, ResponseWrapper<List<ReadCarrerDTO>>>
+    public class GetCarrersQueryHandler : IRequestHandler<GetConceptesCobramentQuery, ResponseWrapper<List<ReadCarrerDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,7 +19,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Queries
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<List<ReadCarrerDTO>>> Handle(GetCarrersQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<List<ReadCarrerDTO>>> Handle(GetConceptesCobramentQuery request, CancellationToken cancellationToken)
         {
             var carrersDb = await _unitOfWork.ReadRepositoryFor<Carrer>().GetAllAsync(p => p.Poblacio, z => z.Zona, t => t.TipusVia);
 

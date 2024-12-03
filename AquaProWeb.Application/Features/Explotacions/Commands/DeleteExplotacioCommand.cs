@@ -3,36 +3,36 @@ using AquaProWeb.Common.Wrapper;
 using AquaProWeb.Domain.Entities;
 using MediatR;
 
-namespace AquaProWeb.Application.Features.Explotacions.Commands
+namespace AquaProWeb.Application.Features.Parametrens.Commands
 {
-    public class DeleteExplotacioCommand : IRequest<ResponseWrapper<int>>
+    public class DeleteParametreCommand : IRequest<ResponseWrapper<int>>
     {
         public int Id { get; set; }
     }
 
-    public class DeleteExplotacioCommandHandler : IRequestHandler<DeleteExplotacioCommand, ResponseWrapper<int>>
+    public class DeleteParametreCommandHandler : IRequestHandler<DeleteParametreCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteExplotacioCommandHandler(IUnitOfWork unitOfWork)
+        public DeleteParametreCommandHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseWrapper<int>> Handle(DeleteExplotacioCommand Request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(DeleteParametreCommand Request, CancellationToken cancellationToken)
         {
-            var explotacioDb = await _unitOfWork.ReadRepositoryFor<Explotacio>().GetByIdAsync(Request.Id);
+            var parametreDb = await _unitOfWork.ReadRepositoryFor<Parametre>().GetByIdAsync(Request.Id);
 
-            if (explotacioDb is not null)
+            if (parametreDb is not null)
             {
-                await _unitOfWork.WriteRepositoryFor<Explotacio>().DeleteAsync(explotacioDb);
+                await _unitOfWork.WriteRepositoryFor<Parametre>().DeleteAsync(parametreDb);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
 
-                return new ResponseWrapper<int>().Success(Request.Id, "Explotacio esborrada correctament!");
+                return new ResponseWrapper<int>().Success(Request.Id, "Parametre esborrada correctament!");
             }
 
-            return new ResponseWrapper<int>().Failure("Explotació no trobada!");
+            return new ResponseWrapper<int>().Failure("Paràmetre no trobada!");
         }
     }
 }

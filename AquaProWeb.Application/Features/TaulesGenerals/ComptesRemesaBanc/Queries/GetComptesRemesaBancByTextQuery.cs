@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Queries
 {
-    public class GetComptesRemesaBancByTextQuery : IRequest<ResponseWrapper<List<ReadCompteRemesaBancDTO>>>
+    public class GetComptesTransferenciaClientByTextQuery : IRequest<ResponseWrapper<List<ReadCompteRemesaBancDTO>>>
     {
         public string Text { get; set; }
     }
 
-    public class GetCompteRemesaBancByTextQueryHandler : IRequestHandler<GetComptesRemesaBancByTextQuery, ResponseWrapper<List<ReadCompteRemesaBancDTO>>>
+    public class GetCompteRemesaBancByTextQueryHandler : IRequestHandler<GetComptesTransferenciaClientByTextQuery, ResponseWrapper<List<ReadCompteRemesaBancDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Queri
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<List<ReadCompteRemesaBancDTO>>> Handle(GetComptesRemesaBancByTextQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<List<ReadCompteRemesaBancDTO>>> Handle(GetComptesTransferenciaClientByTextQuery request, CancellationToken cancellationToken)
         {
             var compteRemesaBancsDb = await _unitOfWork.ReadRepositoryFor<CompteRemesaBanc>().GetByTextAsync(request.Text);
 

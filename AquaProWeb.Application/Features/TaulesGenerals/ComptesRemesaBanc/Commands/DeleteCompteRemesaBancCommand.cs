@@ -5,12 +5,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Commands
 {
-    public class DeleteCompteRemesaBancCommand : IRequest<ResponseWrapper<int>>
+    public class DeleteCompteTransferenciaClientCommand : IRequest<ResponseWrapper<int>>
     {
         public int Id { get; set; }
     }
 
-    public class DeleteCompteRemesaBancCommandHandler : IRequestHandler<DeleteCompteRemesaBancCommand, ResponseWrapper<int>>
+    public class DeleteCompteRemesaBancCommandHandler : IRequestHandler<DeleteCompteTransferenciaClientCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,7 +19,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Comma
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseWrapper<int>> Handle(DeleteCompteRemesaBancCommand Request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(DeleteCompteTransferenciaClientCommand Request, CancellationToken cancellationToken)
         {
             var compteRemesaBancDb = await _unitOfWork.ReadRepositoryFor<CompteRemesaBanc>().GetByIdAsync(Request.Id);
 

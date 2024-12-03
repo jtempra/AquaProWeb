@@ -13,7 +13,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpPost("add")]
         public async Task<IActionResult> AddCarrerAsync([FromBody] CreateCarrerDTO createCarrerDTO)
         {
-            var response = await Sender.Send(new CreateCarrerCommand { CreateCarrer = createCarrerDTO });
+            var response = await Sender.Send(new CreateConcepteCobramentCommand { CreateCarrer = createCarrerDTO });
 
             if (response.IsSuccessful)
             {
@@ -25,7 +25,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpPut("update")]
         public async Task<IActionResult> UpdateCarrerAsync([FromBody] UpdateCarrerDTO updateCarrerDTO)
         {
-            var response = await Sender.Send(new UpdateCarrerCommand { UpdateCarrer = updateCarrerDTO });
+            var response = await Sender.Send(new UpdateConcepteCobramentCommand { UpdateCarrer = updateCarrerDTO });
 
             if (response.IsSuccessful)
             {
@@ -37,7 +37,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCarrerAsync(int id)
         {
-            var response = await Sender.Send(new DeleteCarrerCommand { Id = id });
+            var response = await Sender.Send(new DeleteConcepteCobramentCommand { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -49,7 +49,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCarrerByIdAsync(int id)
         {
-            var response = await Sender.Send(new GetCarrerByIdQuery { Id = id });
+            var response = await Sender.Send(new GetConcepteCobramentByIdQuery { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -61,7 +61,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("all")]
         public async Task<IActionResult> GetCarrersAsync()
         {
-            var response = await Sender.Send(new GetCarrersQuery());
+            var response = await Sender.Send(new GetConceptesCobramentQuery());
 
             if (response.IsSuccessful)
             {
@@ -73,7 +73,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("search")]
         public async Task<IActionResult> GetCarrerByTextAsync(string text)
         {
-            var response = await Sender.Send(new GetCarrersByTextQuery { Text = text });
+            var response = await Sender.Send(new GetConceptesCobramentersByTextQuery { Text = text });
 
             if (response.IsSuccessful)
             {

@@ -17,18 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Parametres\Commands\" />
-    <Folder Include="Features\Parametres\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ComptesTransferenciaClient\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ComptesTransferenciaClient\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ConceptesCobrament\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ConceptesCobrament\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ConceptesFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ConceptesFactura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\Empreses\Commands\" />
-    <Folder Include="Features\TaulesGenerals\Empreses\Queries\" />
-    <Folder Include="Features\TaulesGenerals\FamiliesConcepteFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\FamiliesConcepteFactura\Queries\" />
     <Folder Include="Features\TaulesGenerals\FamiliesContracte\Commands\" />
     <Folder Include="Features\TaulesGenerals\FamiliesContracte\Queries\" />
     <Folder Include="Features\TaulesGenerals\MarquesComptador\Commands\" />

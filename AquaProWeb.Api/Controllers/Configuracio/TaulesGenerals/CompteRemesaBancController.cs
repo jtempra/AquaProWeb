@@ -12,7 +12,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpPost("add")]
         public async Task<IActionResult> AddCompteRemesaBancAsync([FromBody] CreateCompteRemesaBancDTO createCompteRemesaBancDTO)
         {
-            var response = await Sender.Send(new CreateCompteRemesaBancCommand { CreateCompteRemesaBanc = createCompteRemesaBancDTO });
+            var response = await Sender.Send(new CreateCompteTransferenciaClientCommand { CreateCompteRemesaBanc = createCompteRemesaBancDTO });
 
             if (response.IsSuccessful)
             {
@@ -24,7 +24,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpPut("update")]
         public async Task<IActionResult> UpdateCarrerAsync([FromBody] UpdateCompteRemesaBancDTO updateCompteRemesaBancDTO)
         {
-            var response = await Sender.Send(new UpdateCompteRemesaBancCommand { UpdateCompteRemesaBanc = updateCompteRemesaBancDTO });
+            var response = await Sender.Send(new UpdateCompteTransferenciaClientCommand { UpdateCompteRemesaBanc = updateCompteRemesaBancDTO });
 
             if (response.IsSuccessful)
             {
@@ -36,7 +36,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCompteRemesaBancAsync(int id)
         {
-            var response = await Sender.Send(new DeleteCompteRemesaBancCommand { Id = id });
+            var response = await Sender.Send(new DeleteCompteTransferenciaClientCommand { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -48,7 +48,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCompteRemesaBancByIdAsync(int id)
         {
-            var response = await Sender.Send(new GetCompteRemesaBancByIdQuery { Id = id });
+            var response = await Sender.Send(new GetCompteTransferenciaClientByIdQuery { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -60,7 +60,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("all")]
         public async Task<IActionResult> GetComptesRemesaBancAsync()
         {
-            var response = await Sender.Send(new GetComptesRemesaBancQuery());
+            var response = await Sender.Send(new GetComptesTransferenciaClientQuery());
 
             if (response.IsSuccessful)
             {
@@ -72,7 +72,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("search")]
         public async Task<IActionResult> GetCompteRemesaBancByTextAsync(string text)
         {
-            var response = await Sender.Send(new GetComptesRemesaBancByTextQuery { Text = text });
+            var response = await Sender.Send(new GetComptesTransferenciaClientByTextQuery { Text = text });
 
             if (response.IsSuccessful)
             {

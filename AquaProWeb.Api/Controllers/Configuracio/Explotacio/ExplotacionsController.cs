@@ -1,7 +1,9 @@
 ﻿using AquaProWeb.Application.Features.Explotacions.Commands;
 using AquaProWeb.Application.Features.Explotacions.Queries;
+using AquaProWeb.Application.Features.Parametres.Commands;
 using AquaProWeb.Common.Requests.Explotacions;
 using Microsoft.AspNetCore.Mvc;
+using CreateParametreCommand = AquaProWeb.Application.Features.Explotacions.Commands.CreateParametreCommand;
 using GetCanalCobramentByIdQuery = AquaProWeb.Application.Features.TaulesGenerals.CanalsCobrament.Queries.GetCanalCobramentByIdQuery;
 
 namespace AquaProWeb.Api.Controllers.Configuracio.Explotacio
@@ -12,7 +14,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Explotacio
         [HttpPost("add")]
         public async Task<IActionResult> AddExplotacioAsync([FromBody] CreateExplotacioDTO createExplotacioDTO)
         {
-            var response = await Sender.Send(new CreateExplotacioCommand { CreateExplotacio = createExplotacioDTO });
+            var response = await Sender.Send(new CreateParametreCommand { CreateExplotacio = createExplotacioDTO });
 
             if (response.IsSuccessful)
             {
@@ -60,7 +62,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Explotacio
         [HttpGet("all")]
         public async Task<IActionResult> GetExplotacionsAsync()
         {
-            var response = await Sender.Send(new GetExplotacionsQuery());
+            var response = await Sender.Send(new GetParametreQuery());
 
             if (response.IsSuccessful)
             {

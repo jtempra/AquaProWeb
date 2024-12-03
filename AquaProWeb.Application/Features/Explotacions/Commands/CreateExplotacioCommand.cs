@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.Explotacions.Commands
 {
-    public class CreateExplotacioCommand : IRequest<ResponseWrapper<int>>
+    public class CreateParametreCommand : IRequest<ResponseWrapper<int>>
     {
         public CreateExplotacioDTO CreateExplotacio { get; set; }
     }
 
-    public class CreateExplotacioCommandHandler : IRequestHandler<CreateExplotacioCommand, ResponseWrapper<int>>
+    public class CreateExplotacioCommandHandler : IRequestHandler<CreateParametreCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.Explotacions.Commands
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<int>> Handle(CreateExplotacioCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(CreateParametreCommand request, CancellationToken cancellationToken)
         {
             // convertim les dades del DTO a les dades de la entitat del domini
 
