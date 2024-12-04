@@ -19,20 +19,6 @@
   <ItemGroup>
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusCampanya\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusCampanya\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusClient\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusClient\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusComptador\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusComptador\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusConcepteFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusConcepteFactura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusDocument\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusDocument\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusFactura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaClient\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaClient\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusIncidenciaContracte\Commands\" />
     <Folder Include="Features\TaulesGenerals\TipusIncidenciaContracte\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusIncidenciaLectura\Commands\" />

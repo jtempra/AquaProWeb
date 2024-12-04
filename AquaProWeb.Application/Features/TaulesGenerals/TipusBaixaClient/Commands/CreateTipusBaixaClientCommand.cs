@@ -1,8 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
-using AquaProWeb.Common.Requests.TaulesGenerals.TipusBaixaClient;
 using AquaProWeb.Common.Requests.TaulesGenerals.TipusBaixaClients;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -27,11 +25,11 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusBaixaClient.Comman
 
             var tipusBaixaClient = request.CreateTipusBaixaClient.Adapt<Domain.Entities.TipusBaixaClient>();
 
-            await _unitOfWork.WriteRepositoryFor<TipusBaixaClient>().AddAsync(tipusBaixaClient);
+            await _unitOfWork.WriteRepositoryFor<Domain.Entities.TipusBaixaClient>().AddAsync(tipusBaixaClient);
 
             await _unitOfWork.CommitAsync(cancellationToken);
 
-            return new ResponseWrapper<int>().Success(TipusBaixaClient.Id, "TipusBaixaClient creat correctament!");
+            return new ResponseWrapper<int>().Success(tipusBaixaClient.Id, "TipusBaixaClient creat correctament!");
         }
     }
 }
