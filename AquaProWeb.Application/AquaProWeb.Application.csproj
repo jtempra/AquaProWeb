@@ -19,12 +19,6 @@
   <ItemGroup>
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
-    <Folder Include="Features\TaulesGenerals\SituacionsFactura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\SituacionsFactura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\SituacionsRebut\Commands\" />
-    <Folder Include="Features\TaulesGenerals\SituacionsRebut\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusBaixaClient\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusBaixaClient\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusCampanya\Commands\" />
     <Folder Include="Features\TaulesGenerals\TipusCampanya\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusClient\Commands\" />
