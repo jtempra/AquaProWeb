@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
 {
-    public class CreateConcepteCobramentCommand : IRequest<ResponseWrapper<int>>
+    public class CreateCarrerCommand : IRequest<ResponseWrapper<int>>
     {
         public CreateCarrerDTO CreateCarrer { get; set; }
     }
 
-    public class CreateCarrerCommandHandler : IRequestHandler<CreateConcepteCobramentCommand, ResponseWrapper<int>>
+    public class CreateCarrerCommandHandler : IRequestHandler<CreateCarrerCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<int>> Handle(CreateConcepteCobramentCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(CreateCarrerCommand request, CancellationToken cancellationToken)
         {
             // convertim les dades del DTO a les dades de la entitat del domini
 

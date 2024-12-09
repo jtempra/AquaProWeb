@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Commands
 {
-    public class UpdateCompteTransferenciaClientCommand : IRequest<ResponseWrapper<int>>
+    public class UpdateCompteRemesaBancCommand : IRequest<ResponseWrapper<int>>
     {
         public UpdateCompteRemesaBancDTO UpdateCompteRemesaBanc { get; set; }
     }
 
-    public class UpdateCompteRemesaBancCommandHandler : IRequestHandler<UpdateCompteTransferenciaClientCommand, ResponseWrapper<int>>
+    public class UpdateCompteRemesaBancCommandHandler : IRequestHandler<UpdateCompteRemesaBancCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Comma
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<int>> Handle(UpdateCompteTransferenciaClientCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(UpdateCompteRemesaBancCommand request, CancellationToken cancellationToken)
         {
             // llegim la eentitat de la base de dades
 

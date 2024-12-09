@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Queries
 {
-    public class GetConcepteCobramentByIdQuery : IRequest<ResponseWrapper<ReadCarrerDTO>>
+    public class GetCarrerByIdQuery : IRequest<ResponseWrapper<ReadCarrerDTO>>
     {
         public int Id { get; set; }
     }
 
-    public class GetCarrerByIdQueryHandler : IRequestHandler<GetConcepteCobramentByIdQuery, ResponseWrapper<ReadCarrerDTO>>
+    public class GetCarrerByIdQueryHandler : IRequestHandler<GetCarrerByIdQuery, ResponseWrapper<ReadCarrerDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Queries
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<ReadCarrerDTO>> Handle(GetConcepteCobramentByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<ReadCarrerDTO>> Handle(GetCarrerByIdQuery request, CancellationToken cancellationToken)
         {
             var carrerDb = await _unitOfWork.ReadRepositoryFor<Carrer>().GetByIdAsync(request.Id, p => p.Poblacio, z => z.Zona, t => t.TipusVia);
 

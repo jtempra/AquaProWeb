@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
 {
-    public class UpdateConcepteCobramentCommand : IRequest<ResponseWrapper<int>>
+    public class UpdateCarrerCommand : IRequest<ResponseWrapper<int>>
     {
         public UpdateCarrerDTO UpdateCarrer { get; set; }
     }
 
-    public class UpdateCarrerCommandHandler : IRequestHandler<UpdateConcepteCobramentCommand, ResponseWrapper<int>>
+    public class UpdateCarrerCommandHandler : IRequestHandler<UpdateCarrerCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<int>> Handle(UpdateConcepteCobramentCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(UpdateCarrerCommand request, CancellationToken cancellationToken)
         {
             // llegim la eentitat de la base de dades
 

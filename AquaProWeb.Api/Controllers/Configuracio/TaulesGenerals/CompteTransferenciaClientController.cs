@@ -1,18 +1,17 @@
-﻿using AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Commands;
-using AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Queries;
-using AquaProWeb.Common.Requests.TaulesGenerals.ComptesRemesaBanc;
+﻿using AquaProWeb.Application.Features.TaulesGenerals.ComptesTransferenciaClient.Commands;
+using AquaProWeb.Application.Features.TaulesGenerals.ComptesTransferenciaClient.Queries;
+using AquaProWeb.Common.Requests.TaulesGenerals.ComptesTransferenciaClient;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
 {
-
     [Route("api/[controller]")]
-    public class CompteRemesaBancController : BaseApiController
+    public class CompteTransferenciaClientController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddCompteRemesaBancAsync([FromBody] CreateCompteRemesaBancDTO createCompteRemesaBancDTO)
+        public async Task<IActionResult> AddCompteTransferenciaClientsync([FromBody] CreateCompteTransferenciaClientDTO createCompteTransferenciaClientDTO)
         {
-            var response = await Sender.Send(new CreateCompteTransferenciaClientCommand { CreateCompteRemesaBanc = createCompteRemesaBancDTO });
+            var response = await Sender.Send(new CreateCompteTransferenciaClientCommand { CreateCompteTransferenciaClient = createCompteTransferenciaClientDTO });
 
             if (response.IsSuccessful)
             {
@@ -22,9 +21,9 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateCompteRemesaBancAsync([FromBody] UpdateCompteRemesaBancDTO updateCompteRemesaBancDTO)
+        public async Task<IActionResult> UpdateTransferenciaCarrerAsync([FromBody] UpdateCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
         {
-            var response = await Sender.Send(new UpdateCompteRemesaBancCommand { UpdateCompteRemesaBanc = updateCompteRemesaBancDTO });
+            var response = await Sender.Send(new UpdateCompteTransferenciaClientCommand { UpdateCompteTransferenciaClient = updateCompteTransferenciaClientDTO });
 
             if (response.IsSuccessful)
             {
@@ -34,7 +33,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCompteRemesaBancAsync(int id)
+        public async Task<IActionResult> DeleteCompteTransferenciaClientAsync(int id)
         {
             var response = await Sender.Send(new DeleteCompteTransferenciaClientCommand { Id = id });
 
@@ -46,7 +45,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCompteRemesaBancByIdAsync(int id)
+        public async Task<IActionResult> GetCompteTransferenciaClientByIdAsync(int id)
         {
             var response = await Sender.Send(new GetCompteTransferenciaClientByIdQuery { Id = id });
 
@@ -58,7 +57,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetComptesRemesaBancAsync()
+        public async Task<IActionResult> GetComptesTransferenciaClientAsync()
         {
             var response = await Sender.Send(new GetComptesTransferenciaClientQuery());
 
@@ -70,7 +69,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> GetCompteRemesaBancByTextAsync(string text)
+        public async Task<IActionResult> GetCompteTransferenciaClientByTextAsync(string text)
         {
             var response = await Sender.Send(new GetComptesTransferenciaClientByTextQuery { Text = text });
 

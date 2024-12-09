@@ -7,20 +7,20 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Queries
 {
-    public class GetConceptesCobramentersByTextQuery : IRequest<ResponseWrapper<List<ReadConcepteCobramentDTO>>>
+    public class GetConceptesCobramentByTextQuery : IRequest<ResponseWrapper<List<ReadConcepteCobramentDTO>>>
     {
         public string Text { get; set; }
     }
 
-    public class GetConcepteCobramentByTextQueryHandler : IRequestHandler<GetConceptesCobramentersByTextQuery, ResponseWrapper<List<ReadConcepteCobramentDTO>>>
+    public class GetConceptesCobramentByTextQueryHandler : IRequestHandler<GetConceptesCobramentByTextQuery, ResponseWrapper<List<ReadConcepteCobramentDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public GetConcepteCobramentByTextQueryHandler(IUnitOfWork unitOfWork)
+        public GetConceptesCobramentByTextQueryHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<List<ReadConcepteCobramentDTO>>> Handle(GetConceptesCobramentersByTextQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<List<ReadConcepteCobramentDTO>>> Handle(GetConceptesCobramentByTextQuery request, CancellationToken cancellationToken)
         {
             var ConcepteCobramentsDb = await _unitOfWork.ReadRepositoryFor<ConcepteCobrament>().GetByTextAsync(request.Text);
 

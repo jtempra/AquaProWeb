@@ -5,12 +5,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
 {
-    public class DeleteConcepteCobramentCommand : IRequest<ResponseWrapper<int>>
+    public class DeleteCarrerCommand : IRequest<ResponseWrapper<int>>
     {
         public int Id { get; set; }
     }
 
-    public class DeleteCarrerCommandHandler : IRequestHandler<DeleteConcepteCobramentCommand, ResponseWrapper<int>>
+    public class DeleteCarrerCommandHandler : IRequestHandler<DeleteCarrerCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,7 +19,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseWrapper<int>> Handle(DeleteConcepteCobramentCommand Request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(DeleteCarrerCommand Request, CancellationToken cancellationToken)
         {
             var carrerDb = await _unitOfWork.ReadRepositoryFor<Carrer>().GetByIdAsync(Request.Id);
 
