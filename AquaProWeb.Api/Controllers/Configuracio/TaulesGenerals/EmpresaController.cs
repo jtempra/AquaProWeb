@@ -1,11 +1,7 @@
-﻿
-using AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Commands;
-using AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Queries;
-using AquaProWeb.Application.Features.TaulesGenerals.Empreses.Commands;
+﻿using AquaProWeb.Application.Features.TaulesGenerals.Empreses.Commands;
 using AquaProWeb.Application.Features.TaulesGenerals.Empreses.Queries;
 using AquaProWeb.Common.Requests.TaulesGenerals.Empreses;
 using Microsoft.AspNetCore.Mvc;
-using GetConceptesCobramentQuery = AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Queries.GetConceptesCobramentQuery;
 
 namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
 {
@@ -39,7 +35,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmpresaAsync(int id)
         {
-            var response = await Sender.Send(new DeleteConcepteCobramentCommand { Id = id });
+            var response = await Sender.Send(new DeleteEmpresaCommand { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -51,7 +47,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmpresaByIdAsync(int id)
         {
-            var response = await Sender.Send(new GetConcepteCobramentByIdQuery { Id = id });
+            var response = await Sender.Send(new GetEmpresaByIdQuery { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -63,7 +59,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("all")]
         public async Task<IActionResult> GetEmpresasAsync()
         {
-            var response = await Sender.Send(new GetConceptesCobramentQuery());
+            var response = await Sender.Send(new GetEmpresesQuery());
 
             if (response.IsSuccessful)
             {

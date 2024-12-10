@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.Parametres.Queries
 {
-    public class GetCanalCobramentByIdQuery : IRequest<ResponseWrapper<ReadParametreDTO>>
+    public class GetParametreByIdQuery : IRequest<ResponseWrapper<ReadParametreDTO>>
     {
         public int Id { get; set; }
     }
 
-    public class GetParametreByIdQueryHandler : IRequestHandler<GetCanalCobramentByIdQuery, ResponseWrapper<ReadParametreDTO>>
+    public class GetParametreByIdQueryHandler : IRequestHandler<GetParametreByIdQuery, ResponseWrapper<ReadParametreDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,7 +20,7 @@ namespace AquaProWeb.Application.Features.Parametres.Queries
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<ReadParametreDTO>> Handle(GetCanalCobramentByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<ReadParametreDTO>> Handle(GetParametreByIdQuery request, CancellationToken cancellationToken)
         {
             var ParametreDb = await _unitOfWork.ReadRepositoryFor<Parametre>().GetByIdAsync(request.Id);
 

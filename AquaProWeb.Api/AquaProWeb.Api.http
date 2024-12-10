@@ -1,6 +1,10 @@
-@AquaProWeb.Api_HostAddress = http://localhost:7123
+@AquaProWeb.Api_HostAddress = https://localhost:7123
 
 GET {{AquaProWeb.Api_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+GET {{AquaProWeb.Api_HostAddress}}/api/empresa/all
 
 ###

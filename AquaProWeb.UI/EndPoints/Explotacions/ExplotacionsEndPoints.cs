@@ -1,4 +1,4 @@
-﻿namespace AquaProWeb.UI.EndPoints
+﻿namespace AquaProWeb.UI.EndPoints.Explotacions
 {
     public static class ExplotacionsEndPoints
     {

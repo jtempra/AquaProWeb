@@ -1,7 +1,7 @@
 ﻿using AquaProWeb.Common.Requests.Explotacions;
 using AquaProWeb.Common.Responses.Explotacions;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.UI.EndPoints;
+using AquaProWeb.UI.EndPoints.Explotacions;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;

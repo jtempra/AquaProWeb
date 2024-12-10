@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,16 +20,6 @@
   <ItemGroup>
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaContracte\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaContracte\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaLectura\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaLectura\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaTecnica\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaTecnica\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaUbicacio\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusIncidenciaUbicacio\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusOrdreTreball\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusOrdreTreball\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusQueixa\Commands\" />
     <Folder Include="Features\TaulesGenerals\TipusQueixa\Queries\" />
     <Folder Include="Features\TaulesGenerals\TipusReclamacio\Commands\" />

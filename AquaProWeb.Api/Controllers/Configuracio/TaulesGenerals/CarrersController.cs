@@ -61,7 +61,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("all")]
         public async Task<IActionResult> GetCarrersAsync()
         {
-            var response = await Sender.Send(new GetConceptesCobramentQuery());
+            var response = await Sender.Send(new GetCarrersQuery());
 
             if (response.IsSuccessful)
             {
@@ -73,7 +73,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("search")]
         public async Task<IActionResult> GetCarrersByTextAsync(string text)
         {
-            var response = await Sender.Send(new GetConceptesCobramentersByTextQuery { Text = text });
+            var response = await Sender.Send(new GetCarrersByTextQuery { Text = text });
 
             if (response.IsSuccessful)
             {

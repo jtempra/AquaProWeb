@@ -3,13 +3,13 @@ using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
 using AquaProWeb.Common.Requests.Parametres;
-using AquaProWeb.UI.EndPoints;
 using AquaProWeb.Common.Responses.Parametres;
+using AquaProWeb.UI.EndPoints.Parametres;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
-	
-	public class ParametreService : IParametreService
+
+    public class ParametreService : IParametreService
 	{
         private readonly HttpClient _httpClient;
 

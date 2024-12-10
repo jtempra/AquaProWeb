@@ -1,5 +1,5 @@
 ﻿using AquaProWeb.Application.Repositories;
-using AquaProWeb.Common.Requests.Explotacions;
+using AquaProWeb.Common.Requests.Parametres;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.Domain.Entities;
 using Mapster;
@@ -9,14 +9,14 @@ namespace AquaProWeb.Application.Features.Parametres.Commands
 {
     public class UpdateParametreCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateExplotacioDTO UpdateExplotacio { get; set; }
+        public UpdateParametreDTO UpdateParametre { get; set; }
     }
 
-    public class UpdateExplotacioCommandHandler : IRequestHandler<UpdateParametreCommand, ResponseWrapper<int>>
+    public class UpdateParametreCommandHandler : IRequestHandler<UpdateParametreCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public UpdateExplotacioCommandHandler(IUnitOfWork unitOfWork)
+        public UpdateParametreCommandHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -24,17 +24,17 @@ namespace AquaProWeb.Application.Features.Parametres.Commands
         {
             // llegim la eentitat de la base de dades
 
-            var explotacioDb = await _unitOfWork.ReadRepositoryFor<Explotacio>().GetByIdAsync(request.UpdateExplotacio.Id);
+            var ParametreDb = await _unitOfWork.ReadRepositoryFor<Parametre>().GetByIdAsync(request.UpdateParametre.Id);
 
-            if (explotacioDb is not null)
+            if (ParametreDb is not null)
             {
-                request.UpdateExplotacio.Adapt(explotacioDb);
+                request.UpdateParametre.Adapt(ParametreDb);
 
-                await _unitOfWork.WriteRepositoryFor<Explotacio>().UpdateAsync(explotacioDb);
+                await _unitOfWork.WriteRepositoryFor<Parametre>().UpdateAsync(ParametreDb);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
 
-                return new ResponseWrapper<int>().Success(explotacioDb.Id, "Explotació actualitzada correctament!");
+                return new ResponseWrapper<int>().Success(ParametreDb.Id, "Explotació actualitzada correctament!");
             }
 
             return new ResponseWrapper<int>().Failure("La explotació no existeix!");

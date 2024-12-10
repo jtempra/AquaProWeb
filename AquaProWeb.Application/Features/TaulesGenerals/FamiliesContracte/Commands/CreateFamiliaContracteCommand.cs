@@ -1,5 +1,5 @@
 ﻿using AquaProWeb.Application.Repositories;
-using AquaProWeb.Common.Requests.TaulesGenerals.Empreses;
+using AquaProWeb.Common.Requests.TaulesGenerals.FamiliesContracte;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.Domain.Entities;
 using Mapster;
@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Comma
 {
     public class CreateFamiliaContracteCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateEmpresaDTO CreateEmpresa { get; set; }
+        public CreateFamiliaContracteDTO CreateFamiliaContracte { get; set; }
     }
 
     public class CreateFamiliaContracteCommandHandler : IRequestHandler<CreateFamiliaContracteCommand, ResponseWrapper<int>>
@@ -24,7 +24,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Comma
         {
             // convertim les dades del DTO a les dades de la entitat del domini
 
-            var familiaContracte = request.CreateEmpresa.Adapt<FamiliaContracte>();
+            var familiaContracte = request.CreateFamiliaContracte.Adapt<FamiliaContracte>();
 
             await _unitOfWork.WriteRepositoryFor<FamiliaContracte>().AddAsync(familiaContracte);
 
