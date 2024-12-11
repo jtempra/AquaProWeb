@@ -69,16 +69,16 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
             return NotFound(response);
         }
 
-        //[HttpGet("search")]
-        //public async Task<IActionResult> GetCanalCobramentByTextAsync(string text)
-        //{
-        //    var response = await Sender.Send(new GetCanalCobramentByTextQuery { Text = text });
+        [HttpGet("search")]
+        public async Task<IActionResult> GetCanalsCobramentByTextAsync(string text)
+        {
+            var response = await Sender.Send(new GetCanalsCobramentByTextQuery { Text = text });
 
-        //    if (response.IsSuccessful)
-        //    {
-        //        return Ok(response);
-        //    }
-        //    return NotFound(response);
-        //}
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
     }
 }

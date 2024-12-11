@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddTipusUbicacioAsync(CrearTipusUbicacioDTO createTipusUbicacioDTO)
+        public async Task<ResponseWrapper<int>> AddTipusUbicacioAsync(CreateTipusUbicacioDTO createTipusUbicacioDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(TipusUbicacioEndPoints.Add, createTipusUbicacioDTO);
             return await response.ToResponse<int>();

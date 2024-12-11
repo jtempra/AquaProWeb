@@ -6,7 +6,7 @@ namespace AquaProWeb.UI.Services.Contracts;
 
 public interface ITipusUbicacioService
 {
-    Task<ResponseWrapper<int>> AddTipusUbicacioAsync(CrearTipusUbicacioDTO createTipusUbicacioDTO);
+    Task<ResponseWrapper<int>> AddTipusUbicacioAsync(CreateTipusUbicacioDTO createTipusUbicacioDTO);
     Task<ResponseWrapper<int>> DeleteTipusUbicacioAsync(int id);
     Task<ResponseWrapper<List<ReadTipusUbicacioDTO>>> GetAllTipusUbicacioAsync();
     Task<ResponseWrapper<ReadTipusUbicacioDTO>> GetTipusUbicacioByIdAsync(int id);

@@ -2,7 +2,7 @@
 
 namespace AquaProWeb.Domain.Entities
 {
-    public class ZonaUbicacions : BaseEntity
+    public class ZonaUbicacio : BaseEntity
     {
         public string Zona { get; set; }
         public string Descripcio { get; set; }

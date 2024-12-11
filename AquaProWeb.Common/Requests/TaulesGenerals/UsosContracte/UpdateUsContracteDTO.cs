@@ -2,7 +2,7 @@
 {
     public class UpdateUsContracteDTO
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Codi { get; set; }
         public string Us { get; set; }
         public string Descripcio { get; set; }

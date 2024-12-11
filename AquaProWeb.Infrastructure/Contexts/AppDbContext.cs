@@ -491,7 +491,7 @@ public class AppDbContext : DbContext
     {
         get; set;
     }
-    public DbSet<ZonaUbicacions> ZonesUbicacions
+    public DbSet<ZonaUbicacio> ZonesUbicacions
     {
         get; set;
     }

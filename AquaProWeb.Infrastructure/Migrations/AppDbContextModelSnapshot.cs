@@ -3830,7 +3830,7 @@ namespace AquaProWeb.Infrastructure.Migrations
                     b.Property<int>("TipusUbicacioId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ZonaUbicacionsId")
+                    b.Property<int>("ZonaUbicacioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -3845,7 +3845,7 @@ namespace AquaProWeb.Infrastructure.Migrations
 
                     b.HasIndex("TipusUbicacioId");
 
-                    b.HasIndex("ZonaUbicacionsId");
+                    b.HasIndex("ZonaUbicacioId");
 
                     b.ToTable("Ubicacions");
                 });
@@ -3959,7 +3959,7 @@ namespace AquaProWeb.Infrastructure.Migrations
                     b.ToTable("ZonesOrdresTreball");
                 });
 
-            modelBuilder.Entity("AquaProWeb.Domain.Entities.ZonaUbicacions", b =>
+            modelBuilder.Entity("AquaProWeb.Domain.Entities.ZonaUbicacio", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -5247,9 +5247,9 @@ namespace AquaProWeb.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AquaProWeb.Domain.Entities.ZonaUbicacions", "Zona")
+                    b.HasOne("AquaProWeb.Domain.Entities.ZonaUbicacio", "Zona")
                         .WithMany("Ubicacions")
-                        .HasForeignKey("ZonaUbicacionsId")
+                        .HasForeignKey("ZonaUbicacioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -5517,7 +5517,7 @@ namespace AquaProWeb.Infrastructure.Migrations
                     b.Navigation("OrdresTreball");
                 });
 
-            modelBuilder.Entity("AquaProWeb.Domain.Entities.ZonaUbicacions", b =>
+            modelBuilder.Entity("AquaProWeb.Domain.Entities.ZonaUbicacio", b =>
                 {
                     b.Navigation("Ubicacions");
                 });

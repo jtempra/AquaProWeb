@@ -20,22 +20,6 @@
   <ItemGroup>
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusQueixa\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusQueixa\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusReclamacio\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusReclamacio\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusSuggeriment\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusSuggeriment\Queries\" />
-    <Folder Include="Features\TaulesGenerals\TipusUbicacio\Commands\" />
-    <Folder Include="Features\TaulesGenerals\TipusUbicacio\Queries\" />
-    <Folder Include="Features\TaulesGenerals\UsosContracte\Commands\" />
-    <Folder Include="Features\TaulesGenerals\UsosContracte\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ZonesFacturacio\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ZonesFacturacio\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ZonesOrdreTreball\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ZonesOrdreTreball\Queries\" />
-    <Folder Include="Features\TaulesGenerals\ZonesUbicacio\Commands\" />
-    <Folder Include="Features\TaulesGenerals\ZonesUbicacio\Queries\" />
   </ItemGroup>
 
 </Project>

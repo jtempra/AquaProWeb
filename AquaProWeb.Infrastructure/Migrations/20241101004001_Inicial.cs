@@ -1501,7 +1501,7 @@ namespace AquaProWeb.Infrastructure.Migrations
                     DataAlta = table.Column<DateTime>(type: "Date", nullable: true),
                     DataBaixa = table.Column<DateTime>(type: "Date", nullable: true),
                     TipusUbicacioId = table.Column<int>(type: "int", nullable: false),
-                    ZonaUbicacionsId = table.Column<int>(type: "int", nullable: false),
+                    ZonaUbicacioId = table.Column<int>(type: "int", nullable: false),
                     PoblacioId = table.Column<int>(type: "int", nullable: false),
                     CarrerId = table.Column<int>(type: "int", nullable: false),
                     EscomesaId = table.Column<int>(type: "int", nullable: false),
@@ -1543,8 +1543,8 @@ namespace AquaProWeb.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Ubicacions_ZonesUbicacions_ZonaUbicacionsId",
-                        column: x => x.ZonaUbicacionsId,
+                        name: "FK_Ubicacions_ZonesUbicacions_ZonaUbicacioId",
+                        column: x => x.ZonaUbicacioId,
                         principalTable: "ZonesUbicacions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -3411,9 +3411,9 @@ namespace AquaProWeb.Infrastructure.Migrations
                 column: "TipusUbicacioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ubicacions_ZonaUbicacionsId",
+                name: "IX_Ubicacions_ZonaUbicacioId",
                 table: "Ubicacions",
-                column: "ZonaUbicacionsId");
+                column: "ZonaUbicacioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ValorEnumeracio_EnumeracioId",

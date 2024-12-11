@@ -62,11 +62,11 @@ namespace AquaProWeb.Domain.Entities
         {
             get; set;
         }
-        public int ZonaUbicacionsId
+        public int ZonaUbicacioId
         {
             get; set;
         }
-        public ZonaUbicacions Zona
+        public ZonaUbicacio Zona
         {
             get; set;
         }

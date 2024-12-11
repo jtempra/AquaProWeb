@@ -1,5 +1,4 @@
-﻿using AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Queries;
-using AquaProWeb.Application.Features.TaulesGenerals.ConceptesFactura.Commands;
+﻿using AquaProWeb.Application.Features.TaulesGenerals.ConceptesFactura.Commands;
 using AquaProWeb.Application.Features.TaulesGenerals.ConceptesFactura.Queries;
 using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesFactura;
 using Microsoft.AspNetCore.Mvc;
@@ -60,7 +59,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("all")]
         public async Task<IActionResult> GetConceptesFacturaAsync()
         {
-            var response = await Sender.Send(new GetConceptesCobramentQuery());
+            var response = await Sender.Send(new GetConceptesFacturaQuery());
 
             if (response.IsSuccessful)
             {
@@ -72,7 +71,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpGet("search")]
         public async Task<IActionResult> GetConceptesFacturaByTextAsync(string text)
         {
-            var response = await Sender.Send(new GetConceptesCobramentByTextQuery { Text = text });
+            var response = await Sender.Send(new GetConceptesFacturaByTextQuery { Text = text });
 
             if (response.IsSuccessful)
             {

@@ -225,17 +225,17 @@ namespace AquaProWeb.Infrastructure.Contexts
                 // Zones Ubicacions
                 if (!context.ZonesUbicacions!.Any())
                 {
-                    var zonaUbicacioData = new List<ZonaUbicacions>()
+                    var zonaUbicacioData = new List<ZonaUbicacio>()
                     {
-                        new ZonaUbicacions() { Zona = "Centre", Descripcio = "Zona Ciutat", Observacions = "" },
-                        new ZonaUbicacions() { Zona = "Poligon", Descripcio = "Poligon Industrial", Observacions = "" },
-                        new ZonaUbicacions()
+                        new ZonaUbicacio() { Zona = "Centre", Descripcio = "Zona Ciutat", Observacions = "" },
+                        new ZonaUbicacio() { Zona = "Poligon", Descripcio = "Poligon Industrial", Observacions = "" },
+                        new ZonaUbicacio()
                             { Zona = "Urb1", Descripcio = "Urbanització de Can salva", Observacions = "" },
-                        new ZonaUbicacions()
+                        new ZonaUbicacio()
                             { Zona = "Urb2", Descripcio = "Urbanització de la Plana", Observacions = "" },
-                        new ZonaUbicacions()
+                        new ZonaUbicacio()
                             { Zona = "Urb3", Descripcio = "Urbanització de L'Espelt", Observacions = "" },
-                        new ZonaUbicacions() { Zona = "Dis", Descripcio = "Masies Diseminades", Observacions = "" },
+                        new ZonaUbicacio() { Zona = "Dis", Descripcio = "Masies Diseminades", Observacions = "" },
                     };
 
                     await context.ZonesUbicacions.AddRangeAsync(zonaUbicacioData);

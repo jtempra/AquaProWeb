@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.CanalsCobrament.Queries
         }
         public async Task<ResponseWrapper<ReadCanalCobramentDTO>> Handle(GetCanalCobramentByIdQuery request, CancellationToken cancellationToken)
         {
-            var canalCobramentDb = await _unitOfWork.ReadRepositoryFor<Explotacio>().GetByIdAsync(request.Id);
+            var canalCobramentDb = await _unitOfWork.ReadRepositoryFor<CanalCobrament>().GetByIdAsync(request.Id);
 
             if (canalCobramentDb is not null)
             {
