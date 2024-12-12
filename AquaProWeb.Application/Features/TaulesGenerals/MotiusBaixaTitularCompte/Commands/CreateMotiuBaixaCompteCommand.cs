@@ -30,7 +30,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaCompte.Comma
 
             await _unitOfWork.CommitAsync(cancellationToken);
 
-            return new ResponseWrapper<int>().Success(motiuBaixaCompte.Id, "Canal de cobrament creat correctament!");
+            return new ResponseWrapper<int>().Success(motiuBaixaCompte.Id, "Motiu de baixa del compte creat correctament!");
         }
     }
 }

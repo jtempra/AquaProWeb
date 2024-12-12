@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SituacionsFactura.Queri
         }
         public async Task<ResponseWrapper<List<ReadSituacioFacturaDTO>>> Handle(GetSituacionsFacturaByTextQuery request, CancellationToken cancellationToken)
         {
-            var situacioFacturaDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var situacioFacturaDb = await _unitOfWork.ReadRepositoryFor<SituacioFactura>().GetByTextAsync(request.Text);
 
             if (situacioFacturaDb.Count > 0)
             {

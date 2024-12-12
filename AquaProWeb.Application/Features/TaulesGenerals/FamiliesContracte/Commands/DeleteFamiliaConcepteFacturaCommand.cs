@@ -5,12 +5,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Commands
 {
-    public class DeleteFamiliaContracteFacturaCommand : IRequest<ResponseWrapper<int>>
+    public class DeleteFamiliaContracteCommand : IRequest<ResponseWrapper<int>>
     {
         public int Id { get; set; }
     }
 
-    public class DeleteFamiliaContracteCommandHandler : IRequestHandler<DeleteFamiliaContracteFacturaCommand, ResponseWrapper<int>>
+    public class DeleteFamiliaContracteCommandHandler : IRequestHandler<DeleteFamiliaContracteCommand, ResponseWrapper<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,7 +19,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Comma
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseWrapper<int>> Handle(DeleteFamiliaContracteFacturaCommand Request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<int>> Handle(DeleteFamiliaContracteCommand Request, CancellationToken cancellationToken)
         {
             var familiaContracteDb = await _unitOfWork.ReadRepositoryFor<FamiliaContracte>().GetByIdAsync(Request.Id);
 

@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SeriesRebut.Queries
         }
         public async Task<ResponseWrapper<List<ReadSerieRebutDTO>>> Handle(GetSeriesRebutByTextQuery request, CancellationToken cancellationToken)
         {
-            var serieRebutDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var serieRebutDb = await _unitOfWork.ReadRepositoryFor<SerieRebut>().GetByTextAsync(request.Text);
 
             if (serieRebutDb.Count > 0)
             {

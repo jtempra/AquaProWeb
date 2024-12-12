@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaCompte.Commands;
 using AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaCompteCompte.Queries;
-using AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaTitular.Commands;
-using AquaProWeb.Common.Requests.TaulesGenerals.MotiusBaixaTitular;
+using AquaProWeb.Common.Requests.TaulesGenerals.MotiusBaixaCompte;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
@@ -10,9 +9,9 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class MotiusBaixaCompteController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddMotiuBaixaCompteAsync([FromBody] CreateMotiuBaixaTitularDTO createMotiuBaixaTitularDTO)
+        public async Task<IActionResult> AddMotiuBaixaCompteAsync([FromBody] CreateMotiuBaixaCompteDTO createMotiuBaixaCompteDTO)
         {
-            var response = await Sender.Send(new CreateMotiuBaixaTitularCommand { CreateMotiuBaixaTitular = createMotiuBaixaTitularDTO });
+            var response = await Sender.Send(new CreateMotiuBaixaCompteCommand { CreateMotiuBaixaCompte = createMotiuBaixaCompteDTO });
 
             if (response.IsSuccessful)
             {
@@ -22,9 +21,9 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateMotiuBaixaCompteAsync([FromBody] UpdateMotiuBaixaTitularDTO updateMotiuBaixaTitularDTO)
+        public async Task<IActionResult> UpdateMotiuBaixaCompteAsync([FromBody] UpdateMotiuBaixaCompteDTO updateMotiuBaixaCompteDTO)
         {
-            var response = await Sender.Send(new UpdateMotiuBaixaTitularCommand { UpdateMotiuBaixaTitular = updateMotiuBaixaTitularDTO });
+            var response = await Sender.Send(new UpdateMotiuBaixaCompteCommand { UpdateMotiuBaixaCompte = updateMotiuBaixaCompteDTO });
 
             if (response.IsSuccessful)
             {

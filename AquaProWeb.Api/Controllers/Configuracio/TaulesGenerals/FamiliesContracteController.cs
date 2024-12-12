@@ -1,5 +1,4 @@
-﻿using AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Commands;
-using AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Commands;
+﻿using AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Commands;
 using AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Queries;
 using AquaProWeb.Common.Requests.TaulesGenerals.FamiliesContracte;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +35,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFamiliaContracteAsync(int id)
         {
-            var response = await Sender.Send(new DeleteCompteTransferenciaClientCommand { Id = id });
+            var response = await Sender.Send(new DeleteFamiliaContracteCommand { Id = id });
 
             if (response.IsSuccessful)
             {
@@ -58,7 +57,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetComptesRemesaBancAsync()
+        public async Task<IActionResult> GetFamiliesContracteAsync()
         {
             var response = await Sender.Send(new GetFamiliesContracteQuery());
 

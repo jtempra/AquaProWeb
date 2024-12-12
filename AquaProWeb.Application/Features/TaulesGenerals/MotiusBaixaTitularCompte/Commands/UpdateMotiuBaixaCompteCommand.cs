@@ -34,7 +34,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaCompte.Comma
 
                 await _unitOfWork.CommitAsync(cancellationToken);
 
-                return new ResponseWrapper<int>().Success(motiuBaixaCompteDb.Id, "Canal de cobrament actualitzat correctament!");
+                return new ResponseWrapper<int>().Success(motiuBaixaCompteDb.Id, "Motiu de baixa actualitzat correctament!");
             }
 
             return new ResponseWrapper<int>().Failure("El motiu de baixa de Compte no existeix!");

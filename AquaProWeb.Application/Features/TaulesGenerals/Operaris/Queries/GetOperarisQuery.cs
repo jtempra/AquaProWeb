@@ -21,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Operaris.Queries
         }
         public async Task<ResponseWrapper<List<ReadOperariDTO>>> Handle(GetOperarisQuery request, CancellationToken cancellationToken)
         {
-            var operariDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetAllAsync();
+            var operariDb = await _unitOfWork.ReadRepositoryFor<Operari>().GetAllAsync();
 
             if (operariDb.Count > 0)
             {
