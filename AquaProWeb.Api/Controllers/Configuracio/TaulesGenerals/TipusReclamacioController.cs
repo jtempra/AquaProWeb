@@ -68,6 +68,16 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
             return NotFound(response);
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> GetTipusReclamacioByTextAsync(string text)
+        {
+            var response = await Sender.Send(new GetTipusReclamacioByTextQuery { Text = text });
 
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
     }
 }

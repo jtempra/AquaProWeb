@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusIncidenciesLectures;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusIncidenciaLectura.
         }
         public async Task<ResponseWrapper<List<ReadTipusIncidenciaLecturaDTO>>> Handle(GetTipusIncidenciaLecturaByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusIncidenciaLecturaDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusIncidenciaLecturaDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusIncidenciaLectura>().GetByTextAsync(request.Text);
 
             if (tipusIncidenciaLecturaDb.Count > 0)
             {

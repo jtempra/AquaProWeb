@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusOrdresTreball;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusOrdreTreball.Queri
         }
         public async Task<ResponseWrapper<List<ReadTipusOrdreTreballDTO>>> Handle(GetTipusOrdreTreballByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusOrdreTreballDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusOrdreTreballDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusOrdreTreball>().GetByTextAsync(request.Text);
 
             if (tipusOrdreTreballDb.Count > 0)
             {

@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusSuggeriments;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusSuggeriment.Querie
         }
         public async Task<ResponseWrapper<List<ReadTipusSuggerimentDTO>>> Handle(GetTipusSuggerimentByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusSuggerimentDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusSuggerimentDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusSuggeriment>().GetByTextAsync(request.Text);
 
             if (tipusSuggerimentDb.Count > 0)
             {

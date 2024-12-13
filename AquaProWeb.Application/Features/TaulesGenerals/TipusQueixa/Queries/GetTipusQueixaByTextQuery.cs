@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusQueixes;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusQueixa.Queries
         }
         public async Task<ResponseWrapper<List<ReadTipusQueixaDTO>>> Handle(GetTipusQueixaByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusQueixaDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusQueixaDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusQueixa>().GetByTextAsync(request.Text);
 
             if (tipusQueixaDb.Count > 0)
             {

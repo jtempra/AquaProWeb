@@ -73,6 +73,16 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
             return NotFound(response);
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> GetZonesCarrerByTextAsync(string text)
+        {
+            var response = await Sender.Send(new GetZonesCarrerByTextQuery { Text = text });
 
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
     }
 }

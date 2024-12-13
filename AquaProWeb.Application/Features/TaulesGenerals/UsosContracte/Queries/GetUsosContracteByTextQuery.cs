@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.UsosContracte.Queries
         }
         public async Task<ResponseWrapper<List<ReadUsContracteDTO>>> Handle(GetUsosContracteByTextQuery request, CancellationToken cancellationToken)
         {
-            var UsosContracteDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var UsosContracteDb = await _unitOfWork.ReadRepositoryFor<UsContracte>().GetByTextAsync(request.Text);
 
             if (UsosContracteDb.Count > 0)
             {

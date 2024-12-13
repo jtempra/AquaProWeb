@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesFacturacio.Queries
         }
         public async Task<ResponseWrapper<List<ReadZonaFacturacioDTO>>> Handle(GetZonesFacturacioByTextQuery request, CancellationToken cancellationToken)
         {
-            var ZonesFacturacioDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var ZonesFacturacioDb = await _unitOfWork.ReadRepositoryFor<ZonaFacturacio>().GetByTextAsync(request.Text);
 
             if (ZonesFacturacioDb.Count > 0)
             {

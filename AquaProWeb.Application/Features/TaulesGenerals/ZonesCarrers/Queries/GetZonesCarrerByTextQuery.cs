@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesCarrers.Queries
         }
         public async Task<ResponseWrapper<List<ReadZonaCarrerDTO>>> Handle(GetZonesCarrerByTextQuery request, CancellationToken cancellationToken)
         {
-            var ZonesCarrerDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var ZonesCarrerDb = await _unitOfWork.ReadRepositoryFor<ZonaCarrers>().GetByTextAsync(request.Text);
 
             if (ZonesCarrerDb.Count > 0)
             {

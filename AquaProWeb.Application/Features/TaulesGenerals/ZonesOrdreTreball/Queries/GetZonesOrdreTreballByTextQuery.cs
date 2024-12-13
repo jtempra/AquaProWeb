@@ -22,7 +22,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesOrdreTreball.Queri
         }
         public async Task<ResponseWrapper<List<ReadZonaOrdreTreballDTO>>> Handle(GetZonesOrdreTreballByTextQuery request, CancellationToken cancellationToken)
         {
-            var ZonesOrdreTreballDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var ZonesOrdreTreballDb = await _unitOfWork.ReadRepositoryFor<ZonaOrdreTreball>().GetByTextAsync(request.Text);
 
             if (ZonesOrdreTreballDb.Count > 0)
             {

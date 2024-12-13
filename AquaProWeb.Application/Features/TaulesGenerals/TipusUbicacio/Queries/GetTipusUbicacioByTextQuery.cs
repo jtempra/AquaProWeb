@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusUbicacions;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusUbicacio.Queries
         }
         public async Task<ResponseWrapper<List<ReadTipusUbicacioDTO>>> Handle(GetTipusUbicacioByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusUbicacioDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusUbicacioDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusUbicacio>().GetByTextAsync(request.Text);
 
             if (tipusUbicacioDb.Count > 0)
             {

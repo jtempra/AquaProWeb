@@ -1,7 +1,6 @@
 ﻿using AquaProWeb.Application.Repositories;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusConceptesFactura;
 using AquaProWeb.Common.Wrapper;
-using AquaProWeb.Domain.Entities;
 using Mapster;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusConcepteFactura.Qu
         }
         public async Task<ResponseWrapper<List<ReadTipusConcepteFacturaDTO>>> Handle(GetTipusConcepteFacturaByTextQuery request, CancellationToken cancellationToken)
         {
-            var tipusConcepteFacturaDb = await _unitOfWork.ReadRepositoryFor<MotiuBaixaCompte>().GetByTextAsync(request.Text);
+            var tipusConcepteFacturaDb = await _unitOfWork.ReadRepositoryFor<Domain.Entities.TipusConcepteFactura>().GetByTextAsync(request.Text);
 
             if (tipusConcepteFacturaDb.Count > 0)
             {

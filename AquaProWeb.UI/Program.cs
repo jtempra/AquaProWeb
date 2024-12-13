@@ -1,7 +1,3 @@
-using AquaProWeb.Common.Responses.Explotacions;
-using AquaProWeb.Common.Responses.Parametres;
-using AquaProWeb.Common.Responses.TaulesGenerals.CanalsCobrament;
-using AquaProWeb.Common.Responses.TaulesGenerals.ComptesRemesaBanc;
 using AquaProWeb.UI;
 using AquaProWeb.UI.Authentication;
 using AquaProWeb.UI.Services.Account;
@@ -83,18 +79,14 @@ builder.Services.AddScoped<ITipusUbicacioService, TipusUbicacioService>();
 builder.Services.AddScoped<ITipusViaService, TipusViaService>();
 builder.Services.AddScoped<IUsContracteService, UsContracteService>();
 builder.Services.AddScoped<IZonaCarrerService, ZonaCarrerService>();
-builder.Services.AddScoped<IZonaFacturacioService, IZonaFacturacioService>();
+builder.Services.AddScoped<IZonaFacturacioService, ZonaFacturacioService>();
 builder.Services.AddScoped<IZonaOrdreTreballService, ZonaOrdreTreballService>();
-builder.Services.AddScoped<IZonaUbicacioService, IZonaUbicacioService>();
+builder.Services.AddScoped<IZonaUbicacioService, ZonaUbicacioService>();
 
 
 // validadors
 
-builder.Services.AddScoped<IValidator<ReadExplotacioDTO>, ExplotacioValidator>();
-builder.Services.AddScoped<IValidator<ReadParametreDTO>, ParametreValidator>();
-builder.Services.AddScoped<IValidator<ReadCanalCobramentDTO>, CanalCobramentValidator>();
-builder.Services.AddScoped<IValidator<ReadCompteRemesaBancDTO>, CompteRemesaBancValidator>();
-
+builder.Services.AddValidatorsFromAssemblyContaining<CanalCobramentValidator>();
 
 // registrem els serveis de Mudblazor
 
