@@ -14,6 +14,7 @@
 @using MudBlazor.Services;
 @using AquaProWeb.UI.Services.Contracts
 @using AquaProWeb.UI.Pages.Shared
+@using AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 @using Microsoft.AspNetCore.Components.Authorization
 @using FluentValidation
 
@@ -25,7 +26,13 @@
 @inject ICompteRemesaBancService _compteRemesaBancService
 
 @inject IPoblacioService _poblacioService
+@inject IPaisService _paisService
 @inject ITipusViaService _tipusViaService
+@inject ITipusClientService _tipusClientService
 @inject IZonaCarrerService _zonaCarrerService
+
+@inject IClientService _clientService
+
+
 @inject ISnackbar _snackbar
 @inject IDialogService _dialogService

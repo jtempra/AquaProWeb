@@ -1,0 +1,80 @@
+﻿@page "/clients"
+@using AquaProWeb.Common.Responses
+
+
+<MudTable Items="@Clients" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" RowClass="cursor-pointer">
+    <ToolBarContent>
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddClientAsync())"></MudFab>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Nom</MudTh>
+        <MudTh>Primer Cognom</MudTh>
+        <MudTh>Segon Cognom</MudTh>
+        <MudTh>Tipus Contacte</MudTh>
+        <MudTh>TipusClient</MudTh>
+        <MudTh>Tipus Document</MudTh>
+        <MudTh>Document</MudTh>
+        <MudTh>Tipus Via</MudTh>
+        <MudTh>Adreça</MudTh>
+        <MudTh>CP</MudTh>
+        <MudTh>Poblacio</MudTh>
+        <MudTh>Provincia</MudTh>
+        <MudTh>Pais</MudTh>
+        <MudTh>Reste Adreça</MudTh>
+        <MudTh>Telefon 1</MudTh>
+        <MudTh>Telefon 2</MudTh>
+        <MudTh>Telefon 3</MudTh>
+        <MudTh>Movil 1</MudTh>
+        <MudTh>Movil 2</MudTh>
+        <MudTh>Movil 3</MudTh>
+        <MudTh>Email 1</MudTh>
+        <MudTh>Email 2</MudTh>
+        <MudTh>Email 3</MudTh>
+        <MudTh>Observacions</MudTh>
+        <MudTh>IBAN</MudTh>
+        <MudTh>Data Alta</MudTh>
+        <MudTh>Data Baixa</MudTh>
+        <MudTh>Rebre Cartes</MudTh>
+        <MudTh>Rebre Factures</MudTh>
+        <MudTh>Rebre Rebuts</MudTh>
+        <MudTh>Acciones</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Nom">@context.Nom</MudTd>
+        <MudTd DataLabel="Primer Cognom">@context.PrimerCognom</MudTd>
+        <MudTd DataLabel="Segon Cognom">@context.SegonCognom</MudTd>
+        <MudTd DataLabel="Tipus Contacte">@context.TipusContacte</MudTd>
+        <MudTd DataLabel="Tipus Client">@context.TipusClient</MudTd>
+        <MudTd DataLabel="Tipus Document">@context.TipusDocumentIdentificacio</MudTd>
+        <MudTd DataLabel="Document">@context.DocumentIdentificacio</MudTd>
+        <MudTd DataLabel="Tipus Via">@context.TipusVia</MudTd>
+        <MudTd DataLabel="Adreça">@context.Adressa</MudTd>
+        <MudTd DataLabel="CP">@context.CodiPostal</MudTd>
+        <MudTd DataLabel="Poblacio">@context.Poblacio</MudTd>
+        <MudTd DataLabel="Provincia">@context.Provincia</MudTd>
+        <MudTd DataLabel="Pais">@context.Pais</MudTd>
+        <MudTd DataLabel="Reste Adreça">@context.ResteAdressa</MudTd>
+        <MudTd DataLabel="Telefon 1">@context.Telefon1</MudTd>
+        <MudTd DataLabel="Telefon 2">@context.Telefon2</MudTd>
+        <MudTd DataLabel="Telefon 3">@context.Telefon3</MudTd>
+        <MudTd DataLabel="Movil 1">@context.Mobil1</MudTd>
+        <MudTd DataLabel="Movil 2">@context.Mobil2</MudTd>
+        <MudTd DataLabel="Movil 3">@context.Mobil3</MudTd>
+        <MudTd DataLabel="Email 1">@context.EMail1</MudTd>
+        <MudTd DataLabel="Email 2">@context.EMail2</MudTd>
+        <MudTd DataLabel="Email 3">@context.EMail3</MudTd>
+        <MudTd DataLabel="Observacions">@context.Observacions</MudTd>
+        <MudTd DataLabel="IBAN">@context.IBAN</MudTd>
+        <MudTd DataLabel="Data Alta">@context.DataAlta</MudTd>
+        <MudTd DataLabel="Data Baixa">@context.DataBaixa</MudTd>
+        <MudTd DataLabel="Rebre Cartes">@context.RebCartes</MudTd>
+        <MudTd DataLabel="Rebre Factures">@context.RebFactures</MudTd>
+        <MudTd DataLabel="Rebre Rebuts">@context.RebRebuts</MudTd>  
+        <MudTd DataLabel="Accions">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateClientAsync(context.Id))"></MudIconButton>
+                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteClientAsync(context.Id, context.Nom))"></MudIconButton>
+            </MudButtonGroup>
+        </MudTd>
+    </RowTemplate>
+</MudTable>

@@ -1,0 +1,28 @@
+﻿<MudDialog>
+    <TitleContent>
+        Agregar Cliente
+    </TitleContent>
+    <DialogContent>
+        <MudForm @ref="@_form" Model="CreateClientDto" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" Validation="clientValidator.ValidateValue">
+            <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
+                          Label="Codi"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Codi</MudTextField>
+            <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
+                          Label="Nom"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Nom</MudTextField>
+
+            <MudTextField @bind-Value="CreateClientDto.Observacions" For="@(() => CreateClientDto.Observacions)"
+                          Label="Observacions"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Observacions</MudTextField>
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancelar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="@(async () => await Submit())">Guardar</MudButton>
+    </DialogActions>
+</MudDialog>
+
+

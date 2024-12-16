@@ -35,6 +35,15 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 // registrem els serveis
 
+//builder.Services.Scan(scan => scan
+//    .FromExecutingAssembly()
+//    .AddClasses(
+//        filter => filter.Where(x => x.Name.EndsWith("Service")),
+//        publicOnly: false)
+//    .UsingRegistrationStrategy(RegistrationStrategy.Throw)
+//    .AsMatchingInterface()
+//    .WithScopedLifetime());
+
 builder.Services.AddScoped<IExplotacioService, ExplotacioService>();
 builder.Services.AddScoped<IParametreService, ParametreService>();
 

@@ -1,26 +1,24 @@
-﻿using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
+﻿using AquaProWeb.Common.Responses.Abonats.Clients;
 using MudBlazor;
 
-
-
-namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
+namespace AquaProWeb.UI.Pages.Abonats.Clients
 {
-    public partial class CarrersList
+    public partial class ClientsList
     {
-        public List<ReadCarrerDTO> Carrers { get; set; } = [];
+        public List<ReadClientDTO> Clients { get; set; } = [];
         private bool _loading = true;
 
         protected override async Task OnInitializedAsync()
         {
-            await LoadCarrersAsync();
+            await LoadClientsAsync();
         }
 
-        private async Task LoadCarrersAsync()
+        private async Task LoadClientsAsync()
         {
-            var response = await _carrerService.GetAllCarrersAsync();
+            var response = await _clientService.GetAllClientsAsync();
             if (response.IsSuccessful)
             {
-                Carrers = response.Data;
+                Clients = response.Data;
             }
             else
             {
@@ -33,7 +31,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
             _loading = false;
         }
 
-        private async Task AddCarrerAsync()
+        private async Task AddClientAsync()
         {
             var parameters = new DialogParameters();
             var options = new DialogOptions
@@ -43,7 +41,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
                 FullWidth = true
             };
 
-            var dialog = _dialogService.Show<AddCarrerDialog>("Crear Carrer", parameters, options);
+            var dialog = _dialogService.Show<AddClientDialog>("Crear Client", parameters, options);
             var result = await dialog.Result;
             if (!result.Canceled)
             {
@@ -52,17 +50,17 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
             }
         }
 
-        private async Task UpdateCarrerAsync(int Id)
+        private async Task UpdateClientAsync(int Id)
         {
             var parameters = new DialogParameters();
 
             // el carrer a editar la podem agafar de la taula o be de la BD, aqui l'agafem de la BD
 
-            var response = await _carrerService.GetCarrerByIdAsync(Id);
+            var response = await _clientService.GetClientByIdAsync(Id);
             if (response.IsSuccessful)
             {
-                var carrer = response.Data;
-                parameters.Add(nameof(UpdateCarrerDialog.ReadCarrerDto), carrer);
+                var client = response.Data;
+                parameters.Add(nameof(UpdateClientDialog.ReadClientDto), client);
             }
 
 
@@ -73,16 +71,16 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
                 FullWidth = true
             };
 
-            var dialog = _dialogService.Show<UpdateCarrerDialog>("Actualitzar Carrer", parameters, options);
+            var dialog = _dialogService.Show<UpdateClientDialog>("Actualitzar Client", parameters, options);
             var result = await dialog.Result;
             if (!result.Canceled)
             {
-                await LoadCarrersAsync();
+                await LoadClientsAsync();
             }
         }
-        private async Task DeleteCarrerAsync(int Id, string Nom)
+        private async Task DeleteClientAsync(int Id, string Nom)
         {
-            string miss = $"Seguro que quiere borrar la Calle {Nom}?";
+            string miss = $"Seguro que quiere borrar el cliente {Nom}?";
             var parameters = new DialogParameters()
             {
                 {nameof(Shared.DeleteConfirmationDialog.Message),miss}
@@ -95,14 +93,14 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
                 FullWidth = true
             };
 
-            var dialog = _dialogService.Show<Shared.DeleteConfirmationDialog>("Esborrar Carrer", parameters, options);
+            var dialog = _dialogService.Show<Shared.DeleteConfirmationDialog>("Esborrar Client", parameters, options);
             var result = await dialog.Result;
             if (!result.Canceled)
             {
-                var response = await _carrerService.DeleteCarrerAsync(Id);
+                var response = await _clientService.DeleteClientAsync(Id);
                 if (response.IsSuccessful)
                 {
-                    await LoadCarrersAsync();
+                    await LoadClientsAsync();
                     _snackbar.Add(response.Messages[0], Severity.Success);
                 }
                 else
