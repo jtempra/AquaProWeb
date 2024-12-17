@@ -1,5 +1,6 @@
 using AquaProWeb.UI;
 using AquaProWeb.UI.Authentication;
+using AquaProWeb.UI.Services.Abonats;
 using AquaProWeb.UI.Services.Account;
 using AquaProWeb.UI.Services.Configuracio.Explotacion;
 using AquaProWeb.UI.Services.Configuracio.TaulesGenerals;
@@ -91,6 +92,8 @@ builder.Services.AddScoped<IZonaCarrerService, ZonaCarrerService>();
 builder.Services.AddScoped<IZonaFacturacioService, ZonaFacturacioService>();
 builder.Services.AddScoped<IZonaOrdreTreballService, ZonaOrdreTreballService>();
 builder.Services.AddScoped<IZonaUbicacioService, ZonaUbicacioService>();
+
+builder.Services.AddScoped<IClientService, ClientService>();
 
 
 // validadors

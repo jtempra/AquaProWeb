@@ -37,7 +37,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         private async Task SaveAsync()
         {
             UpdateClientDto = ReadClientDto.Adapt<UpdateClientDTO>();
-            var response = await _carrerService.UpdateClientAsync(UpdateClientDto);
+            var response = await _clientService.UpdateClientAsync(UpdateClientDto);
             if (response.IsSuccessful)
             {
                 _snackbar.Add(response.Messages[0], Severity.Success);

@@ -1,4 +1,5 @@
-﻿<MudDialog>
+﻿@using AquaProWeb.Common.Enums
+<MudDialog>
     <TitleContent>
         Agregar Cliente
     </TitleContent>
@@ -7,16 +8,33 @@
             <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
                           Label="Codi"
                           Immediate="true"
-                          Variant="Variant.Outlined">Codi</MudTextField>
-            <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
+                          Variant="Variant.Outlined">Nom</MudTextField>
+            <MudTextField @bind-Value="CreateClientDto.PrimerCognom" For="@(() => CreateClientDto.PrimerCognom)"
                           Label="Nom"
                           Immediate="true"
-                          Variant="Variant.Outlined">Nom</MudTextField>
+                          Variant="Variant.Outlined">Primer Cognom</MudTextField>
 
-            <MudTextField @bind-Value="CreateClientDto.Observacions" For="@(() => CreateClientDto.Observacions)"
+            <MudTextField @bind-Value="CreateClientDto.SegonCognom" For="@(() => CreateClientDto.SegonCognom)"
                           Label="Observacions"
                           Immediate="true"
-                          Variant="Variant.Outlined">Observacions</MudTextField>
+                          Variant="Variant.Outlined">Segon Cognom</MudTextField>
+            <MudSelect T="TipusContacte" Label="Tipus Contacte" @bind-Value="TipusContacte">
+                @foreach (var tipus in Enum.GetValues(typeof(TipusContacte)).Cast<TipusContacte>())
+                {
+                    <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
+                }
+            </MudSelect>
+            <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="TipusDocument">
+                @foreach (var tipus in Enum.GetValues(typeof(TipusDocumentIdentificacio)).Cast<TipusDocumentIdentificacio>())
+                {
+                    <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
+                }
+            </MudSelect>
+            <MudTextField @bind-Value="CreateClientDto.DocumentIdentificacio" For="@(() => CreateClientDto.DocumentIdentificacio)"
+                          Label="Document Identitat"
+                          Immediate="true"
+                          Variant="Variant.Outlined">Document Identitat
+            </MudTextField>
         </MudForm>
     </DialogContent>
     <DialogActions>

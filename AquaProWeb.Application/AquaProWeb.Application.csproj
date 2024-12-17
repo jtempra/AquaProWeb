@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Abonats\Clients\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Commands\" />
     <Folder Include="Features\TaulesGenerals\SituacionsAdminOT\Queries\" />
   </ItemGroup>

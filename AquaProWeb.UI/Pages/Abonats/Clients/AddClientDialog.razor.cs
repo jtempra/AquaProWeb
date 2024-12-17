@@ -1,4 +1,5 @@
-﻿using AquaProWeb.Common.Requests.Abonats.Clients;
+﻿using AquaProWeb.Common.Enums;
+using AquaProWeb.Common.Requests.Abonats.Clients;
 using AquaProWeb.UI.Validations.Abonats;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -17,7 +18,8 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
 
         public ClientValidator clientValidator = new();
 
-
+        private TipusContacte TipusContacte { get; set; }
+        private TipusDocumentIdentificacio TipusDocument { get; set; }
         private async Task Submit()
         {
             await _form.Validate();

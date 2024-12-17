@@ -28,7 +28,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<int>();
         }
 
-        public async Task<ResponseWrapper<List<ReadTipusClientDTO>>> GetAllTipusClientAsync()
+        public async Task<ResponseWrapper<List<ReadTipusClientDTO>>> GetAllTipusClientsAsync()
         {
             var response = await _httpClient.GetAsync(TipusClientEndPoints.GetAll);
             return await response.ToResponse<List<ReadTipusClientDTO>>();

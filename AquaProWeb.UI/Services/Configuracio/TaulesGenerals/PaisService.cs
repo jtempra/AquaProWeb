@@ -27,7 +27,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<int>();
         }
 
-        public async Task<ResponseWrapper<List<ReadPaisDTO>>> GetAllPaissAsync()
+        public async Task<ResponseWrapper<List<ReadPaisDTO>>> GetAllPaisosAsync()
         {
             var response = await _httpClient.GetAsync(PaisosEndPoints.GetAll);
             return await response.ToResponse<List<ReadPaisDTO>>();
@@ -40,7 +40,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadPaisDTO>();
         }
 
-        public async Task<ResponseWrapper<List<ReadPaisDTO>>> GetPaissByTextAsync(string text)
+        public async Task<ResponseWrapper<List<ReadPaisDTO>>> GetPaisosByTextAsync(string text)
         {
             var response = await _httpClient.GetAsync($"PaisosEndPoints.GetByText/{text}");
             return await response.ToResponse<List<ReadPaisDTO>>();
