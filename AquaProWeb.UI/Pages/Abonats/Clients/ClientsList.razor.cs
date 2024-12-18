@@ -8,6 +8,8 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         public List<ReadClientDTO> Clients { get; set; } = [];
         private bool _loading = true;
 
+        private string _searchString = string.Empty;
+
         protected override async Task OnInitializedAsync()
         {
             await LoadClientsAsync();
@@ -37,7 +39,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
             var options = new DialogOptions
             {
                 CloseButton = true,
-                MaxWidth = MaxWidth.Medium,
+                MaxWidth = MaxWidth.Large,
                 FullWidth = true
             };
 
@@ -67,7 +69,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
             var options = new DialogOptions
             {
                 CloseButton = true,
-                MaxWidth = MaxWidth.Medium,
+                MaxWidth = MaxWidth.Large,
                 FullWidth = true
             };
 
@@ -112,5 +114,26 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
                 }
             }
         }
+
+
+        private Func<ReadClientDTO, bool> _quickFilter => x =>
+        {
+            if (string.IsNullOrWhiteSpace(_searchString))
+                return true;
+
+            if (x.Nom.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            if (x.PrimerCognom.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            if (x.SegonCognom.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            //if ($"{x.Number} {x.Position} {x.Molar}".Contains(_searchString))
+            //    return true;
+
+            return false;
+        };
     }
 }

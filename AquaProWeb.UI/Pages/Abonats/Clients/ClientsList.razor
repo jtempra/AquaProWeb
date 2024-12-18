@@ -1,115 +1,57 @@
 ﻿@page "/clientes"
+@using AquaProWeb.Common.Responses.Abonats.Clients
+@using AquaProWeb.Domain.Entities
 
 
-<MudTable Items="@Clients" Hover="@true" Loading="@_loading" FixedHeader="@true" FixedFooter="@true" Dense="@true">
+<MudDataGrid T="@ReadClientDTO" Items="@Clients" Hover="@true" Loading="@_loading" FixedHeader="@true" FixedFooter="@true" Dense="@true" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter" ColumnResizeMode="ResizeMode.Container" >
     <ToolBarContent>
+        <MudText Typo="Typo.h6">Clients</MudText>
+        <MudSpacer />
         <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddClientAsync())"></MudFab>
+        <MudSpacer />
+        <MudTextField @bind-Value="_searchString" Placeholder="Buscar" Adornment="Adornment.Start" Immediate="true" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
-    <ColGroup>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;"/>
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-        <col style="min-width: 200px;" />
-    </ColGroup>
-    <HeaderContent>
-        <MudTh>Nom</MudTh>
-        <MudTh>Primer_Cognom</MudTh>
-        <MudTh>Segon_Cognom</MudTh>
-        <MudTh>Tipus_Contacte</MudTh>
-        <MudTh>Tipus_Client</MudTh>
-        <MudTh>Tipus_Document</MudTh>
-        <MudTh>Document</MudTh>
-        <MudTh>Tipus_Via</MudTh>
-        <MudTh>Adreça</MudTh>
-        <MudTh>CP</MudTh>
-        <MudTh>Poblacio</MudTh>
-        <MudTh>Provincia</MudTh>
-        <MudTh>Pais</MudTh>
-        <MudTh>Reste Adreça</MudTh>
-        <MudTh>Telefon_1</MudTh>
-        <MudTh>Telefon_2</MudTh>
-        <MudTh>Telefon_3</MudTh>
-        <MudTh>Movil_1</MudTh>
-        <MudTh>Movil_2</MudTh>
-        <MudTh>Movil_3</MudTh>
-        <MudTh>Email_1</MudTh>
-        <MudTh>Email_2</MudTh>
-        <MudTh>Email_3</MudTh>
-        <MudTh>Observacions</MudTh>
-        <MudTh>IBAN</MudTh>
-        <MudTh>Data Alta</MudTh>
-        <MudTh>Data Baixa</MudTh>
-        <MudTh>Rebre Cartes</MudTh>
-        <MudTh>Rebre Factures</MudTh>
-        <MudTh>Rebre Rebuts</MudTh>
-        <MudTh>Acciones</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd>@context.Nom</MudTd>
-        <MudTd>@context.PrimerCognom</MudTd>
-        <MudTd>@context.SegonCognom</MudTd>
-        <MudTd>@context.TipusContacte</MudTd>
-        <MudTd>@context.TipusClient.Tipus</MudTd>
-        <MudTd>@context.TipusDocumentIdentificacio</MudTd>
-        <MudTd>@context.DocumentIdentificacio</MudTd>
-        <MudTd>@context.TipusVia.Codi</MudTd>
-        <MudTd>@context.Adressa</MudTd>
-        <MudTd>@context.CodiPostal</MudTd>
-        <MudTd>@context.Poblacio</MudTd>
-        <MudTd>@context.Provincia</MudTd>
-        <MudTd>@context.Pais.NomPais</MudTd>
-        <MudTd>@context.ResteAdressa</MudTd>
-        <MudTd>@context.Telefon1</MudTd>
-        <MudTd>@context.Telefon2</MudTd>
-        <MudTd>@context.Telefon3</MudTd>
-        <MudTd>@context.Mobil1</MudTd>
-        <MudTd>@context.Mobil2</MudTd>
-        <MudTd>@context.Mobil3</MudTd>
-        <MudTd>@context.EMail1</MudTd>
-        <MudTd>@context.EMail2</MudTd>
-        <MudTd>@context.EMail3</MudTd>
-        <MudTd>@context.Observacions</MudTd>
-        <MudTd>@context.IBAN</MudTd>
-        <MudTd>@context.DataAlta</MudTd>
-        <MudTd>@context.DataBaixa</MudTd>
-        <MudTd>@context.RebCartes</MudTd>
-        <MudTd>@context.RebFactures</MudTd>
-        <MudTd>@context.RebRebuts</MudTd>  
-        <MudTd DataLabel="Accions">
-            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
-                <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="(() => UpdateClientAsync(context.Id))"></MudIconButton>
-                <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="(() => DeleteClientAsync(context.Id, context.Nom))"></MudIconButton>
-            </MudButtonGroup>
-        </MudTd>
-    </RowTemplate>
+    <Columns>
+        <PropertyColumn Property="x => x.Nom" Title="Nom" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.PrimerCognom" Title="1er Cognom" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.SegonCognom" Title="2on Cognom" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusContacte" Title="Tipus Contacte" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusClient.Tipus" Title="Tipus Client" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusDocumentIdentificacio" Title="Tipus Identificacio" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.DocumentIdentificacio" Title="Document Id." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusVia.Codi" Title="Tipus Via" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Adressa" Title="Adreça" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.CodiPostal"  Title = "CP" />
+        <PropertyColumn Property="x => x.Poblacio"  Title = "Poblacio" />
+        <PropertyColumn Property="x => x.Provincia"  Title = "Provincia" />
+        <PropertyColumn Property="x => x.Pais.NomPais"  Title = "Pais" />
+        <PropertyColumn Property="x => x.ResteAdressa" Title="Reste Adreça" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Telefon1" Title="Telefon 1" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Telefon2" Title="Telefon 2" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Telefon3" Title="Telefon 3" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Mobil1" Title="Mobil 1" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Mobil2" Title="Mobil 2" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Mobil3" Title="Mobil 3" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.EMail1" Title="EMail 1" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.EMail2" Title="EMail 2" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.EMail3" Title="EMail 3" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Observacions"  Title = "Observacions" />
+        <PropertyColumn Property="x => x.IBAN"  Title = "IBAN" />
+        <PropertyColumn Property="x => x.DataAlta" Title="Data Alta" Format="dd/MM/yyyy" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.DataBaixa" Title="Data Baixa" Format="dd/MM/yyyy" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.RebCartes" Title="Reb Cartes" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.RebFactures" Title="Reb Factures" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.RebRebuts" Title="Reb Rebuts" HeaderStyle="white-space:nowrap" />
+        <TemplateColumn CellClass="d-flex justify-end">
+            <CellTemplate>
+                <MudStack Row>
+                    <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => UpdateClientAsync(@context.Item.Id))"></MudIconButton> 
+                    <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => DeleteClientAsync(@context.Item.Id, @context.Item.Nom))"></MudIconButton>
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
     <PagerContent>
-        <MudTablePager />
+        <MudDataGridPager T="@ReadClientDTO" />
     </PagerContent>
-</MudTable>
+</MudDataGrid>

@@ -1,40 +1,145 @@
 ﻿@using AquaProWeb.Common.Enums
-<MudDialog>
+@using AquaProWeb.Domain.Entities
+<MudDialog >
     <TitleContent>
         Agregar Cliente
     </TitleContent>
     <DialogContent>
-        <MudForm @ref="@_form" Model="CreateClientDto" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" Validation="clientValidator.ValidateValue">
-            <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
-                          Label="Codi"
-                          Immediate="true"
-                          Variant="Variant.Outlined">Nom</MudTextField>
-            <MudTextField @bind-Value="CreateClientDto.PrimerCognom" For="@(() => CreateClientDto.PrimerCognom)"
-                          Label="Nom"
-                          Immediate="true"
-                          Variant="Variant.Outlined">Primer Cognom</MudTextField>
+        <MudForm @ref="@_form" Model="CreateClientDto" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" Validation="clientValidator.ValidateValue" >
+            <MudStack Row="true">
+                <MudTextField @bind-Value="CreateClientDto.Nom" For="@(() => CreateClientDto.Nom)"
+                              Label="Nom"
+                              Immediate="true"
+                              Variant="Variant.Outlined"></MudTextField>
 
-            <MudTextField @bind-Value="CreateClientDto.SegonCognom" For="@(() => CreateClientDto.SegonCognom)"
-                          Label="Observacions"
-                          Immediate="true"
-                          Variant="Variant.Outlined">Segon Cognom</MudTextField>
-            <MudSelect T="TipusContacte" Label="Tipus Contacte" @bind-Value="TipusContacte">
+                <MudTextField @bind-Value="CreateClientDto.PrimerCognom" For="@(() => CreateClientDto.PrimerCognom)"
+                              Label="Primer Cognom"
+                              Immediate="true"
+                              Variant="Variant.Outlined"></MudTextField>
+
+                <MudTextField @bind-Value="CreateClientDto.SegonCognom" For="@(() => CreateClientDto.SegonCognom)"
+                              Label="Segon Cognom"
+                              Immediate="true"
+                              Variant="Variant.Outlined"></MudTextField>
+            </MudStack>
+
+            <MudSelect T="TipusContacte" Label="Tipus Contacte" @bind-Value="TipusContacte" Variant="Variant.Outlined">
                 @foreach (var tipus in Enum.GetValues(typeof(TipusContacte)).Cast<TipusContacte>())
                 {
                     <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
                 }
             </MudSelect>
-            <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="TipusDocument">
-                @foreach (var tipus in Enum.GetValues(typeof(TipusDocumentIdentificacio)).Cast<TipusDocumentIdentificacio>())
-                {
-                    <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
-                }
-            </MudSelect>
-            <MudTextField @bind-Value="CreateClientDto.DocumentIdentificacio" For="@(() => CreateClientDto.DocumentIdentificacio)"
-                          Label="Document Identitat"
+            
+            <MudStack Row = "true">
+                <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="TipusDocument" Variant="Variant.Outlined">
+                    @foreach (var tipus in Enum.GetValues(typeof(TipusDocumentIdentificacio)).Cast<TipusDocumentIdentificacio>())
+                    {
+                        <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudTextField @bind-Value="CreateClientDto.DocumentIdentificacio" For="@(() => CreateClientDto.DocumentIdentificacio)"
+                              Label="Document Identitat"
+                              Immediate="true"
+                              Variant="Variant.Outlined"></MudTextField>
+            </MudStack>
+            <MudStack Row ="true">
+                <MudSelect Label="Tipus Via" MultiSelection="false" @bind-Value="CreateClientDto.TipusViaId" Variant="Variant.Outlined">
+                    @foreach (var tipus in TipusVies)
+                    {
+                        <MudSelectItem Value="@tipus.Id">@tipus.Descripcio</MudSelectItem>
+                    }
+                </MudSelect>
+                <MudTextField @bind-Value="CreateClientDto.Adressa" For="@(() => CreateClientDto.Adressa)"
+                              Label="Adreça"
+                              Immediate="true"
+                              Variant="Variant.Outlined"></MudTextField>
+            </MudStack>
+            <MudGrid>
+                <MudItem md="2">
+                    <MudTextField @bind-Value="CreateClientDto.CodiPostal" For="@(() => CreateClientDto.CodiPostal)"
+                                  Label="CP"
+                                  Immediate="true"
+                                  Variant="Variant.Outlined"></MudTextField>
+                </MudItem>
+                
+                <MudItem md="4">
+                    <MudTextField @bind-Value="CreateClientDto.Poblacio" For="@(() => CreateClientDto.Poblacio)"
+                                  Label="Població"
+                                  Immediate="true"
+                                  Variant="Variant.Outlined"></MudTextField>
+                </MudItem>
+                
+                <MudItem md="4">
+                    <MudTextField @bind-Value="CreateClientDto.Provincia" For="@(() => CreateClientDto.Provincia)"
+                                  Label="Provincia"
+                                  Immediate="true"
+                                  Variant="Variant.Outlined"></MudTextField>
+                </MudItem>
+                
+                <MudItem md="2">
+                    <MudSelect Label="Pais" MultiSelection="false" @bind-Value="CreateClientDto.PaisId" Variant="Variant.Outlined">
+                        @foreach (var pais in Paisos)
+                        {
+                            <MudSelectItem Value="@pais.Id">@pais.NomPais</MudSelectItem>
+                        }
+                    </MudSelect>
+                </MudItem>
+            </MudGrid>
+            <MudTextField @bind-Value="CreateClientDto.ResteAdressa" For="@(() => CreateClientDto.ResteAdressa)"
+                          Label="Reste Adreça"
                           Immediate="true"
-                          Variant="Variant.Outlined">Document Identitat
-            </MudTextField>
+                          Variant="Variant.Outlined"></MudTextField>
+            <MudTabs Outlined="true">
+                <MudTabPanel Text="Tel. Fixes" Icon="@Icons.Material.Filled.Phone">
+                    <MudStack Row ="true">
+                        <MudTextField @bind-Value="CreateClientDto.Telefon1" For="@(() => CreateClientDto.Telefon1)"
+                                      Label="Telefon 1"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.Telefon2" For="@(() => CreateClientDto.Telefon2)"
+                                      Label="Telefon 2"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.Telefon3" For="@(() => CreateClientDto.Telefon3)"
+                                      Label="Telefon 3"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                    </MudStack>
+                </MudTabPanel>
+                <MudTabPanel Text="Tel. Mobils" Icon="@Icons.Material.Filled.PhoneAndroid">
+                    <MudStack Row="true">
+                        <MudTextField @bind-Value="CreateClientDto.Mobil1" For="@(() => CreateClientDto.Mobil1)"
+                                      Label="Mobil 1"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.Mobil2" For="@(() => CreateClientDto.Mobil2)"
+                                      Label="Mobil 2"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.Mobil3" For="@(() => CreateClientDto.Mobil3)"
+                                      Label="Mobil 3"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                    </MudStack>
+                </MudTabPanel>
+                <MudTabPanel Text="Emails" Icon="@Icons.Material.Filled.Email">
+                    <MudStack Row="true">
+                        <MudTextField @bind-Value="CreateClientDto.EMail1" For="@(() => CreateClientDto.EMail1)"
+                                      Label="EMail 1"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.EMail2" For="@(() => CreateClientDto.EMail2)"
+                                      Label="EMail 2"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                        <MudTextField @bind-Value="CreateClientDto.EMail3" For="@(() => CreateClientDto.EMail3)"
+                                      Label="EMail 3"
+                                      Immediate="true"
+                                      Variant="Variant.Outlined"></MudTextField>
+                    </MudStack>
+                </MudTabPanel>
+            </MudTabs>
         </MudForm>
     </DialogContent>
     <DialogActions>

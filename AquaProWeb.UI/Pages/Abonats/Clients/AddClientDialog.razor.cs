@@ -1,5 +1,8 @@
 ﻿using AquaProWeb.Common.Enums;
 using AquaProWeb.Common.Requests.Abonats.Clients;
+using AquaProWeb.Common.Responses.Abonats.Clients;
+using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
+using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.UI.Validations.Abonats;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -9,7 +12,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
     public partial class AddClientDialog
     {
         [Parameter]
-        public CreateClientDTO CreateClientDto { get; set; } = new();
+        public ReadClientDTO ReadClientDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }
@@ -20,6 +23,17 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
 
         private TipusContacte TipusContacte { get; set; }
         private TipusDocumentIdentificacio TipusDocument { get; set; }
+        private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
+        private List<ReadPaisDTO> Paisos { get; set; } = [];
+        public CreateClientDTO CreateClientDto { get; set; } = new();
+
+        protected override async void OnInitialized()
+        {
+            var responseTipus = await _tipusViaService.GetAllTipusViaAsync();
+            TipusVies = responseTipus.Data;
+            var responsePaisos = await _paisService.GetAllPaisosAsync();
+            Paisos = responsePaisos.Data;
+        }
         private async Task Submit()
         {
             await _form.Validate();
