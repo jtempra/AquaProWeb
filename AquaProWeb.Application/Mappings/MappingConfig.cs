@@ -8,6 +8,7 @@ using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesCobrament;
 using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesFactura;
 using AquaProWeb.Common.Requests.TaulesGenerals.Poblacions;
 using AquaProWeb.Common.Requests.TaulesGenerals.TipusVies;
+using AquaProWeb.Common.Responses.Abonats.Clients;
 using AquaProWeb.Common.Responses.Explotacions;
 using AquaProWeb.Common.Responses.TaulesGenerals.CanalsCobrament;
 using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
@@ -15,7 +16,9 @@ using AquaProWeb.Common.Responses.TaulesGenerals.ComptesRemesaBanc;
 using AquaProWeb.Common.Responses.TaulesGenerals.ComptesTransferenciaClient;
 using AquaProWeb.Common.Responses.TaulesGenerals.ConceptesCobrament;
 using AquaProWeb.Common.Responses.TaulesGenerals.ConceptesFactura;
+using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
 using AquaProWeb.Common.Responses.TaulesGenerals.Poblacions;
+using AquaProWeb.Common.Responses.TaulesGenerals.TipusClients;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Responses.TaulesGenerals.ZonesCarrers;
 using AquaProWeb.Domain.Entities;
@@ -85,7 +88,15 @@ namespace AquaProWeb.Application.Mappings
             // Configuración de mapeo de TipusViaDTO a TipusVia
             TypeAdapterConfig<ReadTipusViaDTO, TipusVia>.NewConfig();
 
+            TypeAdapterConfig<Client, ReadClientDTO>
+                .NewConfig()
+                .Map(dest => dest.TipusClient, src => src.TipusClient)
+                .Map(dest => dest.Pais, src => src.Pais)
+                .Map(dest => dest.TipusVia, src => src.TipusVia);
 
+            TypeAdapterConfig<Pais, ReadPaisDTO>.NewConfig();
+            TypeAdapterConfig<TipusClient, ReadTipusClientDTO>.NewConfig();
+            TypeAdapterConfig<TipusVia, ReadTipusViaDTO>.NewConfig();
 
 
             TypeAdapterConfig<Explotacio, ReadExplotacioDTO>

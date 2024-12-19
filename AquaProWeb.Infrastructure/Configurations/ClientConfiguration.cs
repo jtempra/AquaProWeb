@@ -12,7 +12,6 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.Property(c => c.PrimerCognom).HasMaxLength(50);
         builder.Property(c => c.SegonCognom).HasMaxLength(50);
         builder.Ignore(c => c.NomSencer);
-        builder.Property(c => c.TipusContacte).IsRequired();
         builder.Property(c => c.TipusClientId).IsRequired();
         builder.Property(c => c.TipusDocumentIdentificacio).IsRequired();
         builder.Property(c => c.DocumentIdentificacio).IsRequired().HasMaxLength(12);

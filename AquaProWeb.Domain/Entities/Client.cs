@@ -1,5 +1,5 @@
-﻿using AquaProWeb.Domain.Contracts;
-using AquaProWeb.Common.Enums;
+﻿using AquaProWeb.Common.Enums;
+using AquaProWeb.Domain.Contracts;
 
 namespace AquaProWeb.Domain.Entities
 {
@@ -18,10 +18,7 @@ namespace AquaProWeb.Domain.Entities
             get; set;
         }
         public string NomSencer => Nom + " " + PrimerCognom + " " + SegonCognom;
-        public TipusContacte TipusContacte
-        {
-            get; set;
-        }
+
         public int TipusClientId
         {
             get; set;

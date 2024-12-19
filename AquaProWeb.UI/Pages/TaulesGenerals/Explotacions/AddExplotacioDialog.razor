@@ -8,7 +8,7 @@
         Agregar Explotación
     </TitleContent>
     <DialogContent>
-        <MudForm @ref="@_form" Model="CreateExplotacioDto" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit"  Validation="explotacioValidator.ValidateValue">
+        <MudForm @ref="@_form" Model="CreateExplotacioDto" OnValidSubmit="OnValidSubmit"  Validation="explotacioValidator.ValidateValue">
             <MudTextField @bind-Value="CreateExplotacioDto.Codi" For="@(() => CreateExplotacioDto.Codi)"
                           Label="Codi"
                           Immediate="true"

@@ -8,7 +8,6 @@ namespace AquaProWeb.Common.Requests.Abonats.Clients
         public string Nom { get; set; }
         public string PrimerCognom { get; set; }
         public string SegonCognom { get; set; }
-        public TipusContacte TipusContacte { get; set; }
         public int TipusClientId { get; set; }
         public TipusDocumentIdentificacio TipusDocumentIdentificacio { get; set; }
         public string DocumentIdentificacio { get; set; }

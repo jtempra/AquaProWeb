@@ -2,6 +2,7 @@
 using AquaProWeb.Common.Requests.Abonats.Clients;
 using AquaProWeb.Common.Responses.Abonats.Clients;
 using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
+using AquaProWeb.Common.Responses.TaulesGenerals.TipusClients;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.UI.Validations.Abonats;
 using Microsoft.AspNetCore.Components;
@@ -25,6 +26,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         private TipusDocumentIdentificacio TipusDocument { get; set; }
         private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
         private List<ReadPaisDTO> Paisos { get; set; } = [];
+        private List<ReadTipusClientDTO> TipusClients { get; set; } = [];
         public CreateClientDTO CreateClientDto { get; set; } = new();
 
         protected override async void OnInitialized()
@@ -57,7 +59,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
             }
             else
             {
-                _snackbar.Add("lalala", Severity.Error);
+                _snackbar.Add("validació incorrecte", Severity.Error);
                 MudDialog.Close();
             }
         }

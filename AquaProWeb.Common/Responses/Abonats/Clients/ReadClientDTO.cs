@@ -11,7 +11,6 @@ namespace AquaProWeb.Common.Responses.Abonats.Clients
         public string Nom { get; set; }
         public string PrimerCognom { get; set; }
         public string SegonCognom { get; set; }
-        public TipusContacte TipusContacte { get; set; }
         public ReadTipusClientDTO TipusClient { get; set; }
         public TipusDocumentIdentificacio TipusDocumentIdentificacio { get; set; }
         public string DocumentIdentificacio { get; set; }
@@ -33,7 +32,7 @@ namespace AquaProWeb.Common.Responses.Abonats.Clients
         public string? EMail3 { get; set; }
         public string? Observacions { get; set; }
         public string? IBAN { get; set; }
-        public DateTime DataAlta { get; set; }
+        public DateTime? DataAlta { get; set; }
         public DateTime? DataBaixa { get; set; }
         public bool RebCartes { get; set; }
         public bool RebFactures { get; set; }
