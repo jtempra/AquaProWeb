@@ -2,7 +2,7 @@
 @using AquaProWeb.Domain.Entities
 <MudDialog>
     <TitleContent>
-        Agregar Cliente
+        <MudText Typo="Typo.h4">Agregar Cliente</MudText>
     </TitleContent>
     <DialogContent>
         <MudForm @ref="@_form" Model="ReadClientDto" OnValidSubmit="OnValidSubmit"  Validation="clientValidator.ValidateValue" >

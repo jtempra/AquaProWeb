@@ -17,6 +17,7 @@
 @using AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 @using Microsoft.AspNetCore.Components.Authorization
 @using FluentValidation
+@using NetTopologySuite.Geometries
 
 @inject IExplotacioService _explotacioService
 @inject IParametreService _parametreService
@@ -32,7 +33,7 @@
 @inject IZonaCarrerService _zonaCarrerService
 
 @inject IClientService _clientService
-
+@inject IPuntSubministramentService _puntSubministramentService
 
 @inject ISnackbar _snackbar
 @inject IDialogService _dialogService

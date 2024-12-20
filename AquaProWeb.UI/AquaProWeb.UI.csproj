@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Abonats\Escomeses\" />
     <Folder Include="Pages\Abonats\Solicituds\Alta\" />
     <Folder Include="Pages\Abonats\Solicituds\Baixa\" />
     <Folder Include="Pages\Abonats\Solicituds\CanviNom\" />
