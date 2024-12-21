@@ -8,7 +8,7 @@ public interface IZonaUbicacioService
 {
     Task<ResponseWrapper<int>> AddZonaUbicacioAsync(CreateZonaUbicacioDTO createZonaUbicacioDTO);
     Task<ResponseWrapper<int>> DeleteZonaUbicacioAsync(int id);
-    Task<ResponseWrapper<List<ReadZonaUbicacioDTO>>> GetAllZonesCarrerAsync();
+    Task<ResponseWrapper<List<ReadZonaUbicacioDTO>>> GetAllZonesUbicacioAsync();
     Task<ResponseWrapper<ReadZonaUbicacioDTO>> GetZonaUbicacioByIdAsync(int id);
     Task<ResponseWrapper<int>> UpdateZonaUbicacioAsync(UpdateZonaUbicacioDTO updateZonaUbicacioDTO);
 }

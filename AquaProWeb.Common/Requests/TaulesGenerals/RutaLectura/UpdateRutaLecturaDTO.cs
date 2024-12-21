@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AquaProWeb.Common.Requests.TaulesGenerals.RutaLectura
 {
-	public class UpdateRutaLectura
+	public class UpdateRutaLecturaDTO
 	{
 		public int Id { get; set; }
 		public string Ruta { get; set; }

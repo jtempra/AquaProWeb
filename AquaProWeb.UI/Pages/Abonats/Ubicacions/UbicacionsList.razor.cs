@@ -1,26 +1,27 @@
-﻿using AquaProWeb.Common.Responses.Abonats.PuntsSubministrament;
+﻿
+using AquaProWeb.Common.Responses.Abonats.Ubicacions;
 using MudBlazor;
 
-namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
+namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
 {
-    public partial class PuntsSubministramentList
+    public partial class UbicacionsList
     {
-        public List<ReadPuntSubministramentDTO> PuntsSubministrament { get; set; } = [];
+        public List<ReadUbicacioDTO> Ubicacions { get; set; } = [];
         private bool _loading = true;
 
         private string _searchString = string.Empty;
 
         protected override async Task OnInitializedAsync()
         {
-            await LoadPuntsSubministramentAsync();
+            await LoadUbicacionsAsync();
         }
 
-        private async Task LoadPuntsSubministramentAsync()
+        private async Task LoadUbicacionsAsync()
         {
-            var response = await _puntSubministramentService.GetAllPuntsSubministramentAsync();
+            var response = await _ubicacioService.GetAllUbicacionsAsync();
             if (response.IsSuccessful)
             {
-                PuntsSubministrament = response.Data;
+                Ubicacions = response.Data;
             }
             else
             {
@@ -33,7 +34,7 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
             _loading = false;
         }
 
-        private async Task AddPuntSubministramentAsync()
+        private async Task AddUbicacioAsync()
         {
             var parameters = new DialogParameters();
             var options = new DialogOptions
@@ -43,7 +44,7 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
                 FullWidth = true
             };
 
-            var dialog = _dialogService.Show<AddPuntSubministramentDialog>("Crear Punt", parameters, options);
+            var dialog = _dialogService.Show<AddUbicacioDialog>("Crear Punt", parameters, options);
             var result = await dialog.Result;
             if (!result.Canceled)
             {
@@ -52,17 +53,17 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
             }
         }
 
-        private async Task UpdatePuntSubministramentAsync(int Id)
+        private async Task UpdateUbicacioAsync(int Id)
         {
             var parameters = new DialogParameters();
 
             // el carrer a editar la podem agafar de la taula o be de la BD, aqui l'agafem de la BD
 
-            var response = await _puntSubministramentService.GetPuntSubministramentByIdAsync(Id);
+            var response = await _ubicacioService.GetUbicacioByIdAsync(Id);
             if (response.IsSuccessful)
             {
-                var puntSubministrament = response.Data;
-                parameters.Add(nameof(UpdatePuntSubministramentDialog.ReadPuntSubministramentDto), puntSubministrament);
+                var ubicacio = response.Data;
+                parameters.Add(nameof(UpdateUbicacioDialog.ReadUbicacioDto), ubicacio);
             }
 
 
@@ -73,14 +74,14 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
                 FullWidth = true
             };
 
-            var dialog = _dialogService.Show<UpdatePuntSubministramentDialog>("Actualitzar Punt Subministrament", parameters, options);
+            var dialog = _dialogService.Show<UpdateUbicacioDialog>("Actualitzar Punt Subministrament", parameters, options);
             var result = await dialog.Result;
             if (!result.Canceled)
             {
-                await LoadPuntsSubministramentAsync();
+                await LoadUbicacionsAsync();
             }
         }
-        private async Task DeletePuntSubministramentAsync(int Id)
+        private async Task DeleteUbicacioAsync(int Id)
         {
             string miss = $"Seguro que quiere borrar el punt subministrament {Id}?";
             var parameters = new DialogParameters()
@@ -99,10 +100,10 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
             var result = await dialog.Result;
             if (!result.Canceled)
             {
-                var response = await _puntSubministramentService.DeletePuntSubministramentAsync(Id);
+                var response = await _ubicacioService.DeleteUbicacioAsync(Id);
                 if (response.IsSuccessful)
                 {
-                    await LoadPuntsSubministramentAsync();
+                    await LoadUbicacionsAsync();
                     _snackbar.Add(response.Messages[0], Severity.Success);
                 }
                 else
@@ -116,7 +117,7 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
         }
 
 
-        private Func<ReadPuntSubministramentDTO, bool> _quickFilter => x =>
+        private Func<ReadUbicacioDTO, bool> _quickFilter => x =>
         {
             if (string.IsNullOrWhiteSpace(_searchString))
                 return true;

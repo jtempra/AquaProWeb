@@ -1,4 +1,5 @@
 ﻿
+using AquaProWeb.Common.Requests.Abonats.PuntsSubministrament;
 using AquaProWeb.Common.Requests.Explotacions;
 using AquaProWeb.Common.Requests.TaulesGenerals.CanalsCobrament;
 using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
@@ -9,6 +10,8 @@ using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesFactura;
 using AquaProWeb.Common.Requests.TaulesGenerals.Poblacions;
 using AquaProWeb.Common.Requests.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Responses.Abonats.Clients;
+using AquaProWeb.Common.Responses.Abonats.Escomeses;
+using AquaProWeb.Common.Responses.Abonats.Ubicacions;
 using AquaProWeb.Common.Responses.Explotacions;
 using AquaProWeb.Common.Responses.TaulesGenerals.CanalsCobrament;
 using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
@@ -18,9 +21,12 @@ using AquaProWeb.Common.Responses.TaulesGenerals.ConceptesCobrament;
 using AquaProWeb.Common.Responses.TaulesGenerals.ConceptesFactura;
 using AquaProWeb.Common.Responses.TaulesGenerals.Paisos;
 using AquaProWeb.Common.Responses.TaulesGenerals.Poblacions;
+using AquaProWeb.Common.Responses.TaulesGenerals.RutaLectura;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusClients;
+using AquaProWeb.Common.Responses.TaulesGenerals.TipusUbicacions;
 using AquaProWeb.Common.Responses.TaulesGenerals.TipusVies;
 using AquaProWeb.Common.Responses.TaulesGenerals.ZonesCarrers;
+using AquaProWeb.Common.Responses.TaulesGenerals.ZonesUbicacions;
 using AquaProWeb.Domain.Entities;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
@@ -119,7 +125,37 @@ namespace AquaProWeb.Application.Mappings
             TypeAdapterConfig<UpdateTipusViaDTO, TipusVia>
                 .NewConfig();
 
+            // Ubicacio
+            TypeAdapterConfig<Ubicacio, ReadUbicacioDTO>
+                .NewConfig()
+                .Map(dest => dest.TipusUbicacio, src => src.Tipus)
+                .Map(dest => dest.ZonaUbicacio, src => src.Zona)
+                .Map(dest => dest.Poblacio, src => src.Poblacio)
+                .Map(dest => dest.Carrer, src => src.Carrer)
+                .Map(dest => dest.Escomesa, src => src.Escomesa)
+                .Map(dest => dest.RutaLectura, src => src.RutaLectura)
+                .Map(dest => dest.Latitud, src => src.PosicioGeografica.Y)
+                .Map(dest => dest.Longitud, src => src.PosicioGeografica.X);
 
+            TypeAdapterConfig<TipusUbicacio, ReadTipusUbicacioDTO>.NewConfig();
+            TypeAdapterConfig<ZonaUbicacio, ReadZonaUbicacioDTO>.NewConfig();
+            TypeAdapterConfig<Poblacio, ReadPoblacioDTO>.NewConfig();
+            TypeAdapterConfig<Carrer, ReadCarrerDTO>.NewConfig();
+            TypeAdapterConfig<Escomesa, ReadEscomesaDTO>.NewConfig();
+            TypeAdapterConfig<RutaLectura, ReadRutaLecturaDTO>.NewConfig();
+
+            TypeAdapterConfig<UpdateUbicacioDTO, Ubicacio>.NewConfig();
+
+            TypeAdapterConfig<ReadUbicacioDTO, Ubicacio>.NewConfig()
+                .Map(dest => dest.Tipus, src => src.TipusUbicacio)
+                .Map(dest => dest.Zona, src => src.ZonaUbicacio)
+                .Map(dest => dest.Poblacio, src => src.Poblacio)
+                .Map(dest => dest.Carrer, src => src.Carrer)
+                .Map(dest => dest.Escomesa, src => src.Escomesa)
+                .Map(dest => dest.RutaLectura, src => src.RutaLectura)
+                .Map(dest => dest.PosicioGeografica.Y, src => src.Latitud)
+                .Map(dest => dest.PosicioGeografica.X, src => src.Longitud);
+            ;
 
             TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
 

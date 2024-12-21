@@ -1,17 +1,15 @@
-﻿using System.Drawing;
-
-namespace AquaProWeb.Common.Requests.Abonats.PuntsSubministrament
+﻿namespace AquaProWeb.Common.Requests.Abonats.PuntsSubministrament
 {
-    public class UpdatePuntSubministramentDTO
+    public class CreateUbicacioDTO
     {
-        public int Id { get; set; }
         public string Numero { get; set; }
         public string? Bloc { get; set; }
         public string? Escala { get; set; }
         public string? Pis { get; set; }
         public string? Porta { get; set; }
         public string? ResteAdreça { get; set; }
-        public Point? PosicioGeografica { get; set; }
+        public double Latitud { get; set; }
+        public double Longitud { get; set; }
         public string? Localitzacio { get; set; }
         public string? ReferenciaCatastral { get; set; }
         public string? Observacions { get; set; }

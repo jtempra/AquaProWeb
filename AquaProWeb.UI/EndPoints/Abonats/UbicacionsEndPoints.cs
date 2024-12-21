@@ -1,6 +1,6 @@
 ﻿namespace AquaProWeb.UI.EndPoints.Abonats
 {
-    public class PuntsSubministramentEndPoints
+    public static class UbicacionsEndPoints
     {
         public const string Add = "api/ubicacions/add";
         public const string Update = "api/ubicacions/update";

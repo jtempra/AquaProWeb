@@ -1,0 +1,50 @@
+﻿@page "/ubicaciones"
+@using AquaProWeb.Common.Responses.Abonats.Clients
+@using AquaProWeb.Common.Responses.Abonats.Ubicacions
+@using AquaProWeb.Domain.Entities
+
+
+<MudDataGrid T="@ReadUbicacioDTO" Items="@Ubicacions" Hover="@true" Loading="@_loading" FixedHeader="@true" FixedFooter="@true" Dense="@true" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter" ColumnResizeMode="ResizeMode.Container" >
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Clients</MudText>
+        <MudSpacer />
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="(() => AddUbicacioAsync())"></MudFab>
+        <MudSpacer />
+        <MudTextField @bind-Value="_searchString" Placeholder="Buscar" Adornment="Adornment.Start" Immediate="true" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Carrer.Nom" Title="Carrer" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Numero" Title="Num." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Bloc" Title="Bloc" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Escala" Title="Esc." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Pis" Title="Pis" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Porta" Title="Pta." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.ResteAdreça" Title="Reste Adreeça" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Latitud" Title="Lat." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Longitud" Title="Lng." HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Localitzacio"  Title = "Localitzacio" />
+        <PropertyColumn Property="x => x.ReferenciaCatastral"  Title = "Ref. Catastral" />
+        <PropertyColumn Property="x => x.Observacions"  Title = "Observacions" />
+        <PropertyColumn Property="x => x.DataAlta"  Title = "Data Alta" />
+        <PropertyColumn Property="x => x.DataBaixa" Title="Data Baixa" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusUbicacio.Tipus" Title="Tipus" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.ZonaUbicacio.Zona" Title="Zona" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Poblacio.Nom" Title="Poblacio" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Escomesa.Nom" Title="Escomesa" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.SituacioComptador" Title="Situació Comptador" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.RutaLectura.Ruta" Title="Ruta Lectura" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.OrdreRutaLectura" Title="Ordre Ruta" HeaderStyle="white-space:nowrap" />
+        
+        <TemplateColumn CellClass="d-flex justify-end">
+            <CellTemplate>
+                <MudStack Row>
+                    <MudIconButton Color="Color.Success" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => UpdateUbicacioAsync(@context.Item.Id))"></MudIconButton> 
+                    <MudIconButton Color="Color.Warning" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => DeleteUbicacioAsync(@context.Item.Id))"></MudIconButton>
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="@ReadUbicacioDTO" />
+    </PagerContent>
+</MudDataGrid>

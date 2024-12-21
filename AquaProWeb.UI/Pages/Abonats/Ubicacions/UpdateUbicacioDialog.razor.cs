@@ -1,6 +1,6 @@
 ﻿using AquaProWeb.Common.Requests.Abonats.PuntsSubministrament;
 using AquaProWeb.Common.Responses.Abonats.Escomeses;
-using AquaProWeb.Common.Responses.Abonats.PuntsSubministrament;
+using AquaProWeb.Common.Responses.Abonats.Ubicacions;
 using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
 using AquaProWeb.Common.Responses.TaulesGenerals.Poblacions;
 using AquaProWeb.Common.Responses.TaulesGenerals.RutaLectura;
@@ -10,12 +10,12 @@ using Mapster;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
-namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
+namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
 {
-    public partial class UpdatePuntSubministramentDialog
+    public partial class UpdateUbicacioDialog
     {
         [Parameter]
-        public ReadPuntSubministramentDTO ReadPuntSubministramentDto { get; set; } = new();
+        public ReadUbicacioDTO ReadUbicacioDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }
@@ -27,29 +27,29 @@ namespace AquaProWeb.UI.Pages.Abonats.PuntsSubministrament
         private List<ReadCarrerDTO> Carrers { get; set; } = [];
         private List<ReadEscomesaDTO> Escomeses { get; set; } = [];
         private List<ReadRutaLecturaDTO> RutesLectura { get; set; } = [];
-        public UpdatePuntSubministramentDTO UpdatePuntSubministramentDto { get; set; } = new();
+        public UpdateUbicacioDTO UpdateUbicacioDto { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
-            var responseTipus = await _tipusUbicacioService.GetAllTipusUbicacionsAsync();
+            var responseTipus = await _tipusUbicacioService.GetAllTipusUbicacioAsync();
             TipusUbicacions = responseTipus.Data;
-            var responseZones = await _zonesUbicacioService.GetAllZonesUbicacioAsync();
+            var responseZones = await _zonaUbicacioService.GetAllZonesUbicacioAsync();
             ZonesUbicacio = responseZones.Data;
-            var responsePoblacions = await _poblacionsService.GetAllPoblacionsAsync();
+            var responsePoblacions = await _poblacioService.GetAllPoblacionsAsync();
             Poblacions = responsePoblacions.Data;
-            var responseCarrers = await _carrersService.GetAllCarrersAsync();
+            var responseCarrers = await _carrerService.GetAllCarrersAsync();
             Carrers = responseCarrers.Data;
-            var responseEscomeses = await _escomesesService.GetAllEscomesesAsync();
+            var responseEscomeses = await _escomesaService.GetAllEscomesesAsync();
             Escomeses = responseEscomeses.Data;
-            var responseRutes = await _rutesLecturaService.GetAllRutesLecturaAsync();
+            var responseRutes = await _rutaLecturaService.GetAllRutesLecturaAsync();
             RutesLectura = responseRutes.Data;
 
             StateHasChanged();
         }
         private async Task SaveAsync()
         {
-            UpdatePuntSubministramentDto = ReadPuntSubministramentDto.Adapt<UpdatePuntSubministramentDTO>();
-            var response = await _puntSubministramentService.UpdatePuntSubministramentAsync(UpdatePuntSubministramentDto);
+            UpdateUbicacioDto = ReadUbicacioDto.Adapt<UpdateUbicacioDTO>();
+            var response = await _ubicacioService.UpdateUbicacioAsync(UpdateUbicacioDto);
             if (response.IsSuccessful)
             {
                 _snackbar.Add(response.Messages[0], Severity.Success);

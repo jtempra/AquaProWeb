@@ -12,11 +12,11 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Queries
         public string Text { get; set; }
     }
 
-    public class GetCarrerByTextQueryHandler : IRequestHandler<GetCarrersByTextQuery, ResponseWrapper<List<ReadCarrerDTO>>>
+    public class GetCarrersByTextQueryHandler : IRequestHandler<GetCarrersByTextQuery, ResponseWrapper<List<ReadCarrerDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public GetCarrerByTextQueryHandler(IUnitOfWork unitOfWork)
+        public GetCarrersByTextQueryHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

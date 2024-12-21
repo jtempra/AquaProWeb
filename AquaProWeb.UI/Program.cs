@@ -65,6 +65,7 @@ builder.Services.AddScoped<IMotiuBaixaTitularService, MotiuBaixaTitularService>(
 builder.Services.AddScoped<IOperariService, OperariService>();
 builder.Services.AddScoped<IPaisService, PaisService>();
 builder.Services.AddScoped<IPoblacioService, PoblacioService>();
+builder.Services.AddScoped<IRutaLecturaService, RutaLecturaService>();
 builder.Services.AddScoped<ISerieFacturaService, SerieFacturaService>();
 builder.Services.AddScoped<ISerieRebutService, SerieRebutService>();
 builder.Services.AddScoped<ISituacioFacturaService, SituacioFacturaService>();
@@ -94,6 +95,8 @@ builder.Services.AddScoped<IZonaOrdreTreballService, ZonaOrdreTreballService>();
 builder.Services.AddScoped<IZonaUbicacioService, ZonaUbicacioService>();
 
 builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IEscomesaService, EscomesaService>();
+builder.Services.AddScoped<IUbicacioService, UbicacioService>();
 
 
 // validadors

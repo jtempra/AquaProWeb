@@ -1,10 +1,12 @@
-﻿using FluentValidation;
+﻿
+using AquaProWeb.Common.Responses.Abonats.Ubicacions;
+using FluentValidation;
 
 namespace AquaProWeb.UI.Validations.PuntsSubministrament
 {
-    public class PuntSubministramentValidator : AbstractValidator<ReadPuntSubministramentDTO>
+    public class UbicacioValidator : AbstractValidator<ReadUbicacioDTO>
     {
-        public PuntSubministramentValidator()
+        public UbicacioValidator()
         {
             RuleFor(c => c.Numero)
                 .NotEmpty().WithMessage("El número del punt de subministrament no pot estar en blanc");
@@ -14,7 +16,7 @@ namespace AquaProWeb.UI.Validations.PuntsSubministrament
         // funció de validació
         public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
         {
-            var result = await ValidateAsync(ValidationContext<ReadPuntSubministramentDTO>.CreateWithOptions((ReadPuntSubministramentDTO)model, x => x.IncludeProperties(propertyName)));
+            var result = await ValidateAsync(ValidationContext<ReadUbicacioDTO>.CreateWithOptions((ReadUbicacioDTO)model, x => x.IncludeProperties(propertyName)));
             if (result.IsValid)
                 return Array.Empty<string>();
             return result.Errors.Select(e => e.ErrorMessage);

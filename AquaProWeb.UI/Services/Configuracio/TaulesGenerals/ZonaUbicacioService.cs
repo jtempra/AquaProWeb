@@ -18,32 +18,32 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         }
         public async Task<ResponseWrapper<int>> AddZonaUbicacioAsync(CreateZonaUbicacioDTO createZonaUbicacioDTO)
         {
-            var response = await _httpClient.PostAsJsonAsync(ZonesCarrerEndPoints.Add, createZonaUbicacioDTO);
+            var response = await _httpClient.PostAsJsonAsync(ZonesUbicacioEndPoints.Add, createZonaUbicacioDTO);
             return await response.ToResponse<int>();
         }
 
         public async Task<ResponseWrapper<int>> DeleteZonaUbicacioAsync(int id)
         {
-            var response = await _httpClient.DeleteAsync($"{ZonesCarrerEndPoints.Delete}/{id}");
+            var response = await _httpClient.DeleteAsync($"{ZonesUbicacioEndPoints.Delete}/{id}");
             return await response.ToResponse<int>();
         }
 
-        public async Task<ResponseWrapper<List<ReadZonaUbicacioDTO>>> GetAllZonesCarrerAsync()
+        public async Task<ResponseWrapper<List<ReadZonaUbicacioDTO>>> GetAllZonesUbicacioAsync()
         {
-            var response = await _httpClient.GetAsync(ZonesCarrerEndPoints.GetAll);
+            var response = await _httpClient.GetAsync(ZonesUbicacioEndPoints.GetAll);
             return await response.ToResponse<List<ReadZonaUbicacioDTO>>();
 
         }
 
         public async Task<ResponseWrapper<ReadZonaUbicacioDTO>> GetZonaUbicacioByIdAsync(int id)
         {
-            var response = await _httpClient.GetAsync(ZonesCarrerEndPoints.GetById(id));
+            var response = await _httpClient.GetAsync(ZonesUbicacioEndPoints.GetById(id));
             return await response.ToResponse<ReadZonaUbicacioDTO>();
         }
 
         public async Task<ResponseWrapper<int>> UpdateZonaUbicacioAsync(UpdateZonaUbicacioDTO updateZonaUbicacioDTO)
         {
-            var response = await _httpClient.PutAsJsonAsync(ZonesCarrerEndPoints.Update, updateZonaUbicacioDTO);
+            var response = await _httpClient.PutAsJsonAsync(ZonesUbicacioEndPoints.Update, updateZonaUbicacioDTO);
             return await response.ToResponse<int>();
         }
     }
