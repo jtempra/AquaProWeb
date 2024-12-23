@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusIncidenciaClient.C
 {
     public class CreateTipusIncidenciaClientCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusIncidenciaClientDTO CreateTipusIncidenciaClient { get; set; }
+        public SaveTipusIncidenciaClientDTO CreateTipusIncidenciaClient { get; set; }
     }
 
     public class CreateTipusIncidenciaClientCommandHandler : IRequestHandler<CreateTipusIncidenciaClientCommand, ResponseWrapper<int>>

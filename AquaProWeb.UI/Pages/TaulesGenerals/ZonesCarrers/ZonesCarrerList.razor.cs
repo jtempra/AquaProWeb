@@ -58,7 +58,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ZonesCarrers
             var zonaCarrer = ZonesCarrer.FirstOrDefault(t => t.Id == Id);
 
 
-            parameters.Add(nameof(UpdateZonaCarrerDialog.UpdateZonaCarrerDto), new UpdateZonaCarrerDTO()
+            parameters.Add(nameof(UpdateZonaCarrerDialog.UpdateZonaCarrerDto), new SaveZonaCarrerDTO()
             {
                 Id = zonaCarrer.Id,
                 Zona = zonaCarrer.Zona,

@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddConcepteCobramentAsync(CreateConcepteCobramentDTO createConcepteCobramentDTO)
+        public async Task<ResponseWrapper<int>> AddConcepteCobramentAsync(SaveConcepteCobramentDTO createConcepteCobramentDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ConceptesCobramentEndPoints.Add, createConcepteCobramentDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateConcepteCobramentAsync(UpdateConcepteCobramentDTO updateConcepteCobramentDTO)
+        public async Task<ResponseWrapper<int>> UpdateConcepteCobramentAsync(SaveConcepteCobramentDTO updateConcepteCobramentDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ConceptesCobramentEndPoints.Update, updateConcepteCobramentDTO);
             return await response.ToResponse<int>();

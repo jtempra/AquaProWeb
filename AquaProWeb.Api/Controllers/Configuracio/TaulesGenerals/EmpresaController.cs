@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class EmpresaController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddEmpresaAsync([FromBody] CreateEmpresaDTO createEmpresaDTO)
+        public async Task<IActionResult> AddEmpresaAsync([FromBody] SaveEmpresaDTO createEmpresaDTO)
         {
             var response = await Sender.Send(new CreateEmpresaCommand { CreateEmpresa = createEmpresaDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateEmpresaAsync([FromBody] UpdateEmpresaDTO updateEmpresaDTO)
+        public async Task<IActionResult> UpdateEmpresaAsync([FromBody] SaveEmpresaDTO updateEmpresaDTO)
         {
             var response = await Sender.Send(new UpdateEmpresaCommand { UpdateEmpresa = updateEmpresaDTO });
 

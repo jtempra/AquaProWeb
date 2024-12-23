@@ -8,7 +8,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Explotacions
     public partial class AddExplotacioDialog
     {
         [Parameter]
-        public CreateExplotacioDTO CreateExplotacioDto { get; set; } = new();
+        public SaveExplotacioDTO CreateExplotacioDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }

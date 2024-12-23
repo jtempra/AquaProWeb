@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusComptador.Commands
 {
     public class CreateTipusComptadorCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusComptadorDTO CreateTipusComptador { get; set; }
+        public SaveTipusComptadorDTO CreateTipusComptador { get; set; }
     }
 
     public class CreateTipusComptadorCommandHandler : IRequestHandler<CreateTipusComptadorCommand, ResponseWrapper<int>>

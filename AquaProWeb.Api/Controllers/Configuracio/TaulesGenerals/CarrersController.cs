@@ -11,7 +11,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class CarrersController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddCarrerAsync([FromBody] CreateCarrerDTO createCarrerDTO)
+        public async Task<IActionResult> AddCarrerAsync([FromBody] SaveCarrerDTO createCarrerDTO)
         {
             var response = await Sender.Send(new CreateCarrerCommand { CreateCarrer = createCarrerDTO });
 
@@ -23,7 +23,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateCarrerAsync([FromBody] UpdateCarrerDTO updateCarrerDTO)
+        public async Task<IActionResult> UpdateCarrerAsync([FromBody] SaveCarrerDTO updateCarrerDTO)
         {
             var response = await Sender.Send(new UpdateCarrerCommand { UpdateCarrer = updateCarrerDTO });
 

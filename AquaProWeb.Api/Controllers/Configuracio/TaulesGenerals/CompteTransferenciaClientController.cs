@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class CompteTransferenciaClientController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddCompteTransferenciaClientsync([FromBody] CreateCompteTransferenciaClientDTO createCompteTransferenciaClientDTO)
+        public async Task<IActionResult> AddCompteTransferenciaClientsync([FromBody] SaveCompteTransferenciaClientDTO createCompteTransferenciaClientDTO)
         {
             var response = await Sender.Send(new CreateCompteTransferenciaClientCommand { CreateCompteTransferenciaClient = createCompteTransferenciaClientDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateTransferenciaCarrerAsync([FromBody] UpdateCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
+        public async Task<IActionResult> UpdateTransferenciaCarrerAsync([FromBody] SaveCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
         {
             var response = await Sender.Send(new UpdateCompteTransferenciaClientCommand { UpdateCompteTransferenciaClient = updateCompteTransferenciaClientDTO });
 

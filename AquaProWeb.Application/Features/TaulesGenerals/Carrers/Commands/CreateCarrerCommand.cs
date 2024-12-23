@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
 {
     public class CreateCarrerCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateCarrerDTO CreateCarrer { get; set; }
+        public SaveCarrerDTO CreateCarrer { get; set; }
     }
 
     public class CreateCarrerCommandHandler : IRequestHandler<CreateCarrerCommand, ResponseWrapper<int>>

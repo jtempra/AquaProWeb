@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusVies.Commands
 {
     public class UpdateTipusViaCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateTipusViaDTO UpdateTipusVia { get; set; }
+        public SaveTipusViaDTO UpdateTipusVia { get; set; }
     }
 
     public class UpdateTipusViaCommandHandler : IRequestHandler<UpdateTipusViaCommand, ResponseWrapper<int>>

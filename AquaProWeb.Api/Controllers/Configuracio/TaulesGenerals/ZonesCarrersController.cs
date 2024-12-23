@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class ZonesCarrersController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddZonaCarrerAsync([FromBody] CreateZonaCarrerDTO createZonaCarrerDTO)
+        public async Task<IActionResult> AddZonaCarrerAsync([FromBody] SaveZonaCarrerDTO createZonaCarrerDTO)
         {
             var response = await Sender.Send(new CreateZonaCarrerCommand { CreateZonaCarrer = createZonaCarrerDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateZonaCarrerAsync([FromBody] UpdateZonaCarrerDTO updateZonaCarrerDTO)
+        public async Task<IActionResult> UpdateZonaCarrerAsync([FromBody] SaveZonaCarrerDTO updateZonaCarrerDTO)
         {
             var response = await Sender.Send(new UpdateZonaCarrerCommand { UpdateZonaCarrer = updateZonaCarrerDTO });
 

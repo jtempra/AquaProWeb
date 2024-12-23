@@ -6,10 +6,10 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals;
 
 public interface IFamiliaConcepteFacturaService
 {
-    Task<ResponseWrapper<int>> AddFamiliaConcepteFacturaAsync(CreateFamiliaConcepteFacturaDTO createFamiliaConcepteFacturaDTO);
+    Task<ResponseWrapper<int>> AddFamiliaConcepteFacturaAsync(SaveFamiliaConcepteFacturaDTO createFamiliaConcepteFacturaDTO);
     Task<ResponseWrapper<int>> DeleteFamiliaConcepteFacturaAsync(int id);
     Task<ResponseWrapper<List<ReadFamiliaConcepteFacturaDTO>>> GetAllFamiliesConcepteFacturaAsync();
     Task<ResponseWrapper<ReadFamiliaConcepteFacturaDTO>> GetFamiliaConcepteFacturaByIdAsync(int id);
     Task<ResponseWrapper<List<ReadFamiliaConcepteFacturaDTO>>> GetFamiliesConcepteFacturaByTextAsync(string text);
-    Task<ResponseWrapper<int>> UpdateFamiliaConcepteFacturaAsync(UpdateFamiliaConcepteFacturaDTO updateFamiliaConcepteFacturaDTO);
+    Task<ResponseWrapper<int>> UpdateFamiliaConcepteFacturaAsync(SaveFamiliaConcepteFacturaDTO updateFamiliaConcepteFacturaDTO);
 }

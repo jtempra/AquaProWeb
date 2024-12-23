@@ -8,7 +8,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.TipusVia
     public partial class UpdateTipusViaDialog
     {
         [Parameter]
-        public UpdateTipusViaDTO UpdateTipusViaDto { get; set; } = new();
+        public SaveTipusViaDTO UpdateTipusViaDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }

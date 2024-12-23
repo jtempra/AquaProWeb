@@ -58,7 +58,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.TipusVia
             var tipusVia = TipusVia.FirstOrDefault(t => t.Id == Id);
 
 
-            parameters.Add(nameof(UpdateTipusViaDialog.UpdateTipusViaDto), new UpdateTipusViaDTO()
+            parameters.Add(nameof(UpdateTipusViaDialog.UpdateTipusViaDto), new SaveTipusViaDTO()
             {
                 Id = tipusVia.Id,
                 Codi = tipusVia.Codi,

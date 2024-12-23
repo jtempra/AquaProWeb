@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddCanalCobramentAsync(CreateCanalCobramentDTO createCanalCobramentDTO)
+        public async Task<ResponseWrapper<int>> AddCanalCobramentAsync(SaveCanalCobramentDTO createCanalCobramentDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(CanalsCobramentEndPoints.Add, createCanalCobramentDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadCanalCobramentDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCanalCobramentAsync(UpdateCanalCobramentDTO updateCanalCobramentDTO)
+        public async Task<ResponseWrapper<int>> UpdateCanalCobramentAsync(SaveCanalCobramentDTO updateCanalCobramentDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(CanalsCobramentEndPoints.Update, updateCanalCobramentDTO);
             return await response.ToResponse<int>();

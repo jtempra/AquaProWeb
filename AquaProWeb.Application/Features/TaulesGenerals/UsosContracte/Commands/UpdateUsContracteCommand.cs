@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.UsosContracte.Commands
 {
     public class UpdateUsContracteCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateUsContracteDTO UpdateUsContracte { get; set; }
+        public SaveUsContracteDTO UpdateUsContracte { get; set; }
     }
 
     public class UpdateUsContracteCommandHandler : IRequestHandler<UpdateUsContracteCommand, ResponseWrapper<int>>

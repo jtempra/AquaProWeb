@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesOrdreTreball.Comma
 {
     public class CreateZonaOrdreTreballCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateZonaOrdreTreballDTO CreateZonaOrdreTreball { get; set; }
+        public SaveZonaOrdreTreballDTO CreateZonaOrdreTreball { get; set; }
     }
 
     public class CreateZonaOrdreTreballCommandHandler : IRequestHandler<CreateZonaOrdreTreballCommand, ResponseWrapper<int>>

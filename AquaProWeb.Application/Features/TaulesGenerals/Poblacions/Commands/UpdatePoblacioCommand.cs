@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Poblacions.Commands
 {
     public class UpdatePoblacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdatePoblacioDTO UpdatePoblacio { get; set; }
+        public SavePoblacioDTO UpdatePoblacio { get; set; }
     }
 
     public class UpdatePoblacioCommandHandler : IRequestHandler<UpdatePoblacioCommand, ResponseWrapper<int>>

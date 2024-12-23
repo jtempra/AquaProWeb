@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Explotacions.Commands
 {
     public class UpdateExplotacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateExplotacioDTO UpdateExplotacio { get; set; }
+        public SaveExplotacioDTO UpdateExplotacio { get; set; }
     }
 
     public class UpdateExplotacioCommandHandler : IRequestHandler<UpdateExplotacioCommand, ResponseWrapper<int>>

@@ -17,7 +17,7 @@ namespace AquaProWeb.UI.Services.Abonats
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddUbicacioAsync(CreateUbicacioDTO createUbicacioDTO)
+        public async Task<ResponseWrapper<int>> AddUbicacioAsync(SaveUbicacioDTO createUbicacioDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(UbicacionsEndPoints.Add, createUbicacioDTO);
             return await response.ToResponse<int>();
@@ -29,10 +29,10 @@ namespace AquaProWeb.UI.Services.Abonats
             return await response.ToResponse<int>();
         }
 
-        public async Task<ResponseWrapper<List<ReadUbicacioDTO>>> GetAllUbicacionsAsync()
+        public async Task<ResponseWrapper<List<ListUbicacioDTO>>> GetAllUbicacionsAsync()
         {
             var response = await _httpClient.GetAsync(UbicacionsEndPoints.GetAll);
-            return await response.ToResponse<List<ReadUbicacioDTO>>();
+            return await response.ToResponse<List<ListUbicacioDTO>>();
 
         }
 
@@ -42,14 +42,14 @@ namespace AquaProWeb.UI.Services.Abonats
             return await response.ToResponse<ReadUbicacioDTO>();
         }
 
-        public async Task<ResponseWrapper<List<ReadUbicacioDTO>>> GetUbicacionsByTextAsync(string text)
+        public async Task<ResponseWrapper<List<ListUbicacioDTO>>> GetUbicacionsByTextAsync(string text)
         {
             var response = await _httpClient.GetAsync($"PuntsSubministramentEndPoints.GetByText/{text}");
-            return await response.ToResponse<List<ReadUbicacioDTO>>();
+            return await response.ToResponse<List<ListUbicacioDTO>>();
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateUbicacioAsync(UpdateUbicacioDTO updateUbicacioDTO)
+        public async Task<ResponseWrapper<int>> UpdateUbicacioAsync(SaveUbicacioDTO updateUbicacioDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(UbicacionsEndPoints.Update, updateUbicacioDTO);
             return await response.ToResponse<int>();

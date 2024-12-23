@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class OperarisController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddOperariAsync([FromBody] CreateOperariDTO createOperariDTO)
+        public async Task<IActionResult> AddOperariAsync([FromBody] SaveOperariDTO createOperariDTO)
         {
             var response = await Sender.Send(new CreateOperariCommand { CreateOperari = createOperariDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateOperariAsync([FromBody] UpdateOperariDTO updateOperariDTO)
+        public async Task<IActionResult> UpdateOperariAsync([FromBody] SaveOperariDTO updateOperariDTO)
         {
             var response = await Sender.Send(new UpdateOperariCommand { UpdateOperari = updateOperariDTO });
 

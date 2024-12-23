@@ -24,7 +24,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
         private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
         private List<ReadZonaCarrerDTO> ZonesCarrers { get; set; } = [];
         private CategoriaVia CategoriesVia { get; set; }
-        public CreateCarrerDTO CreateCarrerDto { get; set; } = new();
+        public SaveCarrerDTO CreateCarrerDto { get; set; } = new();
         protected override async void OnInitialized()
         {
             var responsePoblacions = await _poblacioService.GetAllPoblacionsAsync();
@@ -36,7 +36,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
         }
         private async Task SaveAsync()
         {
-            CreateCarrerDto = ReadCarrerDto.Adapt<CreateCarrerDTO>();
+            CreateCarrerDto = ReadCarrerDto.Adapt<SaveCarrerDTO>();
             var response = await _carrerService.AddCarrerAsync(CreateCarrerDto);
             if (response.IsSuccessful)
             {

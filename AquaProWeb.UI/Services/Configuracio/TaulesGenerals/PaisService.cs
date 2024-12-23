@@ -15,7 +15,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddPaisAsync(CreatePaisDTO createPaisDTO)
+        public async Task<ResponseWrapper<int>> AddPaisAsync(SavePaisDTO createPaisDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(PaisosEndPoints.Add, createPaisDTO);
             return await response.ToResponse<int>();
@@ -47,7 +47,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdatePaisAsync(UpdatePaisDTO updatePaisDTO)
+        public async Task<ResponseWrapper<int>> UpdatePaisAsync(SavePaisDTO updatePaisDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(PaisosEndPoints.Update, updatePaisDTO);
             return await response.ToResponse<int>();

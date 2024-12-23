@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaTitular.Comm
 {
     public class UpdateMotiuBaixaTitularCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateMotiuBaixaTitularDTO UpdateMotiuBaixaTitular { get; set; }
+        public SaveMotiuBaixaTitularDTO UpdateMotiuBaixaTitular { get; set; }
     }
 
     public class UpdateMotiuBaixaTitularCommandHandler : IRequestHandler<UpdateMotiuBaixaTitularCommand, ResponseWrapper<int>>

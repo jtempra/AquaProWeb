@@ -8,7 +8,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ZonesCarrers
     {
 
         [Parameter]
-        public UpdateZonaCarrerDTO UpdateZonaCarrerDto { get; set; } = new();
+        public SaveZonaCarrerDTO UpdateZonaCarrerDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }

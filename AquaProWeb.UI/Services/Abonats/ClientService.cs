@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Abonats
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddClientAsync(CreateClientDTO createClientDTO)
+        public async Task<ResponseWrapper<int>> AddClientAsync(SaveClientDTO createClientDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ClientsEndPoints.Add, createClientDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Abonats
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateClientAsync(UpdateClientDTO updateClientDTO)
+        public async Task<ResponseWrapper<int>> UpdateClientAsync(SaveClientDTO updateClientDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ClientsEndPoints.Update, updateClientDTO);
             return await response.ToResponse<int>();

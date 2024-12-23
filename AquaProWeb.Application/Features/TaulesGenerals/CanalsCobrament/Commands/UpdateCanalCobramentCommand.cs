@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.CanalsCobrament.Command
 {
     public class UpdateCanalCobramentCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateCanalCobramentDTO UpdateCanalCobrament { get; set; }
+        public SaveCanalCobramentDTO UpdateCanalCobrament { get; set; }
     }
 
     public class UpdateCanalCobramentCommandHandler : IRequestHandler<UpdateCanalCobramentCommand, ResponseWrapper<int>>

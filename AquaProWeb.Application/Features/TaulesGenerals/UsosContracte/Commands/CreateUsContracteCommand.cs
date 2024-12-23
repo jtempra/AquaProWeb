@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.UsosContracte.Commands
 {
     public class CreateUsContracteCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateUsContracteDTO CreateUsContracte { get; set; }
+        public SaveUsContracteDTO CreateUsContracte { get; set; }
     }
 
     public class CreateUsContracteCommandHandler : IRequestHandler<CreateUsContracteCommand, ResponseWrapper<int>>

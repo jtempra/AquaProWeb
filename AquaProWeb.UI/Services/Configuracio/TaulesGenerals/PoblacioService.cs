@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddPoblacioAsync(CreatePoblacioDTO createPoblacioDTO)
+        public async Task<ResponseWrapper<int>> AddPoblacioAsync(SavePoblacioDTO createPoblacioDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(PoblacionsEndPoints.Add, createPoblacioDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdatePoblacioAsync(UpdatePoblacioDTO updatePoblacioDTO)
+        public async Task<ResponseWrapper<int>> UpdatePoblacioAsync(SavePoblacioDTO updatePoblacioDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(PoblacionsEndPoints.Update, updatePoblacioDTO);
             return await response.ToResponse<int>();

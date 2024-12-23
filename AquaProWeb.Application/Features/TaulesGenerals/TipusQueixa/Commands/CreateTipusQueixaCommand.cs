@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusQueixa.Commands
 {
     public class CreateTipusQueixaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusQueixaDTO CreateTipusQueixa { get; set; }
+        public SaveTipusQueixaDTO CreateTipusQueixa { get; set; }
     }
 
     public class CreateTipusQueixaCommandHandler : IRequestHandler<CreateTipusQueixaCommand, ResponseWrapper<int>>

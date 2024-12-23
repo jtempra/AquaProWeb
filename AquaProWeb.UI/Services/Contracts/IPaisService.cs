@@ -6,10 +6,10 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals;
 
 public interface IPaisService
 {
-    Task<ResponseWrapper<int>> AddPaisAsync(CreatePaisDTO createPaisDTO);
+    Task<ResponseWrapper<int>> AddPaisAsync(SavePaisDTO createPaisDTO);
     Task<ResponseWrapper<int>> DeletePaisAsync(int id);
     Task<ResponseWrapper<List<ReadPaisDTO>>> GetAllPaisosAsync();
     Task<ResponseWrapper<ReadPaisDTO>> GetPaisByIdAsync(int id);
     Task<ResponseWrapper<List<ReadPaisDTO>>> GetPaisosByTextAsync(string text);
-    Task<ResponseWrapper<int>> UpdatePaisAsync(UpdatePaisDTO updatePaisDTO);
+    Task<ResponseWrapper<int>> UpdatePaisAsync(SavePaisDTO updatePaisDTO);
 }

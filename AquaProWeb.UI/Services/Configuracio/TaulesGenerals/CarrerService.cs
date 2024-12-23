@@ -1,10 +1,10 @@
-﻿using AquaProWeb.Common.Wrapper;
+﻿using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
+using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
+using AquaProWeb.Common.Wrapper;
+using AquaProWeb.UI.EndPoints.TaulesGenerals;
 using AquaProWeb.UI.Extensions;
 using AquaProWeb.UI.Services.Contracts;
 using System.Net.Http.Json;
-using AquaProWeb.Common.Requests.TaulesGenerals.Carrers;
-using AquaProWeb.Common.Responses.TaulesGenerals.Carrers;
-using AquaProWeb.UI.EndPoints.TaulesGenerals;
 
 namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddCarrerAsync(CreateCarrerDTO createCarrerDTO)
+        public async Task<ResponseWrapper<int>> AddCarrerAsync(SaveCarrerDTO createCarrerDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(CarrersEndPoints.Add, createCarrerDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCarrerAsync(UpdateCarrerDTO updateCarrerDTO)
+        public async Task<ResponseWrapper<int>> UpdateCarrerAsync(SaveCarrerDTO updateCarrerDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(CarrersEndPoints.Update, updateCarrerDTO);
             return await response.ToResponse<int>();

@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesRemesaBanc.Comma
 {
     public class UpdateCompteRemesaBancCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateCompteRemesaBancDTO UpdateCompteRemesaBanc { get; set; }
+        public SaveCompteRemesaBancDTO UpdateCompteRemesaBanc { get; set; }
     }
 
     public class UpdateCompteRemesaBancCommandHandler : IRequestHandler<UpdateCompteRemesaBancCommand, ResponseWrapper<int>>

@@ -27,7 +27,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
         private List<ReadCarrerDTO> Carrers { get; set; } = [];
         private List<ReadEscomesaDTO> Escomeses { get; set; } = [];
         private List<ReadRutaLecturaDTO> RutesLectura { get; set; } = [];
-        public UpdateUbicacioDTO UpdateUbicacioDto { get; set; } = new();
+        public SaveUbicacioDTO UpdateUbicacioDto { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
         }
         private async Task SaveAsync()
         {
-            UpdateUbicacioDto = ReadUbicacioDto.Adapt<UpdateUbicacioDTO>();
+            UpdateUbicacioDto = ReadUbicacioDto.Adapt<SaveUbicacioDTO>();
             var response = await _ubicacioService.UpdateUbicacioAsync(UpdateUbicacioDto);
             if (response.IsSuccessful)
             {

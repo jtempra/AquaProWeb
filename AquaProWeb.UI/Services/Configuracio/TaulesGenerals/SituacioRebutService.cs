@@ -9,12 +9,12 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 {
     public interface ISituacioRebutService
     {
-        Task<ResponseWrapper<int>> AddSituacioRebutAsync(CreateSituacioRebutDTO createSituacioRebutDTO);
+        Task<ResponseWrapper<int>> AddSituacioRebutAsync(SaveSituacioRebutDTO createSituacioRebutDTO);
         Task<ResponseWrapper<int>> DeleteSituacioRebutAsync(int id);
         Task<ResponseWrapper<List<ReadSituacioRebutDTO>>> GetAllSituacionsFacturasAsync();
         Task<ResponseWrapper<ReadSituacioRebutDTO>> GetSituacioRebutByIdAsync(int id);
         Task<ResponseWrapper<List<ReadSituacioRebutDTO>>> GetSituacionsFacturasByTextAsync(string text);
-        Task<ResponseWrapper<int>> UpdateSituacioRebutAsync(UpdateSituacioRebutDTO updateSituacioRebutDTO);
+        Task<ResponseWrapper<int>> UpdateSituacioRebutAsync(SaveSituacioRebutDTO updateSituacioRebutDTO);
     }
 
     public class SituacioRebutService : ISituacioRebutService
@@ -25,7 +25,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddSituacioRebutAsync(CreateSituacioRebutDTO createSituacioRebutDTO)
+        public async Task<ResponseWrapper<int>> AddSituacioRebutAsync(SaveSituacioRebutDTO createSituacioRebutDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(SituacionsRebutEndPoints.Add, createSituacioRebutDTO);
             return await response.ToResponse<int>();
@@ -57,7 +57,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateSituacioRebutAsync(UpdateSituacioRebutDTO updateSituacioRebutDTO)
+        public async Task<ResponseWrapper<int>> UpdateSituacioRebutAsync(SaveSituacioRebutDTO updateSituacioRebutDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(SituacionsRebutEndPoints.Update, updateSituacioRebutDTO);
             return await response.ToResponse<int>();

@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class TipusClientController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddTipusClientAsync([FromBody] CreateTipusClientDTO createTipusClientDTO)
+        public async Task<IActionResult> AddTipusClientAsync([FromBody] SaveTipusClientDTO createTipusClientDTO)
         {
             var response = await Sender.Send(new CreateTipusClientCommand { CreateTipusClient = createTipusClientDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateTipusClientAsync([FromBody] UpdateTipusClientDTO updateTipusClientDTO)
+        public async Task<IActionResult> UpdateTipusClientAsync([FromBody] SaveTipusClientDTO updateTipusClientDTO)
         {
             var response = await Sender.Send(new UpdateTipusClientCommand { UpdateTipusClient = updateTipusClientDTO });
 

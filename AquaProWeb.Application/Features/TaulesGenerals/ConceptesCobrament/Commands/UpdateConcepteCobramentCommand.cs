@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ConceptesCobrament.Comm
 {
     public class UpdateConcepteCobramentCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateConcepteCobramentDTO UpdateConcepteCobrament { get; set; }
+        public SaveConcepteCobramentDTO UpdateConcepteCobrament { get; set; }
     }
 
     public class UpdateConcepteCobramentCommandHandler : IRequestHandler<UpdateConcepteCobramentCommand, ResponseWrapper<int>>

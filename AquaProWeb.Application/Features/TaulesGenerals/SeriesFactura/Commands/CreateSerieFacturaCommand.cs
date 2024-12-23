@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SeriesFactura.Commands
 {
     public class CreateSerieFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateSerieFacturaDTO CreateSerieFactura { get; set; }
+        public SaveSerieFacturaDTO CreateSerieFactura { get; set; }
     }
 
     public class CreateSerieFacturaCommandHandler : IRequestHandler<CreateSerieFacturaCommand, ResponseWrapper<int>>

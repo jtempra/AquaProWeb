@@ -16,11 +16,11 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ComptesRemesaBanc
         private MudDialogInstance MudDialog { get; set; }
 
         private MudForm _form = default;
-        public UpdateCompteRemesaBancDTO UpdateCompteRemesaBancDto { get; set; } = new();
+        public SaveCompteRemesaBancDTO UpdateCompteRemesaBancDto { get; set; } = new();
 
         private async Task SaveAsync()
         {
-            UpdateCompteRemesaBancDto = ReadCompteRemesaBancDto.Adapt<UpdateCompteRemesaBancDTO>();
+            UpdateCompteRemesaBancDto = ReadCompteRemesaBancDto.Adapt<SaveCompteRemesaBancDTO>();
             var response = await _compteRemesaBancService.UpdateCompteRemesaBancAsync(UpdateCompteRemesaBancDto);
             if (response.IsSuccessful)
             {

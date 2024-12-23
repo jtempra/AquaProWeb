@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class PaisosController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddPaisAsync([FromBody] CreatePaisDTO createPaisDTO)
+        public async Task<IActionResult> AddPaisAsync([FromBody] SavePaisDTO createPaisDTO)
         {
             var response = await Sender.Send(new CreatePaisCommand { CreatePais = createPaisDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdatePaisAsync([FromBody] UpdatePaisDTO updatePaisDTO)
+        public async Task<IActionResult> UpdatePaisAsync([FromBody] SavePaisDTO updatePaisDTO)
         {
             var response = await Sender.Send(new UpdatePaisCommand { UpdatePais = updatePaisDTO });
 

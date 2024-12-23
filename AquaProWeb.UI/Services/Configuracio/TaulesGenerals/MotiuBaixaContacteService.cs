@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddMotiuBaixaContacteAsync(CreateMotiuBaixaContacteDTO createMotiuBaixaContacteDTO)
+        public async Task<ResponseWrapper<int>> AddMotiuBaixaContacteAsync(SaveMotiuBaixaContacteDTO createMotiuBaixaContacteDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(MotiusBaixaContacteEndPoints.Add, createMotiuBaixaContacteDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateMotiuBaixaContacteAsync(UpdateMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO)
+        public async Task<ResponseWrapper<int>> UpdateMotiuBaixaContacteAsync(SaveMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(MotiusBaixaComptadorEndPoints.Update, updateMotiuBaixaContacteDTO);
             return await response.ToResponse<int>();

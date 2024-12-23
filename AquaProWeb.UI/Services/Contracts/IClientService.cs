@@ -6,10 +6,10 @@ namespace AquaProWeb.UI.Services.Contracts;
 
 public interface IClientService
 {
-    Task<ResponseWrapper<int>> AddClientAsync(CreateClientDTO createClientDTO);
+    Task<ResponseWrapper<int>> AddClientAsync(SaveClientDTO createClientDTO);
     Task<ResponseWrapper<int>> DeleteClientAsync(int id);
     Task<ResponseWrapper<List<ReadClientDTO>>> GetAllClientsAsync();
     Task<ResponseWrapper<ReadClientDTO>> GetClientByIdAsync(int id);
     Task<ResponseWrapper<List<ReadClientDTO>>> GetClientsByTextAsync(string text);
-    Task<ResponseWrapper<int>> UpdateClientAsync(UpdateClientDTO updateClientDTO);
+    Task<ResponseWrapper<int>> UpdateClientAsync(SaveClientDTO updateClientDTO);
 }

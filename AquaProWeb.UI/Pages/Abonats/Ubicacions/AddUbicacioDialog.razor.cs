@@ -30,7 +30,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
         private List<ReadCarrerDTO> Carrers { get; set; } = [];
         private List<ReadEscomesaDTO> Escomeses { get; set; } = [];
         private List<ReadRutaLecturaDTO> RutesLectura { get; set; } = [];
-        public CreateUbicacioDTO CreateUbicacioDto { get; set; } = new();
+        public SaveUbicacioDTO CreateUbicacioDto { get; set; } = new();
 
         protected override async void OnInitialized()
         {

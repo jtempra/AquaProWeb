@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Empreses.Commands
 {
     public class UpdateEmpresaCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateEmpresaDTO UpdateEmpresa { get; set; }
+        public SaveEmpresaDTO UpdateEmpresa { get; set; }
     }
 
     public class UpdateEmpresaCommandHandler : IRequestHandler<UpdateEmpresaCommand, ResponseWrapper<int>>

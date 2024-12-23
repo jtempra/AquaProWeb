@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class MotiusBaixaContacteController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddMotiuBaixaContacteAsync([FromBody] CreateMotiuBaixaContacteDTO createMotiuBaixaContacteDTO)
+        public async Task<IActionResult> AddMotiuBaixaContacteAsync([FromBody] SaveMotiuBaixaContacteDTO createMotiuBaixaContacteDTO)
         {
             var response = await Sender.Send(new CreateMotiuBaixaContacteCommand { CreateMotiuBaixaContacte = createMotiuBaixaContacteDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateMotiuBaixaContacteAsync([FromBody] UpdateMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO)
+        public async Task<IActionResult> UpdateMotiuBaixaContacteAsync([FromBody] SaveMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO)
         {
             var response = await Sender.Send(new UpdateMotiuBaixaContacteCommand { UpdateMotiuBaixaContacte = updateMotiuBaixaContacteDTO });
 

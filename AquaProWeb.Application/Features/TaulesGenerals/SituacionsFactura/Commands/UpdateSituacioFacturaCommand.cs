@@ -10,7 +10,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SituacionsFactura.Comma
 {
     public class UpdateSituacioFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateSituacioFacturaDTO UpdateSituacioFactura { get; set; }
+        public SaveSituacioFacturaDTO UpdateSituacioFactura { get; set; }
     }
 
     public class UpdateSituacioFacturaCommandHandler : IRequestHandler<UpdateSituacioFacturaCommand, ResponseWrapper<int>>

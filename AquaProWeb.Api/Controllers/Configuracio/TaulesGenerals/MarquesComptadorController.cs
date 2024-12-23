@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class MarquesComptadorController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddMarcaComptadorAsync([FromBody] CreateMarcaComptadorDTO createMarcaComptadorDTO)
+        public async Task<IActionResult> AddMarcaComptadorAsync([FromBody] SaveMarcaComptadorDTO createMarcaComptadorDTO)
         {
             var response = await Sender.Send(new CreateMarcaComptadorCommand { CreateMarcaComptador = createMarcaComptadorDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateMarcaComptadorAsync([FromBody] UpdateMarcaComptadorDTO updateMarcaComptadorDTO)
+        public async Task<IActionResult> UpdateMarcaComptadorAsync([FromBody] SaveMarcaComptadorDTO updateMarcaComptadorDTO)
         {
             var response = await Sender.Send(new UpdateMarcaComptadorCommand { UpdateMarcaComptador = updateMarcaComptadorDTO });
 

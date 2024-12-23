@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.MotiusBaixaCompte.Comma
 {
     public class CreateMotiuBaixaCompteCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateMotiuBaixaCompteDTO CreateMotiuBaixaCompte { get; set; }
+        public SaveMotiuBaixaCompteDTO CreateMotiuBaixaCompte { get; set; }
     }
 
     public class CreateMotiuBaixaCompteCommandHandler : IRequestHandler<CreateMotiuBaixaCompteCommand, ResponseWrapper<int>>

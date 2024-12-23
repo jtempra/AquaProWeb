@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SeriesRebut.Commands
 {
     public class UpdateSerieRebutCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateSerieRebutDTO UpdateSerieRebut { get; set; }
+        public SaveSerieRebutDTO UpdateSerieRebut { get; set; }
     }
 
     public class UpdateSerieRebutCommandHandler : IRequestHandler<UpdateSerieRebutCommand, ResponseWrapper<int>>

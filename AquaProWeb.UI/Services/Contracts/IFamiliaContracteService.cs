@@ -6,10 +6,10 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals;
 
 public interface IFamiliaContracteService
 {
-    Task<ResponseWrapper<int>> AddFamiliaContracteAsync(CreateFamiliaContracteDTO createFamiliaContracteDTO);
+    Task<ResponseWrapper<int>> AddFamiliaContracteAsync(SaveFamiliaContracteDTO createFamiliaContracteDTO);
     Task<ResponseWrapper<int>> DeleteFamiliaContracteAsync(int id);
     Task<ResponseWrapper<List<ReadFamiliaContracteDTO>>> GetAllFamiliesContracteAsync();
     Task<ResponseWrapper<ReadFamiliaContracteDTO>> GetFamiliaContracteByIdAsync(int id);
     Task<ResponseWrapper<List<ReadFamiliaContracteDTO>>> GetFamiliesContracteByTextAsync(string text);
-    Task<ResponseWrapper<int>> UpdateFamiliaContracteAsync(UpdateFamiliaContracteDTO updateFamiliaContracteDTO);
+    Task<ResponseWrapper<int>> UpdateFamiliaContracteAsync(SaveFamiliaContracteDTO updateFamiliaContracteDTO);
 }

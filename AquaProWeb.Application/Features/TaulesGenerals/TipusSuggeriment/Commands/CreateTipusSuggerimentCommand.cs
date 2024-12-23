@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusSuggeriment.Comman
 {
     public class CreateTipusSuggerimentCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusSuggerimentDTO CreateTipusSuggeriment { get; set; }
+        public SaveTipusSuggerimentDTO CreateTipusSuggeriment { get; set; }
     }
 
     public class CreateTipusSuggerimentCommandHandler : IRequestHandler<CreateTipusSuggerimentCommand, ResponseWrapper<int>>

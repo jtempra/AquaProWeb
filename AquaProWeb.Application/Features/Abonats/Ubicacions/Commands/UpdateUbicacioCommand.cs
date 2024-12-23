@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Abonats.Ubicacions.Commands
 {
     public class UpdateUbicacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateUbicacioDTO UpdateUbicacio { get; set; }
+        public SaveUbicacioDTO UpdateUbicacio { get; set; }
     }
 
     public class UpdateUbicacioCommandHandler : IRequestHandler<UpdateUbicacioCommand, ResponseWrapper<int>>

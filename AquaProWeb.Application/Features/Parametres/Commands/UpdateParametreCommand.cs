@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Parametres.Commands
 {
     public class UpdateParametreCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateParametreDTO UpdateParametre { get; set; }
+        public SaveParametreDTO UpdateParametre { get; set; }
     }
 
     public class UpdateParametreCommandHandler : IRequestHandler<UpdateParametreCommand, ResponseWrapper<int>>

@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class PoblacionsController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddPoblacioAsync([FromBody] CreatePoblacioDTO createPoblacioDTO)
+        public async Task<IActionResult> AddPoblacioAsync([FromBody] SavePoblacioDTO createPoblacioDTO)
         {
             var response = await Sender.Send(new CreatePoblacioCommand { CreatePoblacio = createPoblacioDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdatePoblacioAsync([FromBody] UpdatePoblacioDTO updatePoblacioDTO)
+        public async Task<IActionResult> UpdatePoblacioAsync([FromBody] SavePoblacioDTO updatePoblacioDTO)
         {
             var response = await Sender.Send(new UpdatePoblacioCommand { UpdatePoblacio = updatePoblacioDTO });
 

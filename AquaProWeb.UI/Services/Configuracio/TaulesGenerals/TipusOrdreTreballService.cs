@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddTipusOrdreTreballAsync(CreateTipusOrdreTreballDTO createTipusOrdreTreballDTO)
+        public async Task<ResponseWrapper<int>> AddTipusOrdreTreballAsync(SaveTipusOrdreTreballDTO createTipusOrdreTreballDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(TipusOrdreTreballEndPoints.Add, createTipusOrdreTreballDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadTipusOrdreTreballDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateTipusOrdreTreballAsync(UpdateTipusOrdreTreballDTO updateTipusOrdreTreballDTO)
+        public async Task<ResponseWrapper<int>> UpdateTipusOrdreTreballAsync(SaveTipusOrdreTreballDTO updateTipusOrdreTreballDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(TipusOrdreTreballEndPoints.Update, updateTipusOrdreTreballDTO);
             return await response.ToResponse<int>();

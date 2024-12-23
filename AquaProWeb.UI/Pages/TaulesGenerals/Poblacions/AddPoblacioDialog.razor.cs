@@ -8,7 +8,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Poblacions
     public partial class AddPoblacioDialog
     {
         [Parameter]
-        public CreatePoblacioDTO CreatePoblacioDto { get; set; } = new();
+        public SavePoblacioDTO CreatePoblacioDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }

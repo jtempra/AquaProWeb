@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusCampanya.Commands
 {
     public class CreateTipusCampanyaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusCampanyaDTO CreateTipusCampanya { get; set; }
+        public SaveTipusCampanyaDTO CreateTipusCampanya { get; set; }
     }
 
     public class CreateTipusCampanyaCommandHandler : IRequestHandler<CreateTipusCampanyaCommand, ResponseWrapper<int>>

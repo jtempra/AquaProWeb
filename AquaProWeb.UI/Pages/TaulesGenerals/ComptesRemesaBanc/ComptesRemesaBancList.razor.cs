@@ -61,7 +61,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.ComptesRemesaBanc
             var compte = ComptesRemesaBanc.FirstOrDefault(e => e.Id == Id);
 
 
-            parameters.Add(nameof(UpdateCompteRemesaBancDialog.UpdateCompteRemesaBancDto), new UpdateCompteRemesaBancDTO()
+            parameters.Add(nameof(UpdateCompteRemesaBancDialog.UpdateCompteRemesaBancDto), new SaveCompteRemesaBancDTO()
             {
                 Id = compte.Id,
                 Descripcio = compte.Descripcio,

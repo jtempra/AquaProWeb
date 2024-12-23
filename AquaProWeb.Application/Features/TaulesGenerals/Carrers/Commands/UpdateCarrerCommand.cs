@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Carrers.Commands
 {
     public class UpdateCarrerCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateCarrerDTO UpdateCarrer { get; set; }
+        public SaveCarrerDTO UpdateCarrer { get; set; }
     }
 
     public class UpdateCarrerCommandHandler : IRequestHandler<UpdateCarrerCommand, ResponseWrapper<int>>

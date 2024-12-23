@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class CanalsCobramentController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddPoblacioAsync([FromBody] CreateCanalCobramentDTO createCanalCobramentDTO)
+        public async Task<IActionResult> AddPoblacioAsync([FromBody] SaveCanalCobramentDTO createCanalCobramentDTO)
         {
             var response = await Sender.Send(new CreateCanalCobramentCommand { CreateCanalCobrament = createCanalCobramentDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateCanalCobramentAsync([FromBody] UpdateCanalCobramentDTO updateCanalCobramentDTO)
+        public async Task<IActionResult> UpdateCanalCobramentAsync([FromBody] SaveCanalCobramentDTO updateCanalCobramentDTO)
         {
             var response = await Sender.Send(new UpdateCanalCobramentCommand { UpdateCanalCobrament = updateCanalCobramentDTO });
 

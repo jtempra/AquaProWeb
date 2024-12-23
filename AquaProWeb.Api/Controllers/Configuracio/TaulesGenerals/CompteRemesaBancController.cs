@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class CompteRemesaBancController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddCompteRemesaBancAsync([FromBody] CreateCompteRemesaBancDTO createCompteRemesaBancDTO)
+        public async Task<IActionResult> AddCompteRemesaBancAsync([FromBody] SaveCompteRemesaBancDTO createCompteRemesaBancDTO)
         {
             var response = await Sender.Send(new CreateCompteTransferenciaClientCommand { CreateCompteRemesaBanc = createCompteRemesaBancDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateCompteRemesaBancAsync([FromBody] UpdateCompteRemesaBancDTO updateCompteRemesaBancDTO)
+        public async Task<IActionResult> UpdateCompteRemesaBancAsync([FromBody] SaveCompteRemesaBancDTO updateCompteRemesaBancDTO)
         {
             var response = await Sender.Send(new UpdateCompteRemesaBancCommand { UpdateCompteRemesaBanc = updateCompteRemesaBancDTO });
 

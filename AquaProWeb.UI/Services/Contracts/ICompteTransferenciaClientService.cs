@@ -6,8 +6,8 @@ namespace AquaProWeb.UI.Services.Contracts
 {
     public interface ICompteTransferenciaClientService
     {
-        Task<ResponseWrapper<int>> AddCompteTransferenciaClientAsync(CreateCompteTransferenciaClientDTO createCompteTransferenciaClientDTO);
-        Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(UpdateCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO);
+        Task<ResponseWrapper<int>> AddCompteTransferenciaClientAsync(SaveCompteTransferenciaClientDTO createCompteTransferenciaClientDTO);
+        Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(SaveCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO);
         Task<ResponseWrapper<int>> DeleteCompteTransferenciaClientAsync(int id);
         Task<ResponseWrapper<ReadCompteTransferenciaClientDTO>> GetCompteTransferenciaClientByIdAsync(int id);
         Task<ResponseWrapper<List<ReadCompteTransferenciaClientDTO>>> GetAllComptesTransferenciaClientAsync();

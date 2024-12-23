@@ -6,7 +6,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
 {
     public partial class UbicacionsList
     {
-        public List<ReadUbicacioDTO> Ubicacions { get; set; } = [];
+        public List<ListUbicacioDTO> Ubicacions { get; set; } = [];
         private bool _loading = true;
 
         private string _searchString = string.Empty;
@@ -117,7 +117,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
         }
 
 
-        private Func<ReadUbicacioDTO, bool> _quickFilter => x =>
+        private Func<ListUbicacioDTO, bool> _quickFilter => x =>
         {
             if (string.IsNullOrWhiteSpace(_searchString))
                 return true;

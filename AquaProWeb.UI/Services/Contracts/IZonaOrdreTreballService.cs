@@ -6,9 +6,9 @@ namespace AquaProWeb.UI.Services.Contracts;
 
 public interface IZonaOrdreTreballService
 {
-    Task<ResponseWrapper<int>> AddZonaOrdreTreballAsync(CreateZonaOrdreTreballDTO createZonaOrdreTreballDTO);
+    Task<ResponseWrapper<int>> AddZonaOrdreTreballAsync(SaveZonaOrdreTreballDTO createZonaOrdreTreballDTO);
     Task<ResponseWrapper<int>> DeleteZonaOrdreTreballAsync(int id);
     Task<ResponseWrapper<List<ReadZonaOrdreTreballDTO>>> GetAllZonesCarrerAsync();
     Task<ResponseWrapper<ReadZonaOrdreTreballDTO>> GetZonaOrdreTreballByIdAsync(int id);
-    Task<ResponseWrapper<int>> UpdateZonaOrdreTreballAsync(UpdateZonaOrdreTreballDTO updateZonaOrdreTreballDTO);
+    Task<ResponseWrapper<int>> UpdateZonaOrdreTreballAsync(SaveZonaOrdreTreballDTO updateZonaOrdreTreballDTO);
 }

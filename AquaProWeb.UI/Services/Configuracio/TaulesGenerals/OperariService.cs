@@ -15,7 +15,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddOperariAsync(CreateOperariDTO createOperariDTO)
+        public async Task<ResponseWrapper<int>> AddOperariAsync(SaveOperariDTO createOperariDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(OperarisEndPoints.Add, createOperariDTO);
             return await response.ToResponse<int>();
@@ -47,7 +47,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateOperariAsync(UpdateOperariDTO updateOperariDTO)
+        public async Task<ResponseWrapper<int>> UpdateOperariAsync(SaveOperariDTO updateOperariDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(OperarisEndPoints.Update, updateOperariDTO);
             return await response.ToResponse<int>();

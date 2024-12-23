@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SituacionsRebut.Command
 {
     public class CreateSituacioRebutCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateSituacioRebutDTO CreateSituacioRebut { get; set; }
+        public SaveSituacioRebutDTO CreateSituacioRebut { get; set; }
     }
 
     public class CreateSituacioRebutCommandHandler : IRequestHandler<CreateSituacioRebutCommand, ResponseWrapper<int>>

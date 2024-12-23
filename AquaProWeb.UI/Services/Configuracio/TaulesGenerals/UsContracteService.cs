@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddUsContracteAsync(CreateUsContracteDTO createUsContracteDTO)
+        public async Task<ResponseWrapper<int>> AddUsContracteAsync(SaveUsContracteDTO createUsContracteDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(UsosContracteEndPoints.Add, createUsContracteDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadUsContracteDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateUsContracteAsync(UpdateUsContracteDTO updateUsContracteDTO)
+        public async Task<ResponseWrapper<int>> UpdateUsContracteAsync(SaveUsContracteDTO updateUsContracteDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(UsosContracteEndPoints.Update, updateUsContracteDTO);
             return await response.ToResponse<int>();

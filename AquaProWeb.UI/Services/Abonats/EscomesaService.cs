@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Abonats
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddEscomesaAsync(CreateEscomesaDTO createEscomesaDTO)
+        public async Task<ResponseWrapper<int>> AddEscomesaAsync(SaveEscomesaDTO createEscomesaDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(EscomesesEndPoints.Add, createEscomesaDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Abonats
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateEscomesaAsync(UpdateEscomesaDTO updateEscomesaDTO)
+        public async Task<ResponseWrapper<int>> UpdateEscomesaAsync(SaveEscomesaDTO updateEscomesaDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(EscomesesEndPoints.Update, updateEscomesaDTO);
             return await response.ToResponse<int>();

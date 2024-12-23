@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddCompteTransferenciaClientAsync(CreateCompteTransferenciaClientDTO createCompteTransferenciaClientDTO)
+        public async Task<ResponseWrapper<int>> AddCompteTransferenciaClientAsync(SaveCompteTransferenciaClientDTO createCompteTransferenciaClientDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ComptesTransferenciaClientEndPoints.Add, createCompteTransferenciaClientDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(UpdateCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
+        public async Task<ResponseWrapper<int>> UpdateCompteTransferenciaClientAsync(SaveCompteTransferenciaClientDTO updateCompteTransferenciaClientDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ComptesTransferenciaClientEndPoints.Update, updateCompteTransferenciaClientDTO);
             return await response.ToResponse<int>();

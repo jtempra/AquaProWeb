@@ -73,7 +73,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Poblacions
             var poblacio = Poblacions.FirstOrDefault(e => e.Id == Id);
 
 
-            parameters.Add(nameof(UpdatePoblacioDialog.UpdatePoblacioDto), new UpdatePoblacioDTO()
+            parameters.Add(nameof(UpdatePoblacioDialog.UpdatePoblacioDto), new SavePoblacioDTO()
             {
                 Id = poblacio.Id,
                 Nom = poblacio.Nom,

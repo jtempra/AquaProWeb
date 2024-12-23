@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ComptesTransferenciaCli
 {
     public class UpdateCompteTransferenciaClientCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateCompteTransferenciaClientDTO UpdateCompteTransferenciaClient { get; set; }
+        public SaveCompteTransferenciaClientDTO UpdateCompteTransferenciaClient { get; set; }
     }
 
     public class UpdateCompteTransferenciaClientCommandHandler : IRequestHandler<UpdateCompteTransferenciaClientCommand, ResponseWrapper<int>>

@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Parametres
     public class ParametresController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddParametreAsync([FromBody] CreateParametreDTO createParametreDTO)
+        public async Task<IActionResult> AddParametreAsync([FromBody] SaveParametreDTO createParametreDTO)
         {
             var response = await Sender.Send(new CreateParametreCommand { CreateParametre = createParametreDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Parametres
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateParametreAsync([FromBody] UpdateParametreDTO updateParametreDTO)
+        public async Task<IActionResult> UpdateParametreAsync([FromBody] SaveParametreDTO updateParametreDTO)
         {
             var response = await Sender.Send(new UpdateParametreCommand { UpdateParametre = updateParametreDTO });
 

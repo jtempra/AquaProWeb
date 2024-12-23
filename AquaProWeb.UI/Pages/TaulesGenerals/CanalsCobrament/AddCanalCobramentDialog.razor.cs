@@ -9,7 +9,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.CanalsCobrament
     public partial class AddCanalCobramentDialog
     {
         [Parameter]
-        public CreateCanalCobramentDTO CreateCanalCobramentDto { get; set; } = new();
+        public SaveCanalCobramentDTO CreateCanalCobramentDto { get; set; } = new();
 
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }

@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class TipusOrdreTreballController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddTipusOrdreTreballAsync([FromBody] CreateTipusOrdreTreballDTO createTipusOrdreTreballDTO)
+        public async Task<IActionResult> AddTipusOrdreTreballAsync([FromBody] SaveTipusOrdreTreballDTO createTipusOrdreTreballDTO)
         {
             var response = await Sender.Send(new CreateTipusOrdreTreballCommand { CreateTipusOrdreTreball = createTipusOrdreTreballDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateTipusOrdreTreballAsync([FromBody] UpdateTipusOrdreTreballDTO updateTipusOrdreTreballDTO)
+        public async Task<IActionResult> UpdateTipusOrdreTreballAsync([FromBody] SaveTipusOrdreTreballDTO updateTipusOrdreTreballDTO)
         {
             var response = await Sender.Send(new UpdateTipusOrdreTreballCommand { UpdateTipusOrdreTreball = updateTipusOrdreTreballDTO });
 

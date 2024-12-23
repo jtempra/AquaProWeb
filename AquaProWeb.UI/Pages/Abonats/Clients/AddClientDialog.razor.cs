@@ -27,7 +27,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
         private List<ReadPaisDTO> Paisos { get; set; } = [];
         private List<ReadTipusClientDTO> TipusClients { get; set; } = [];
-        public CreateClientDTO CreateClientDto { get; set; } = new();
+        public SaveClientDTO CreateClientDto { get; set; } = new();
 
         protected override async void OnInitialized()
         {

@@ -7,12 +7,12 @@ using MediatR;
 
 namespace AquaProWeb.Application.Features.Abonats.Ubicacions.Queries
 {
-    public class GetUbicacionsByTextQuery : IRequest<ResponseWrapper<List<ReadUbicacioDTO>>>
+    public class GetUbicacionsByTextQuery : IRequest<ResponseWrapper<List<ListUbicacioDTO>>>
     {
         public string Text { get; set; }
     }
 
-    public class GetUbicacionsByTextQueryHandler : IRequestHandler<GetUbicacionsByTextQuery, ResponseWrapper<List<ReadUbicacioDTO>>>
+    public class GetUbicacionsByTextQueryHandler : IRequestHandler<GetUbicacionsByTextQuery, ResponseWrapper<List<ListUbicacioDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -20,16 +20,16 @@ namespace AquaProWeb.Application.Features.Abonats.Ubicacions.Queries
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<ResponseWrapper<List<ReadUbicacioDTO>>> Handle(GetUbicacionsByTextQuery request, CancellationToken cancellationToken)
+        public async Task<ResponseWrapper<List<ListUbicacioDTO>>> Handle(GetUbicacionsByTextQuery request, CancellationToken cancellationToken)
         {
             var UbicacionsDb = await _unitOfWork.ReadRepositoryFor<Ubicacio>().GetByTextAsync(request.Text);
 
             if (UbicacionsDb.Count > 0)
             {
-                return new ResponseWrapper<List<ReadUbicacioDTO>>().Success(UbicacionsDb.Adapt<List<ReadUbicacioDTO>>());
+                return new ResponseWrapper<List<ListUbicacioDTO>>().Success(UbicacionsDb.Adapt<List<ListUbicacioDTO>>());
             }
 
-            return new ResponseWrapper<List<ReadUbicacioDTO>>().Failure("No s'han trobat Ubicacions!");
+            return new ResponseWrapper<List<ListUbicacioDTO>>().Failure("No s'han trobat Ubicacions!");
         }
     }
 }

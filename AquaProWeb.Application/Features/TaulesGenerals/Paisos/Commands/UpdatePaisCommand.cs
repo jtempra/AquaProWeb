@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Paisos.Commands
 {
     public class UpdatePaisCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdatePaisDTO UpdatePais { get; set; }
+        public SavePaisDTO UpdatePais { get; set; }
     }
 
     public class UpdatePaisCommandHandler : IRequestHandler<UpdatePaisCommand, ResponseWrapper<int>>

@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.FamiliesContracte.Comma
 {
     public class UpdateFamiliaContracteCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateFamiliaContracteDTO UpdateFamiliaContracte { get; set; }
+        public SaveFamiliaContracteDTO UpdateFamiliaContracte { get; set; }
     }
 
     public class UpdateFamiliaContracteCommandHandler : IRequestHandler<UpdateFamiliaContracteCommand, ResponseWrapper<int>>

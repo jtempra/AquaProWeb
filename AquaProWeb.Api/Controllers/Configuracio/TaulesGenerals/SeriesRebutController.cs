@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class SeriesRebutController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddSerieRebutAsync([FromBody] CreateSerieRebutDTO createSerieRebutDTO)
+        public async Task<IActionResult> AddSerieRebutAsync([FromBody] SaveSerieRebutDTO createSerieRebutDTO)
         {
             var response = await Sender.Send(new CreateSerieRebutCommand { CreateSerieRebut = createSerieRebutDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateSerieRebutAsync([FromBody] UpdateSerieRebutDTO updateSerieRebutDTO)
+        public async Task<IActionResult> UpdateSerieRebutAsync([FromBody] SaveSerieRebutDTO updateSerieRebutDTO)
         {
             var response = await Sender.Send(new UpdateSerieRebutCommand { UpdateSerieRebut = updateSerieRebutDTO });
 

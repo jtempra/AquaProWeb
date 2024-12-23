@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.Explotacion
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddExplotacioAsync(CreateExplotacioDTO createExplotacioDTO)
+        public async Task<ResponseWrapper<int>> AddExplotacioAsync(SaveExplotacioDTO createExplotacioDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ExplotacionsEndPoints.Add, createExplotacioDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.Explotacion
             return await response.ToResponse<ReadExplotacioDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateExplotacioAsync(UpdateExplotacioDTO updateExplotacioDTO)
+        public async Task<ResponseWrapper<int>> UpdateExplotacioAsync(SaveExplotacioDTO updateExplotacioDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ExplotacionsEndPoints.Update, updateExplotacioDTO);
             return await response.ToResponse<int>();

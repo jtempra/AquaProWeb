@@ -6,8 +6,8 @@ namespace AquaProWeb.UI.Services.Contracts
 {
     public interface ICarrerService
     {
-        Task<ResponseWrapper<int>> AddCarrerAsync(CreateCarrerDTO createCarrerDTO);
-        Task<ResponseWrapper<int>> UpdateCarrerAsync(UpdateCarrerDTO updateCarrerDTO);
+        Task<ResponseWrapper<int>> AddCarrerAsync(SaveCarrerDTO createCarrerDTO);
+        Task<ResponseWrapper<int>> UpdateCarrerAsync(SaveCarrerDTO updateCarrerDTO);
         Task<ResponseWrapper<int>> DeleteCarrerAsync(int id);
         Task<ResponseWrapper<ReadCarrerDTO>> GetCarrerByIdAsync(int id);
         Task<ResponseWrapper<List<ReadCarrerDTO>>> GetAllCarrersAsync();

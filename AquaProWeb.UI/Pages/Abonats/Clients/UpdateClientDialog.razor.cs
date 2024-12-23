@@ -21,7 +21,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         private List<ReadTipusClientDTO> TipusClient { get; set; } = [];
         private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
         private List<ReadPaisDTO> Paisos { get; set; } = [];
-        public UpdateClientDTO UpdateClientDto { get; set; } = new();
+        public SaveClientDTO UpdateClientDto { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -36,7 +36,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
         }
         private async Task SaveAsync()
         {
-            UpdateClientDto = ReadClientDto.Adapt<UpdateClientDTO>();
+            UpdateClientDto = ReadClientDto.Adapt<SaveClientDTO>();
             var response = await _clientService.UpdateClientAsync(UpdateClientDto);
             if (response.IsSuccessful)
             {

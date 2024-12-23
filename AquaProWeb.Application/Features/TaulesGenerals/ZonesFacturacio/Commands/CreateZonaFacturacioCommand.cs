@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesFacturacio.Command
 {
     public class CreateZonaFacturacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateZonaFacturacioDTO CreateZonaFacturacio { get; set; }
+        public SaveZonaFacturacioDTO CreateZonaFacturacio { get; set; }
     }
 
     public class CreateZonaFacturacioCommandHandler : IRequestHandler<CreateZonaFacturacioCommand, ResponseWrapper<int>>

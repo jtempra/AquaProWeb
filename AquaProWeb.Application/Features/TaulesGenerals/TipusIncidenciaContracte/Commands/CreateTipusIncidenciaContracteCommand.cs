@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusIncidenciaContract
 {
     public class CreateTipusIncidenciaContracteCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusIncidenciaContracteDTO CreateTipusIncidenciaContracte { get; set; }
+        public SaveTipusIncidenciaContracteDTO CreateTipusIncidenciaContracte { get; set; }
     }
 
     public class CreateTipusIncidenciaContracteCommandHandler : IRequestHandler<CreateTipusIncidenciaContracteCommand, ResponseWrapper<int>>

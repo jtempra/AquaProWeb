@@ -1,5 +1,4 @@
 ﻿using AquaProWeb.Application.Repositories;
-using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesCobrament;
 using AquaProWeb.Common.Requests.TaulesGenerals.ConceptesFactura;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.Domain.Entities;
@@ -10,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ConceptesFactura.Comman
 {
     public class CreateConcepteFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateConcepteFacturaDTO CreateConcepteFactura { get; set; }
+        public SaveConcepteFacturaDTO CreateConcepteFactura { get; set; }
     }
 
     public class CreateConcepteFacturaCommandHandler : IRequestHandler<CreateConcepteFacturaCommand, ResponseWrapper<int>>

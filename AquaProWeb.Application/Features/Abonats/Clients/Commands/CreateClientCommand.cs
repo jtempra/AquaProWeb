@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Abonats.Clients.Commands
 {
     public class CreateClientCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateClientDTO CreateClient { get; set; }
+        public SaveClientDTO CreateClient { get; set; }
     }
 
     public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, ResponseWrapper<int>>

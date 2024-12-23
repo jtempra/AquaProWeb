@@ -60,7 +60,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Explotacions
             var explotacio = Explotacions.FirstOrDefault(e => e.Id == Id);
 
 
-            parameters.Add(nameof(UpdateExplotacioDialog.UpdateExplotacioDto), new UpdateExplotacioDTO()
+            parameters.Add(nameof(UpdateExplotacioDialog.UpdateExplotacioDto), new SaveExplotacioDTO()
             {
                 Id = explotacio.Id,
                 Codi = explotacio.Codi,

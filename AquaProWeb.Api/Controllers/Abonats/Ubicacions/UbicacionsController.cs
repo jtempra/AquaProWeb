@@ -10,7 +10,7 @@ namespace AquaProWeb.Api.Controllers.Abonats.PuntsSubministrament
     public class UbicacionsController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddUbicacioAsync([FromBody] CreateUbicacioDTO createUbicacioDTO)
+        public async Task<IActionResult> AddUbicacioAsync([FromBody] SaveUbicacioDTO createUbicacioDTO)
         {
             var response = await Sender.Send(new CreateUbicacioCommand { CreateUbicacio = createUbicacioDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Abonats.PuntsSubministrament
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateUbicacioAsync([FromBody] UpdateUbicacioDTO updateUbicacioDTO)
+        public async Task<IActionResult> UpdateUbicacioAsync([FromBody] SaveUbicacioDTO updateUbicacioDTO)
         {
             var response = await Sender.Send(new UpdateUbicacioCommand { UpdateUbicacio = updateUbicacioDTO });
 

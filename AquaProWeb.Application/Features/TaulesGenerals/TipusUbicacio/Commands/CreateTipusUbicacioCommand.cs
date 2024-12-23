@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusUbicacio.Commands
 {
     public class CreateTipusUbicacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusUbicacioDTO CreateTipusUbicacio { get; set; }
+        public SaveTipusUbicacioDTO CreateTipusUbicacio { get; set; }
     }
 
     public class CreateTipusUbicacioCommandHandler : IRequestHandler<CreateTipusUbicacioCommand, ResponseWrapper<int>>

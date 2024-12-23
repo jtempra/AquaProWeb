@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class TipusConcepteFacturaController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddTipusConcepteFacturaAsync([FromBody] CreateTipusConcepteFacturaDTO createTipusConcepteFacturaDTO)
+        public async Task<IActionResult> AddTipusConcepteFacturaAsync([FromBody] SaveTipusConcepteFacturaDTO createTipusConcepteFacturaDTO)
         {
             var response = await Sender.Send(new CreateTipusConcepteFacturaCommand { CreateTipusConcepteFactura = createTipusConcepteFacturaDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateTipusConcepteFacturaAsync([FromBody] UpdateTipusConcepteFacturaDTO updateTipusConcepteFacturaDTO)
+        public async Task<IActionResult> UpdateTipusConcepteFacturaAsync([FromBody] SaveTipusConcepteFacturaDTO updateTipusConcepteFacturaDTO)
         {
             var response = await Sender.Send(new UpdateTipusConcepteFacturaCommand { UpdateTipusConcepteFactura = updateTipusConcepteFacturaDTO });
 

@@ -23,7 +23,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
         private List<ReadTipusViaDTO> TipusVies { get; set; } = [];
         private List<ReadZonaCarrerDTO> ZonesCarrers { get; set; } = [];
         private CategoriaVia CategoriesVia { get; set; }
-        public UpdateCarrerDTO UpdateCarrerDto { get; set; } = new();
+        public SaveCarrerDTO UpdateCarrerDto { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -38,7 +38,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.Carrers
         }
         private async Task SaveAsync()
         {
-            UpdateCarrerDto = ReadCarrerDto.Adapt<UpdateCarrerDTO>();
+            UpdateCarrerDto = ReadCarrerDto.Adapt<SaveCarrerDTO>();
             var response = await _carrerService.UpdateCarrerAsync(UpdateCarrerDto);
             if (response.IsSuccessful)
             {

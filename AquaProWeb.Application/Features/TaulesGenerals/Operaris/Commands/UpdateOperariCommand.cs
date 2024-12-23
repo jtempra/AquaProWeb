@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Operaris.Commands
 {
     public class UpdateOperariCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateOperariDTO UpdateOperari { get; set; }
+        public SaveOperariDTO UpdateOperari { get; set; }
     }
 
     public class UpdateOperariCommandHandler : IRequestHandler<UpdateOperariCommand, ResponseWrapper<int>>

@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusDocument.Commands
 {
     public class CreateTipusDocumentCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusDocumentDTO CreateTipusDocument { get; set; }
+        public SaveTipusDocumentDTO CreateTipusDocument { get; set; }
     }
 
     public class CreateTipusDocumentCommandHandler : IRequestHandler<CreateTipusDocumentCommand, ResponseWrapper<int>>

@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.ZonesCarrers.Commands
 {
     public class CreateZonaCarrerCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateZonaCarrerDTO CreateZonaCarrer { get; set; }
+        public SaveZonaCarrerDTO CreateZonaCarrer { get; set; }
     }
 
     public class CreateZonaCarrerCommandHandler : IRequestHandler<CreateZonaCarrerCommand, ResponseWrapper<int>>

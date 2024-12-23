@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddZonaUbicacioAsync(CreateZonaUbicacioDTO createZonaUbicacioDTO)
+        public async Task<ResponseWrapper<int>> AddZonaUbicacioAsync(SaveZonaUbicacioDTO createZonaUbicacioDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ZonesUbicacioEndPoints.Add, createZonaUbicacioDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadZonaUbicacioDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateZonaUbicacioAsync(UpdateZonaUbicacioDTO updateZonaUbicacioDTO)
+        public async Task<ResponseWrapper<int>> UpdateZonaUbicacioAsync(SaveZonaUbicacioDTO updateZonaUbicacioDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ZonesUbicacioEndPoints.Update, updateZonaUbicacioDTO);
             return await response.ToResponse<int>();

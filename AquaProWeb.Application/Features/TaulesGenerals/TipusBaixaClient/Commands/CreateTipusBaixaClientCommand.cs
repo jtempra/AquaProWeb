@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusBaixaClient.Comman
 {
     public class CreateTipusBaixaClientCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusBaixaClientDTO CreateTipusBaixaClient { get; set; }
+        public SaveTipusBaixaClientDTO CreateTipusBaixaClient { get; set; }
     }
 
     public class CreateTipusBaixaClientCommandHandler : IRequestHandler<CreateTipusBaixaClientCommand, ResponseWrapper<int>>

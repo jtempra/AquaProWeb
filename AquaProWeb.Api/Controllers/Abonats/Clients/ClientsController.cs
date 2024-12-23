@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Abonats.Clients
     public class ClientsController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddClientAsync([FromBody] CreateClientDTO createClientDTO)
+        public async Task<IActionResult> AddClientAsync([FromBody] SaveClientDTO createClientDTO)
         {
             var response = await Sender.Send(new CreateClientCommand { CreateClient = createClientDTO });
 
@@ -21,7 +21,7 @@ namespace AquaProWeb.Api.Controllers.Abonats.Clients
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateClientAsync([FromBody] UpdateClientDTO updateClientDTO)
+        public async Task<IActionResult> UpdateClientAsync([FromBody] SaveClientDTO updateClientDTO)
         {
             var response = await Sender.Send(new UpdateClientCommand { UpdateClient = updateClientDTO });
 

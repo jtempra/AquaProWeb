@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.Empreses.Commands
 {
     public class CreateEmpresaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateEmpresaDTO CreateEmpresa { get; set; }
+        public SaveEmpresaDTO CreateEmpresa { get; set; }
     }
 
     public class CreateEmpresaCommandHandler : IRequestHandler<CreateEmpresaCommand, ResponseWrapper<int>>

@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Parametres.Commands
 {
     public class CreateParametreCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateParametreDTO CreateParametre { get; set; }
+        public SaveParametreDTO CreateParametre { get; set; }
     }
 
     public class CreateParametreCommandHandler : IRequestHandler<CreateParametreCommand, ResponseWrapper<int>>

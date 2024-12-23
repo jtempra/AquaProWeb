@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.MarquesComptador.Comman
 {
     public class CreateMarcaComptadorCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateMarcaComptadorDTO CreateMarcaComptador { get; set; }
+        public SaveMarcaComptadorDTO CreateMarcaComptador { get; set; }
     }
 
     public class CreateMarcaComptadorCommandHandler : IRequestHandler<CreateMarcaComptadorCommand, ResponseWrapper<int>>

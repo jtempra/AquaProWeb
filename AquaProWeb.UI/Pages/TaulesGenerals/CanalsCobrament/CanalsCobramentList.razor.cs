@@ -73,7 +73,7 @@ namespace AquaProWeb.UI.Pages.TaulesGenerals.CanalsCobrament
             var canal = CanalsCobrament.FirstOrDefault(e => e.Id == Id);
 
 
-            parameters.Add(nameof(UpdateCanalCobramentDialog.UpdateCanalCobramentDto), new UpdateCanalCobramentDTO()
+            parameters.Add(nameof(UpdateCanalCobramentDialog.UpdateCanalCobramentDto), new SaveCanalCobramentDTO()
             {
                 Id = canal.Id,
                 Canal = canal.Canal,

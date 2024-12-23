@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Abonats.Ubicacions.Commands
 {
     public class CreateUbicacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateUbicacioDTO CreateUbicacio { get; set; }
+        public SaveUbicacioDTO CreateUbicacio { get; set; }
     }
 
     public class CreateUbicacioCommandHandler : IRequestHandler<CreateUbicacioCommand, ResponseWrapper<int>>

@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusReclamacio.Command
 {
     public class UpdateTipusReclamacioCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateTipusReclamacioDTO UpdateTipusReclamacio { get; set; }
+        public SaveTipusReclamacioDTO UpdateTipusReclamacio { get; set; }
     }
 
     public class UpdateTipusReclamacioCommandHandler : IRequestHandler<UpdateTipusReclamacioCommand, ResponseWrapper<int>>

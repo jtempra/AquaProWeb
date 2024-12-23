@@ -9,7 +9,7 @@ namespace AquaProWeb.Application.Features.Explotacions.Commands
 {
     public class CreateParametreCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateExplotacioDTO CreateExplotacio { get; set; }
+        public SaveExplotacioDTO CreateExplotacio { get; set; }
     }
 
     public class CreateExplotacioCommandHandler : IRequestHandler<CreateParametreCommand, ResponseWrapper<int>>

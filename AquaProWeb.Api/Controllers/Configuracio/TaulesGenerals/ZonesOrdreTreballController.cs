@@ -9,7 +9,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
     public class ZonesOrdreTreballController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddZonaOrdreTreballAsync([FromBody] CreateZonaOrdreTreballDTO createZonaOrdreTreballDTO)
+        public async Task<IActionResult> AddZonaOrdreTreballAsync([FromBody] SaveZonaOrdreTreballDTO createZonaOrdreTreballDTO)
         {
             var response = await Sender.Send(new CreateZonaOrdreTreballCommand { CreateZonaOrdreTreball = createZonaOrdreTreballDTO });
 
@@ -22,7 +22,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateZonaOrdreTreballAsync([FromBody] UpdateZonaOrdreTreballDTO updateZonaOrdreTreballDTO)
+        public async Task<IActionResult> UpdateZonaOrdreTreballAsync([FromBody] SaveZonaOrdreTreballDTO updateZonaOrdreTreballDTO)
         {
             var response = await Sender.Send(new UpdateZonaOrdreTreballCommand { UpdateZonaOrdreTreball = updateZonaOrdreTreballDTO });
 

@@ -49,7 +49,7 @@ namespace AquaProWeb.Application.Mappings
             TypeAdapterConfig<ZonaCarrers, ReadZonaCarrerDTO>.NewConfig();
             TypeAdapterConfig<TipusVia, ReadTipusViaDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateCarrerDTO, Carrer>.NewConfig();
+            TypeAdapterConfig<SaveCarrerDTO, Carrer>.NewConfig();
 
             TypeAdapterConfig<ReadCarrerDTO, Carrer>
                 .NewConfig()
@@ -60,30 +60,30 @@ namespace AquaProWeb.Application.Mappings
             // Canal cobrament
             TypeAdapterConfig<CanalCobrament, ReadCanalCobramentDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateCanalCobramentDTO, CanalCobrament>.NewConfig();
+            TypeAdapterConfig<SaveCanalCobramentDTO, CanalCobrament>.NewConfig();
 
             // Compte remesa banc
             TypeAdapterConfig<CompteRemesaBanc, ReadCompteRemesaBancDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateCompteRemesaBancDTO, CompteRemesaBanc>.NewConfig();
+            TypeAdapterConfig<SaveCompteRemesaBancDTO, CompteRemesaBanc>.NewConfig();
 
             // Compte transferencia client
 
             TypeAdapterConfig<CompteTransferenciaClient, ReadCompteTransferenciaClientDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateCompteTransferenciaClientDTO, CompteTransferenciaClient>.NewConfig();
+            TypeAdapterConfig<SaveCompteTransferenciaClientDTO, CompteTransferenciaClient>.NewConfig();
 
             // Concepte Cobrament
 
             TypeAdapterConfig<ConcepteCobrament, ReadConcepteCobramentDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateConcepteCobramentDTO, ConcepteCobrament>.NewConfig();
+            TypeAdapterConfig<SaveConcepteCobramentDTO, ConcepteCobrament>.NewConfig();
 
             // Concepte Factura
 
             TypeAdapterConfig<ConcepteFactura, ReadConcepteFacturaDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateConcepteFacturaDTO, ConcepteFactura>.NewConfig();
+            TypeAdapterConfig<SaveConcepteFacturaDTO, ConcepteFactura>.NewConfig();
 
             // Configuración de mapeo de PoblacioDTO a Poblacio
             TypeAdapterConfig<ReadPoblacioDTO, Poblacio>.NewConfig();
@@ -110,19 +110,19 @@ namespace AquaProWeb.Application.Mappings
             TypeAdapterConfig<ReadExplotacioDTO, Explotacio>
                 .NewConfig();
 
-            TypeAdapterConfig<UpdateExplotacioDTO, Explotacio>
+            TypeAdapterConfig<SaveExplotacioDTO, Explotacio>
                 .NewConfig();
 
             TypeAdapterConfig<Poblacio, ReadPoblacioDTO>
                 .NewConfig();
 
-            TypeAdapterConfig<UpdatePoblacioDTO, Poblacio>
+            TypeAdapterConfig<SavePoblacioDTO, Poblacio>
                 .NewConfig();
 
             TypeAdapterConfig<TipusVia, ReadTipusViaDTO>
                 .NewConfig();
 
-            TypeAdapterConfig<UpdateTipusViaDTO, TipusVia>
+            TypeAdapterConfig<SaveTipusViaDTO, TipusVia>
                 .NewConfig();
 
             // Ubicacio
@@ -135,7 +135,8 @@ namespace AquaProWeb.Application.Mappings
                 .Map(dest => dest.Escomesa, src => src.Escomesa)
                 .Map(dest => dest.RutaLectura, src => src.RutaLectura)
                 .Map(dest => dest.Latitud, src => src.PosicioGeografica.Y)
-                .Map(dest => dest.Longitud, src => src.PosicioGeografica.X);
+                .Map(dest => dest.Longitud, src => src.PosicioGeografica.X)
+                .TwoWays();
 
             TypeAdapterConfig<TipusUbicacio, ReadTipusUbicacioDTO>.NewConfig();
             TypeAdapterConfig<ZonaUbicacio, ReadZonaUbicacioDTO>.NewConfig();
@@ -144,18 +145,23 @@ namespace AquaProWeb.Application.Mappings
             TypeAdapterConfig<Escomesa, ReadEscomesaDTO>.NewConfig();
             TypeAdapterConfig<RutaLectura, ReadRutaLecturaDTO>.NewConfig();
 
-            TypeAdapterConfig<UpdateUbicacioDTO, Ubicacio>.NewConfig();
+            TypeAdapterConfig<SaveUbicacioDTO, Ubicacio>.NewConfig();
 
-            TypeAdapterConfig<ReadUbicacioDTO, Ubicacio>.NewConfig()
-                .Map(dest => dest.Tipus, src => src.TipusUbicacio)
-                .Map(dest => dest.Zona, src => src.ZonaUbicacio)
-                .Map(dest => dest.Poblacio, src => src.Poblacio)
-                .Map(dest => dest.Carrer, src => src.Carrer)
-                .Map(dest => dest.Escomesa, src => src.Escomesa)
-                .Map(dest => dest.RutaLectura, src => src.RutaLectura)
-                .Map(dest => dest.PosicioGeografica.Y, src => src.Latitud)
-                .Map(dest => dest.PosicioGeografica.X, src => src.Longitud);
-            ;
+
+            TypeAdapterConfig<Ubicacio, ListUbicacioDTO>
+                .NewConfig()
+                .Map(dest => dest.TipusUbicacio, src => src.Tipus.Tipus)
+                .Map(dest => dest.ZonaUbicacio, src => src.Zona.Zona)
+                .Map(dest => dest.Poblacio, src => src.Poblacio.Nom)
+                .Map(dest => dest.Carrer, src => src.Carrer.Nom)
+                .Map(dest => dest.Escomesa, src => src.Escomesa.Nom)
+                .Map(dest => dest.RutaLectura, src => src.RutaLectura.Ruta)
+                .Map(dest => dest.Latitud, src => src.PosicioGeografica.Y)
+                .Map(dest => dest.Longitud, src => src.PosicioGeografica.X);
+
+
+
+
 
             TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
 

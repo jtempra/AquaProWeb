@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusFactura.Commands
 {
     public class CreateTipusFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusFacturaDTO CreateTipusFactura { get; set; }
+        public SaveTipusFacturaDTO CreateTipusFactura { get; set; }
     }
 
     public class CreateTipusFacturaCommandHandler : IRequestHandler<CreateTipusFacturaCommand, ResponseWrapper<int>>

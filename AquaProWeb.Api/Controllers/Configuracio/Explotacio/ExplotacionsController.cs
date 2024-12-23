@@ -12,7 +12,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Explotacio
     public class ExplotacionsController : BaseApiController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> AddExplotacioAsync([FromBody] CreateExplotacioDTO createExplotacioDTO)
+        public async Task<IActionResult> AddExplotacioAsync([FromBody] SaveExplotacioDTO createExplotacioDTO)
         {
             var response = await Sender.Send(new CreateParametreCommand { CreateExplotacio = createExplotacioDTO });
 
@@ -24,7 +24,7 @@ namespace AquaProWeb.Api.Controllers.Configuracio.Explotacio
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateExplotacioAsync([FromBody] UpdateExplotacioDTO updateExplotacioDTO)
+        public async Task<IActionResult> UpdateExplotacioAsync([FromBody] SaveExplotacioDTO updateExplotacioDTO)
         {
             var response = await Sender.Send(new UpdateExplotacioCommand { UpdateExplotacio = updateExplotacioDTO });
 

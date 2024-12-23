@@ -4,7 +4,7 @@
 @using AquaProWeb.Domain.Entities
 
 
-<MudDataGrid T="@ReadUbicacioDTO" Items="@Ubicacions" Hover="@true" Loading="@_loading" FixedHeader="@true" FixedFooter="@true" Dense="@true" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter" ColumnResizeMode="ResizeMode.Container" >
+<MudDataGrid T="@ListUbicacioDTO" Items="@Ubicacions" Hover="@true" Loading="@_loading" FixedHeader="@true" FixedFooter="@true" Dense="@true" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter" ColumnResizeMode="ResizeMode.Container" >
     <ToolBarContent>
         <MudText Typo="Typo.h6">Clients</MudText>
         <MudSpacer />
@@ -13,7 +13,7 @@
         <MudTextField @bind-Value="_searchString" Placeholder="Buscar" Adornment="Adornment.Start" Immediate="true" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <Columns>
-        <PropertyColumn Property="x => x.Carrer.Nom" Title="Carrer" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Carrer" Title="Carrer" HeaderStyle="white-space:nowrap" />
         <PropertyColumn Property="x => x.Numero" Title="Num." HeaderStyle="white-space:nowrap" />
         <PropertyColumn Property="x => x.Bloc" Title="Bloc" HeaderStyle="white-space:nowrap" />
         <PropertyColumn Property="x => x.Escala" Title="Esc." HeaderStyle="white-space:nowrap" />
@@ -27,12 +27,12 @@
         <PropertyColumn Property="x => x.Observacions"  Title = "Observacions" />
         <PropertyColumn Property="x => x.DataAlta"  Title = "Data Alta" />
         <PropertyColumn Property="x => x.DataBaixa" Title="Data Baixa" HeaderStyle="white-space:nowrap" />
-        <PropertyColumn Property="x => x.TipusUbicacio.Tipus" Title="Tipus" HeaderStyle="white-space:nowrap" />
-        <PropertyColumn Property="x => x.ZonaUbicacio.Zona" Title="Zona" HeaderStyle="white-space:nowrap" />
-        <PropertyColumn Property="x => x.Poblacio.Nom" Title="Poblacio" HeaderStyle="white-space:nowrap" />
-        <PropertyColumn Property="x => x.Escomesa.Nom" Title="Escomesa" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.TipusUbicacio" Title="Tipus" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.ZonaUbicacio" Title="Zona" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Poblacio" Title="Poblacio" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.Escomesa" Title="Escomesa" HeaderStyle="white-space:nowrap" />
         <PropertyColumn Property="x => x.SituacioComptador" Title="Situació Comptador" HeaderStyle="white-space:nowrap" />
-        <PropertyColumn Property="x => x.RutaLectura.Ruta" Title="Ruta Lectura" HeaderStyle="white-space:nowrap" />
+        <PropertyColumn Property="x => x.RutaLectura" Title="Ruta Lectura" HeaderStyle="white-space:nowrap" />
         <PropertyColumn Property="x => x.OrdreRutaLectura" Title="Ordre Ruta" HeaderStyle="white-space:nowrap" />
         
         <TemplateColumn CellClass="d-flex justify-end">
@@ -45,6 +45,6 @@
         </TemplateColumn>
     </Columns>
     <PagerContent>
-        <MudDataGridPager T="@ReadUbicacioDTO" />
+        <MudDataGridPager T="@ListUbicacioDTO" />
     </PagerContent>
 </MudDataGrid>

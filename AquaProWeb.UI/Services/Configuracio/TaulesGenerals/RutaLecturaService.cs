@@ -17,7 +17,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddRutaLecturaAsync(CreateRutaLecturaDTO createRutaLecturaDTO)
+        public async Task<ResponseWrapper<int>> AddRutaLecturaAsync(SaveRutaLecturaDTO createRutaLecturaDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(RutasLecturaEndPoints.Add, createRutaLecturaDTO);
             return await response.ToResponse<int>();
@@ -49,7 +49,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateRutaLecturaAsync(UpdateRutaLecturaDTO updateRutaLecturaDTO)
+        public async Task<ResponseWrapper<int>> UpdateRutaLecturaAsync(SaveRutaLecturaDTO updateRutaLecturaDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(RutasLecturaEndPoints.Update, updateRutaLecturaDTO);
             return await response.ToResponse<int>();

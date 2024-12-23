@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusConcepteFactura.Co
 {
     public class CreateTipusConcepteFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateTipusConcepteFacturaDTO CreateTipusConcepteFactura { get; set; }
+        public SaveTipusConcepteFacturaDTO CreateTipusConcepteFactura { get; set; }
     }
 
     public class CreateTipusConcepteFacturaCommandHandler : IRequestHandler<CreateTipusConcepteFacturaCommand, ResponseWrapper<int>>

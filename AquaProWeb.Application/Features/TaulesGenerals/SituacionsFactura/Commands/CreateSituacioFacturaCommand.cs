@@ -1,5 +1,4 @@
 ﻿using AquaProWeb.Application.Repositories;
-using AquaProWeb.Common.Requests.TaulesGenerals.SeriesFactura;
 using AquaProWeb.Common.Requests.TaulesGenerals.SituacioFactura;
 using AquaProWeb.Common.Wrapper;
 using AquaProWeb.Domain.Entities;
@@ -10,7 +9,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.SituacionsFactura.Comma
 {
     public class CreateSituacioFacturaCommand : IRequest<ResponseWrapper<int>>
     {
-        public CreateSituacioFacturaDTO CreateSituacioFactura { get; set; }
+        public SaveSituacioFacturaDTO CreateSituacioFactura { get; set; }
     }
 
     public class CreateSituacioFacturaCommandHandler : IRequestHandler<CreateSituacioFacturaCommand, ResponseWrapper<int>>

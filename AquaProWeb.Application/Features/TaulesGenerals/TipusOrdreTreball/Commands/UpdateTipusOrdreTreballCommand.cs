@@ -8,7 +8,7 @@ namespace AquaProWeb.Application.Features.TaulesGenerals.TipusOrdreTreball.Comma
 {
     public class UpdateTipusOrdreTreballCommand : IRequest<ResponseWrapper<int>>
     {
-        public UpdateTipusOrdreTreballDTO UpdateTipusOrdreTreball { get; set; }
+        public SaveTipusOrdreTreballDTO UpdateTipusOrdreTreball { get; set; }
     }
 
     public class UpdateTipusOrdreTreballCommandHandler : IRequestHandler<UpdateTipusOrdreTreballCommand, ResponseWrapper<int>>

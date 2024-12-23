@@ -6,10 +6,10 @@ namespace AquaProWeb.UI.Services.Contracts;
 
 public interface IMotiuBaixaContacteService
 {
-    Task<ResponseWrapper<int>> AddMotiuBaixaContacteAsync(CreateMotiuBaixaContacteDTO createMotiuBaixaContacteDTO);
+    Task<ResponseWrapper<int>> AddMotiuBaixaContacteAsync(SaveMotiuBaixaContacteDTO createMotiuBaixaContacteDTO);
     Task<ResponseWrapper<int>> DeleteMotiuBaixaContacteAsync(int id);
     Task<ResponseWrapper<List<ReadMotiuBaixaContacteDTO>>> GetAllMotiusBaixaContacteAsync();
     Task<ResponseWrapper<ReadMotiuBaixaContacteDTO>> GetMotiuBaixaContacteByIdAsync(int id);
     Task<ResponseWrapper<List<ReadMotiuBaixaContacteDTO>>> GetMotiusBaixaContacteByTextAsync(string text);
-    Task<ResponseWrapper<int>> UpdateMotiuBaixaContacteAsync(UpdateMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO);
+    Task<ResponseWrapper<int>> UpdateMotiuBaixaContacteAsync(SaveMotiuBaixaContacteDTO updateMotiuBaixaContacteDTO);
 }

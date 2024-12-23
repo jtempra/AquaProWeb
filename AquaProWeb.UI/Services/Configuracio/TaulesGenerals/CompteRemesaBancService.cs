@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddCompteRemesaBancAsync(CreateCompteRemesaBancDTO createCompteRemesaBancDTO)
+        public async Task<ResponseWrapper<int>> AddCompteRemesaBancAsync(SaveCompteRemesaBancDTO createCompteRemesaBancDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(ComptesRemesaBancEndPoints.Add, createCompteRemesaBancDTO);
             return await response.ToResponse<int>();
@@ -48,7 +48,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
-        public async Task<ResponseWrapper<int>> UpdateCompteRemesaBancAsync(UpdateCompteRemesaBancDTO updateCompteRemesaBancDTO)
+        public async Task<ResponseWrapper<int>> UpdateCompteRemesaBancAsync(SaveCompteRemesaBancDTO updateCompteRemesaBancDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(ComptesRemesaBancEndPoints.Update, updateCompteRemesaBancDTO);
             return await response.ToResponse<int>();

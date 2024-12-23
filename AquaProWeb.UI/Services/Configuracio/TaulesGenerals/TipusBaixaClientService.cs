@@ -16,7 +16,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         {
             _httpClient = httpClient;
         }
-        public async Task<ResponseWrapper<int>> AddTipusBaixaClientAsync(CreateTipusBaixaClientDTO createTipusBaixaClientDTO)
+        public async Task<ResponseWrapper<int>> AddTipusBaixaClientAsync(SaveTipusBaixaClientDTO createTipusBaixaClientDTO)
         {
             var response = await _httpClient.PostAsJsonAsync(TipusBaixaClientEndPoints.Add, createTipusBaixaClientDTO);
             return await response.ToResponse<int>();
@@ -41,7 +41,7 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
             return await response.ToResponse<ReadTipusBaixaClientDTO>();
         }
 
-        public async Task<ResponseWrapper<int>> UpdateTipusBaixaClientAsync(UpdateTipusBaixaClientDTO updateTipusBaixaClientDTO)
+        public async Task<ResponseWrapper<int>> UpdateTipusBaixaClientAsync(SaveTipusBaixaClientDTO updateTipusBaixaClientDTO)
         {
             var response = await _httpClient.PutAsJsonAsync(TipusBaixaClientEndPoints.Update, updateTipusBaixaClientDTO);
             return await response.ToResponse<int>();
