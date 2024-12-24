@@ -19,39 +19,39 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
         }
         public async Task<ResponseWrapper<int>> AddRutaLecturaAsync(SaveRutaLecturaDTO createRutaLecturaDTO)
         {
-            var response = await _httpClient.PostAsJsonAsync(RutasLecturaEndPoints.Add, createRutaLecturaDTO);
+            var response = await _httpClient.PostAsJsonAsync(RutesLecturaEndPoints.Add, createRutaLecturaDTO);
             return await response.ToResponse<int>();
         }
 
         public async Task<ResponseWrapper<int>> DeleteRutaLecturaAsync(int id)
         {
-            var response = await _httpClient.DeleteAsync($"{RutasLecturaEndPoints.Delete}/{id}");
+            var response = await _httpClient.DeleteAsync($"{RutesLecturaEndPoints.Delete}/{id}");
             return await response.ToResponse<int>();
         }
 
         public async Task<ResponseWrapper<List<ReadRutaLecturaDTO>>> GetAllRutesLecturaAsync()
         {
-            var response = await _httpClient.GetAsync(RutasLecturaEndPoints.GetAll);
+            var response = await _httpClient.GetAsync(RutesLecturaEndPoints.GetAll);
             return await response.ToResponse<List<ReadRutaLecturaDTO>>();
 
         }
 
         public async Task<ResponseWrapper<ReadRutaLecturaDTO>> GetRutaLecturaByIdAsync(int id)
         {
-            var response = await _httpClient.GetAsync(RutasLecturaEndPoints.GetById(id));
+            var response = await _httpClient.GetAsync(RutesLecturaEndPoints.GetById(id));
             return await response.ToResponse<ReadRutaLecturaDTO>();
         }
 
         public async Task<ResponseWrapper<List<ReadRutaLecturaDTO>>> GetRutesLecturaByTextAsync(string text)
         {
-            var response = await _httpClient.GetAsync($"{RutasLecturaEndPoints.GetByText}/{text}");
+            var response = await _httpClient.GetAsync($"{RutesLecturaEndPoints.GetByText}/{text}");
             return await response.ToResponse<List<ReadRutaLecturaDTO>>();
 
         }
 
         public async Task<ResponseWrapper<int>> UpdateRutaLecturaAsync(SaveRutaLecturaDTO updateRutaLecturaDTO)
         {
-            var response = await _httpClient.PutAsJsonAsync(RutasLecturaEndPoints.Update, updateRutaLecturaDTO);
+            var response = await _httpClient.PutAsJsonAsync(RutesLecturaEndPoints.Update, updateRutaLecturaDTO);
             return await response.ToResponse<int>();
         }
     }

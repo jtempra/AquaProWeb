@@ -1,5 +1,28 @@
-﻿<h3>AddPuntSubministramentDialog</h3>
+﻿@using AquaProWeb.Common.Enums
+@using AquaProWeb.UI.Validations.Ubicacions
+<MudForm @ref="@_form" Model ="ReadUbicacioDto">
+    <MudDialog>
+        <TitleContent>
+            <MudText Typo="Typo.h4">Agregar Punt de Subministrament</MudText>
+        </TitleContent>
+        <DialogContent>
+            <MudSelect  Label="Poblacio" MultiSelection="false" @bind-Value="ReadUbicacioDto.Poblacio.Id" For="@(() => ReadUbicacioDto.Poblacio.Id)" Variant="Variant.Filled" Margin="Margin.Normal">
+                @foreach (var poblacio in Poblacions)
+                {
+                    <MudSelectItem Value="@poblacio.Id">@poblacio.Nom</MudSelectItem>
+                }
+            </MudSelect>
+            @* <MudSelect Label="Carrer" MultiSelection="false" @bind-Value="ReadUbicacioDto.Carrer" For="@(() => ReadUbicacioDto.Carrer)" Variant="Variant.Filled" Margin="Margin.Normal">
+                @foreach (var carrer in Carrers.Where(c => c.PoblacioId == ).Select())
+                {
+                    <MudSelectItem Value="@carrer.Id">@carrer.Nom</MudSelectItem>
+                }
+            </MudSelect> *@
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel">Cancelar</MudButton>
+            <MudButton Color="Color.Primary" OnClick="@(async () => await Submit())">Guardar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</MudForm>
 
-@code {
-
-}

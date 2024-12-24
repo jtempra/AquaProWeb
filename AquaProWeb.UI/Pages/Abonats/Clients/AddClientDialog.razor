@@ -31,7 +31,7 @@
                         <MudSelectItem Value="@tipus.Id">@tipus.Tipus</MudSelectItem>
                     }
                 </MudSelect>
-                <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="TipusDocument" For="@(() => ReadClientDto.TipusDocumentIdentificacio)" Variant="Variant.Filled" Margin="Margin.Normal">
+                <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="ReadClientDto.TipusDocumentIdentificacio" For="@(() => ReadClientDto.TipusDocumentIdentificacio)" Variant="Variant.Filled" Margin="Margin.Normal">
                     @foreach (var tipus in Enum.GetValues(typeof(TipusDocumentIdentificacio)).Cast<TipusDocumentIdentificacio>())
                     {
                         <MudSelectItem Value="@tipus">@tipus.ToString()</MudSelectItem>
@@ -42,9 +42,11 @@
                               Label="Document Identitat"
                               Immediate="true"
                               Variant="Variant.Filled" Margin="Margin.Normal"></MudTextField>
+
                 <MudDatePicker Label="Data Alta" @bind-Date="ReadClientDto.DataAlta" For="@(() => ReadClientDto.DataAlta)" Variant="Variant.Filled" Margin="Margin.Normal"/>
                 <MudDatePicker Label="Data Baixa" @bind-Date="ReadClientDto.DataBaixa" For="@(() => ReadClientDto.DataBaixa)" Variant="Variant.Filled" Margin="Margin.Normal"/>
             </MudStack>
+
             <MudStack Row ="true">
                 <MudSelect Label="Tipus Via" MultiSelection="false" @bind-Value="ReadClientDto.TipusVia" For="@(() => ReadClientDto.TipusVia)" Variant="Variant.Filled" Margin="Margin.Normal">
                     @foreach (var tipus in TipusVies)

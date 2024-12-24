@@ -31,9 +31,11 @@ namespace AquaProWeb.UI.Pages.Abonats.Clients
 
         protected override async void OnInitialized()
         {
-            var responseTipus = await _tipusViaService.GetAllTipusViaAsync();
-            TipusVies = responseTipus.Data;
-            var responsePaisos = await _paisService.GetAllPaisosAsync();
+            var responseTipusVia = await _tipusViaService.GetAllTipusViaAsync();
+            TipusVies = responseTipusVia.Data;
+            var responseTipusClient = await _tipusClientService.GetAllTipusClientsAsync();
+            TipusClients = responseTipusClient.Data;
+			var responsePaisos = await _paisService.GetAllPaisosAsync();
             Paisos = responsePaisos.Data;
         }
         private async Task Submit()

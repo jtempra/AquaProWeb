@@ -2,7 +2,7 @@
 using AquaProWeb.Common.Responses.Abonats.Ubicacions;
 using FluentValidation;
 
-namespace AquaProWeb.UI.Validations.PuntsSubministrament
+namespace AquaProWeb.UI.Validations.Ubicacions
 {
     public class UbicacioValidator : AbstractValidator<ReadUbicacioDTO>
     {
