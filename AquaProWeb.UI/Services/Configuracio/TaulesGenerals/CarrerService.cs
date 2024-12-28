@@ -35,6 +35,11 @@ namespace AquaProWeb.UI.Services.Configuracio.TaulesGenerals
 
         }
 
+        public async Task<ResponseWrapper<List<ReadCarrerDTO>>> GetCarrersByIdPoblacioAsync(int idPoblacio)
+        {
+            var response = await _httpClient.GetAsync(CarrersEndPoints.GetByIdPoblacio(idPoblacio));
+            return await response.ToResponse<List<ReadCarrerDTO>>();
+        }
         public async Task<ResponseWrapper<ReadCarrerDTO>> GetCarrerByIdAsync(int id)
         {
             var response = await _httpClient.GetAsync(CarrersEndPoints.GetById(id));

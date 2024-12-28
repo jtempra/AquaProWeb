@@ -10,6 +10,7 @@ namespace AquaProWeb.UI.Services.Contracts
         Task<ResponseWrapper<int>> UpdateCarrerAsync(SaveCarrerDTO updateCarrerDTO);
         Task<ResponseWrapper<int>> DeleteCarrerAsync(int id);
         Task<ResponseWrapper<ReadCarrerDTO>> GetCarrerByIdAsync(int id);
+        Task<ResponseWrapper<List<ReadCarrerDTO>>> GetCarrersByIdPoblacioAsync(int id);
         Task<ResponseWrapper<List<ReadCarrerDTO>>> GetAllCarrersAsync();
         Task<ResponseWrapper<List<ReadCarrerDTO>>> GetCarrersByTextAsync(string text);
     }

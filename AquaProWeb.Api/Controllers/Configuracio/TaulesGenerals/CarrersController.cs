@@ -58,6 +58,18 @@ namespace AquaProWeb.Api.Controllers.Configuracio.TaulesGenerals
             return NotFound(response);
         }
 
+        [HttpGet("poblacio/{id}")]
+        public async Task<IActionResult> GetCarrersByIdPoblacioAsync(int id)
+        {
+            var response = await Sender.Send(new GetCarrersByIdPoblacioQuery { IdPoblacio = id });
+
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
+
         [HttpGet("all")]
         public async Task<IActionResult> GetCarrersAsync()
         {

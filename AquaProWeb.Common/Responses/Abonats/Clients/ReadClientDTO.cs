@@ -11,14 +11,17 @@ namespace AquaProWeb.Common.Responses.Abonats.Clients
         public string Nom { get; set; }
         public string PrimerCognom { get; set; }
         public string SegonCognom { get; set; }
+        public int TipusClientId { get; set; }
         public ReadTipusClientDTO TipusClient { get; set; }
         public TipusDocumentIdentificacio TipusDocumentIdentificacio { get; set; }
         public string DocumentIdentificacio { get; set; }
+        public int TipusViaId { get; set; }
         public ReadTipusViaDTO TipusVia { get; set; }
         public string Adressa { get; set; }
         public string CodiPostal { get; set; }
         public string Poblacio { get; set; }
         public string Provincia { get; set; }
+        public int PaisId { get; set; }
         public ReadPaisDTO Pais { get; set; }
         public string? ResteAdressa { get; set; }
         public string Telefon1 { get; set; }

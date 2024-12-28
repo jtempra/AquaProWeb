@@ -25,8 +25,6 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
 
         public UbicacioValidator ubicacioValidator = new();
 
-        public int PoblacioSeleccionada = 0;
-
         private List<ReadTipusUbicacioDTO> TipusUbicacions { get; set; } = [];
         private List<ReadZonaUbicacioDTO> ZonesUbicacio { get; set; } = [];
         private List<ReadPoblacioDTO> Poblacions { get; set; } = [];
@@ -43,14 +41,22 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
             ZonesUbicacio = responseZones.Data;
             var responsePoblacions = await _poblacioService.GetAllPoblacionsAsync();
             Poblacions = responsePoblacions.Data;
-            var responseCarrers = await _carrerService.GetAllCarrersAsync();
-            Carrers = responseCarrers.Data;
             //var responseEscomeses = await _escomesaService.GetAllEscomesesAsync();
             //Escomeses = responseEscomeses.Data;
             var responseRutes = await _rutaLecturaService.GetAllRutesLecturaAsync();
             RutesLectura = responseRutes.Data;
 
         }
+
+        private async Task OnPoblacioChange(int poblacioId)
+        {
+            ReadUbicacioDto.PoblacioId = poblacioId;
+            var responseCarrers = await _carrerService.GetCarrersByIdPoblacioAsync(poblacioId);
+            Carrers = responseCarrers.Data;
+            StateHasChanged();
+        }
+
+
         private async Task Submit()
         {
             await _form.Validate();

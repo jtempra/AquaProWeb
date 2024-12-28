@@ -7,5 +7,6 @@ namespace AquaProWeb.Application.Repositories
         Task<T> GetByIdAsync(int Id, params Expression<Func<T, object>>[] includeProperties);
         Task<List<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties);
         Task<List<T>> GetByTextAsync(string searchTerm);
+        List<T> GetByPredicateAsync(Func<T, bool> predicate, params Expression<Func<T, object>>[] includeProperties);
     }
 }

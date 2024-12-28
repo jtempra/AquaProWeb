@@ -55,6 +55,18 @@ namespace AquaProWeb.Infrastructure.Repositories
             return await query.FirstOrDefaultAsync();
         }
 
+        public List<T> GetByPredicateAsync(Func<T, bool> predicate, params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = _context.Set<T>().Where(predicate).AsQueryable();
+
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+            }
+
+            return query.ToList();
+        }
+
         public async Task<List<T>> GetByTextAsync(string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
@@ -106,5 +118,7 @@ namespace AquaProWeb.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+
+
     }
 }

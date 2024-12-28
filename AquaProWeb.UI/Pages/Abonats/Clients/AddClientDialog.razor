@@ -1,4 +1,5 @@
 ﻿@using AquaProWeb.Common.Enums
+@using AquaProWeb.Common.Responses.TaulesGenerals.TipusClients
 @using AquaProWeb.Domain.Entities
 <MudDialog>
     <TitleContent>
@@ -25,10 +26,10 @@
 
             
             <MudStack Row="true">
-                <MudSelect Label="Tipus Client" MultiSelection="false" @bind-Value="ReadClientDto.TipusClient" For="@(() => ReadClientDto.TipusClient)" Variant="Variant.Filled" Margin="Margin.Normal">
+                <MudSelect T = "int" Label="Tipus Client" MultiSelection="false" @bind-Value="ReadClientDto.TipusClientId" For="@(() => ReadClientDto.TipusClientId)" Variant="Variant.Filled" Margin="Margin.Normal">
                     @foreach (var tipus in TipusClients)
                     {
-                        <MudSelectItem Value="@tipus.Id">@tipus.Tipus</MudSelectItem>
+                        <MudSelectItem T="int" Value="@tipus.Id">@tipus.Tipus</MudSelectItem>
                     }
                 </MudSelect>
                 <MudSelect T="TipusDocumentIdentificacio" Label="Tipus Document" @bind-Value="ReadClientDto.TipusDocumentIdentificacio" For="@(() => ReadClientDto.TipusDocumentIdentificacio)" Variant="Variant.Filled" Margin="Margin.Normal">
@@ -48,7 +49,7 @@
             </MudStack>
 
             <MudStack Row ="true">
-                <MudSelect Label="Tipus Via" MultiSelection="false" @bind-Value="ReadClientDto.TipusVia" For="@(() => ReadClientDto.TipusVia)" Variant="Variant.Filled" Margin="Margin.Normal">
+                <MudSelect Label="Tipus Via" MultiSelection="false" @bind-Value="ReadClientDto.TipusViaId" For="@(() => ReadClientDto.TipusViaId)" Variant="Variant.Filled" Margin="Margin.Normal">
                     @foreach (var tipus in TipusVies)
                     {
                         <MudSelectItem Value="@tipus.Id">@tipus.Descripcio</MudSelectItem>
@@ -82,7 +83,7 @@
                 </MudItem>
                 
                 <MudItem md="2">
-                    <MudSelect Label="Pais" MultiSelection="false" @bind-Value="ReadClientDto.Pais" For="@(() => ReadClientDto.Pais)" Variant="Variant.Filled" Margin="Margin.Normal">
+                    <MudSelect Label="Pais" MultiSelection="false" @bind-Value="ReadClientDto.PaisId" For="@(() => ReadClientDto.PaisId)" Variant="Variant.Filled" Margin="Margin.Normal">
                         @foreach (var pais in Paisos)
                         {
                             <MudSelectItem Value="@pais.Id">@pais.NomPais</MudSelectItem>

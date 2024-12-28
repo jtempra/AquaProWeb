@@ -8,6 +8,7 @@
         public const string GetAll = "api/Carrers/all";
 
         public static string GetById(int id) => $"api/carrers/{id}";
+        public static string GetByIdPoblacio(int id) => $"api/carrers/poblacio/{id}";
         public static string GetByText(string text) => $"api/carrers/search/{text}";
     }
 }
