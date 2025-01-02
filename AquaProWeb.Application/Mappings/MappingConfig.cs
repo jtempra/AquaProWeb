@@ -128,15 +128,15 @@ namespace AquaProWeb.Application.Mappings
             // Ubicacio
             TypeAdapterConfig<Ubicacio, ReadUbicacioDTO>
                 .NewConfig()
-                .Map(dest => dest.TipusUbicacio, src => src.Tipus)
-                .Map(dest => dest.ZonaUbicacio, src => src.Zona)
-                .Map(dest => dest.Poblacio, src => src.Poblacio)
-                .Map(dest => dest.Carrer, src => src.Carrer)
-                .Map(dest => dest.Escomesa, src => src.Escomesa)
-                .Map(dest => dest.RutaLectura, src => src.RutaLectura)
-                .Map(dest => dest.Latitud, src => src.PosicioGeografica.Y)
-                .Map(dest => dest.Longitud, src => src.PosicioGeografica.X)
-                .TwoWays();
+            .Map(dest => dest.TipusUbicacio, src => src.Tipus)
+            .Map(dest => dest.ZonaUbicacio, src => src.Zona)
+            .Map(dest => dest.Poblacio, src => src.Poblacio)
+            .Map(dest => dest.Carrer, src => src.Carrer)
+            .Map(dest => dest.Escomesa, src => src.Escomesa)
+            .Map(dest => dest.RutaLectura, src => src.RutaLectura)
+            .Map(dest => dest.Latitud, src => src.PosicioGeografica.Y)
+            .Map(dest => dest.Longitud, src => src.PosicioGeografica.X)
+            .TwoWays();
 
             TypeAdapterConfig<TipusUbicacio, ReadTipusUbicacioDTO>.NewConfig();
             TypeAdapterConfig<ZonaUbicacio, ReadZonaUbicacioDTO>.NewConfig();

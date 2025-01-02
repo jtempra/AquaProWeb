@@ -9,5 +9,6 @@
 
         public static string GetById(int id) => $"api/ubicacions/{id}";
         public static string GetByText(string text) => $"api/ubicacions/search/{text}";
+        public static string GetByRutaOrdre(int idRuta, int numordre) => $"api/ubicacions/ruta/{idRuta}/ordre/{numordre}";
     }
 }

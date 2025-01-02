@@ -31,6 +31,15 @@ namespace AquaProWeb.Api.Exceptions
 
                 return true;
             }
+
+            //if (exception is ArgumentNullException)
+            //{
+            //    _logger.LogError(exception, "Argument Exception!!!");
+
+            //    await MyException.ExceptionMessage(httpContext, exception, HttpStatusCode.BadRequest, "Parametros nulos!");
+
+            //    return true;
+            //}
             else
             {
                 _logger.LogError(exception, "Unexpected Error!!!");

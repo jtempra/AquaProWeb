@@ -1,8 +1,10 @@
 using AquaProWeb.Api.Exceptions;
 using AquaProWeb.Application;
+using AquaProWeb.Application.Features.Abonats.Ubicacions.Commands;
 using AquaProWeb.Application.Mappings;
 using AquaProWeb.Infrastructure;
 using AquaProWeb.Infrastructure.Contexts;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -68,7 +70,11 @@ builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddConfigurationDatabase(builder.Configuration);
 builder.Services.AddAuthorizationDatabase(builder.Configuration);
 builder.Services.AddRepositories();
-builder.Services.AddApplicationServices();
+builder.Services.AddMediator();
+//builder.Services.AddApplicationValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateUbicacioCommandValidator>();
+builder.Services.AddValidationPipeline();
+
 builder.Services.RegisterMappings();
 
 var app = builder.Build();

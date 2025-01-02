@@ -30,7 +30,7 @@ namespace AquaProWeb.Application.Features.Abonats.Ubicacions.Commands
 
             await _unitOfWork.CommitAsync(cancellationToken);
 
-            return new ResponseWrapper<int>().Success(Ubicacio.Id, "Ubicacio creat correctament!");
+            return new ResponseWrapper<int>().Success(Ubicacio.Id, "Ubicacio creada correctament!");
         }
     }
 }

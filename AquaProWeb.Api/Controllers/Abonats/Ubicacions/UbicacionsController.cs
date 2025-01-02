@@ -57,6 +57,18 @@ namespace AquaProWeb.Api.Controllers.Abonats.PuntsSubministrament
             return NotFound(response);
         }
 
+        [HttpGet("ruta/{ruta}/ordre/{ordre}")]
+        public async Task<IActionResult> GetUbicacioByRutaOrdreAsync(int ruta, int ordre)
+        {
+            var response = await Sender.Send(new GetUbicacioByRutaOrdreQuery { IdRuta = ruta, Ordre = ordre });
+
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
+
         [HttpGet("all")]
         public async Task<IActionResult> GetUbicacionsAsync()
         {

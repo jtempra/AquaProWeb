@@ -54,5 +54,11 @@ namespace AquaProWeb.UI.Services.Abonats
             var response = await _httpClient.PutAsJsonAsync(UbicacionsEndPoints.Update, updateUbicacioDTO);
             return await response.ToResponse<int>();
         }
+
+        public async Task<ResponseWrapper<ReadUbicacioDTO?>> GetUbicacioByOrdreRutaLectura(int rutaLecturaId, int ordreRutaLectura)
+        {
+            var response = await _httpClient.GetAsync(UbicacionsEndPoints.GetByRutaOrdre(rutaLecturaId, ordreRutaLectura));
+            return await response.ToResponse<ReadUbicacioDTO>();
+        }
     }
 }

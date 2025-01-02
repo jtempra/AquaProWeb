@@ -41,8 +41,8 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
             ZonesUbicacio = responseZones.Data;
             var responsePoblacions = await _poblacioService.GetAllPoblacionsAsync();
             Poblacions = responsePoblacions.Data;
-            //var responseEscomeses = await _escomesaService.GetAllEscomesesAsync();
-            //Escomeses = responseEscomeses.Data;
+            var responseEscomeses = await _escomesaService.GetAllEscomesesAsync();
+            Escomeses = responseEscomeses.Data;
             var responseRutes = await _rutaLecturaService.GetAllRutesLecturaAsync();
             RutesLectura = responseRutes.Data;
 
@@ -51,11 +51,48 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
         private async Task OnPoblacioChange(int poblacioId)
         {
             ReadUbicacioDto.PoblacioId = poblacioId;
+            ReadUbicacioDto.CarrerId = 0;
             var responseCarrers = await _carrerService.GetCarrersByIdPoblacioAsync(poblacioId);
             Carrers = responseCarrers.Data;
+            _form.Validate();
+
             StateHasChanged();
         }
+        private async Task OnCarrerChange(int carrerId)
+        {
+            ReadUbicacioDto.CarrerId = carrerId;
+            _form.Validate();
 
+            StateHasChanged();
+        }
+        private async Task OnRutaLecturaChange(int rutaLecturaId)
+        {
+            ReadUbicacioDto.RutaLecturaId = rutaLecturaId;
+            _form.Validate();
+
+            StateHasChanged();
+        }
+        private async Task OnEscomesaChange(int escomesaId)
+        {
+            ReadUbicacioDto.EscomesaId = escomesaId;
+            _form.Validate();
+
+            StateHasChanged();
+        }
+        private async Task OnTipusUbicacioChange(int tipusUbicacioId)
+        {
+            ReadUbicacioDto.TipusUbicacioId = tipusUbicacioId;
+            _form.Validate();
+
+            StateHasChanged();
+        }
+        private async Task OnZonaUbicacioChange(int zonaUbicacioId)
+        {
+            ReadUbicacioDto.ZonaUbicacioId = zonaUbicacioId;
+            _form.Validate();
+
+            StateHasChanged();
+        }
 
         private async Task Submit()
         {
@@ -66,7 +103,7 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
                 var response = await _ubicacioService.AddUbicacioAsync(ReadUbicacioDto.Adapt<SaveUbicacioDTO>());
                 if (response.IsSuccessful)
                 {
-                    _snackbar.Add(response.Messages[0], Severity.Success);
+                    _snackbar.Add(response.Messages[0], MudBlazor.Severity.Success);
 
                     MudDialog.Close();
                 }
@@ -74,13 +111,13 @@ namespace AquaProWeb.UI.Pages.Abonats.Ubicacions
                 {
                     foreach (var miss in response.Messages)
                     {
-                        _snackbar.Add(miss, Severity.Error);
+                        _snackbar.Add(miss, MudBlazor.Severity.Error);
                     }
                 }
             }
             else
             {
-                _snackbar.Add("validació incorrecte", Severity.Error);
+                _snackbar.Add("validació incorrecte", MudBlazor.Severity.Error);
                 MudDialog.Close();
             }
         }

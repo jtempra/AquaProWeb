@@ -12,4 +12,5 @@ public interface IUbicacioService
     Task<ResponseWrapper<ReadUbicacioDTO>> GetUbicacioByIdAsync(int id);
     Task<ResponseWrapper<List<ListUbicacioDTO>>> GetUbicacionsByTextAsync(string text);
     Task<ResponseWrapper<int>> UpdateUbicacioAsync(SaveUbicacioDTO updateUbicacioDTO);
+    Task<ResponseWrapper<ReadUbicacioDTO?>> GetUbicacioByOrdreRutaLectura(int rutaLecturaId, int ordreRutaLectura);
 }

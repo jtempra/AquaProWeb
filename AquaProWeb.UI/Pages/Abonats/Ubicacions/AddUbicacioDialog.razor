@@ -1,7 +1,9 @@
 ﻿@using AquaProWeb.Common.Enums
 @using AquaProWeb.Common.Responses.TaulesGenerals.Poblacions
 @using AquaProWeb.UI.Validations.Ubicacions
-<MudForm @ref="@_form" Model ="ReadUbicacioDto">
+
+
+<MudForm @ref="@_form" Model="ReadUbicacioDto" OnValidSubmit="OnValidSubmit" Validation="ubicacioValidator.ValidateValue">
     <MudDialog>
         <TitleContent>
             <MudText Typo="Typo.h4">Agregar Punt de Subministrament</MudText>
@@ -9,16 +11,16 @@
         <DialogContent>
             <MudGrid>
                 <MudItem xs="12" sm="3" md="3">
-                    <MudSelect T="int" Label="Poblacio" MultiSelection="false" Value="@ReadUbicacioDto.PoblacioId" For="@(() => ReadUbicacioDto.PoblacioId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnPoblacioChange">
-                        <MudSelectItem Value="0">Selecciona població ...</MudSelectItem>
+                    <MudSelect T="int" Label="Poblacio" MultiSelection="false" Immediate="true" Value="@ReadUbicacioDto.PoblacioId" For="@(() => ReadUbicacioDto.PoblacioId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnPoblacioChange" >
+                        <MudSelectItem T = "int" Value="0">Selecciona població ...</MudSelectItem>
                         @foreach (var poblacio in Poblacions)
                         {
-                            <MudSelectItem Value="@poblacio.Id">@poblacio.Nom</MudSelectItem>
+                            <MudSelectItem T ="int" Value="@poblacio.Id">@poblacio.Nom</MudSelectItem>
                         }
                     </MudSelect>
                 </MudItem>
                 <MudItem xs="12" sm="3" md="3">
-                    <MudSelect T="int" Label="Tipus Ubicació" MultiSelection="false" Value="@ReadUbicacioDto.TipusUbicacioId" For="@(() => ReadUbicacioDto.TipusUbicacioId)" Variant="Variant.Filled" Margin="Margin.Normal">
+                    <MudSelect T="int" Label="Tipus Ubicació" MultiSelection="false" Value="@ReadUbicacioDto.TipusUbicacioId" For="@(() => ReadUbicacioDto.TipusUbicacioId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnTipusUbicacioChange">
                         <MudSelectItem Value="0">Selecciona un tipus ubicació ...</MudSelectItem>
                         @foreach (var tipus in TipusUbicacions)
                         {
@@ -27,7 +29,7 @@
                     </MudSelect>
                 </MudItem>
                 <MudItem xs="12" sm="3" md="3">
-                    <MudSelect T="int" Label="Zona Ubicació" MultiSelection="false" Value="@ReadUbicacioDto.ZonaUbicacioId" For="@(() => ReadUbicacioDto.ZonaUbicacioId)" Variant="Variant.Filled" Margin="Margin.Normal">
+                    <MudSelect T="int" Label="Zona Ubicació" MultiSelection="false" Value="@ReadUbicacioDto.ZonaUbicacioId" For="@(() => ReadUbicacioDto.ZonaUbicacioId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnZonaUbicacioChange">
                         <MudSelectItem Value="0">Selecciona una zona ...</MudSelectItem>
                         @foreach (var zona in ZonesUbicacio)
                         {
@@ -36,7 +38,7 @@
                     </MudSelect>
                 </MudItem>
                 <MudItem xs="12" sm="3" md="3">
-                    <MudSelect T="int" Label="Escomesa" MultiSelection="false" Value="@ReadUbicacioDto.EscomesaId" For="@(() => ReadUbicacioDto.EscomesaId)" Variant="Variant.Filled" Margin="Margin.Normal">
+                    <MudSelect T="int" Label="Escomesa" MultiSelection="false" Value="@ReadUbicacioDto.EscomesaId" For="@(() => ReadUbicacioDto.EscomesaId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnEscomesaChange">
                         <MudSelectItem Value="0">Selecciona una escomesa ...</MudSelectItem>
                         @foreach (var escomesa in Escomeses)
                         {
@@ -47,7 +49,7 @@
             </MudGrid>
 
             <MudStack Row="true">
-                <MudSelect T="int" Label="Carrer" MultiSelection="false" Value="@ReadUbicacioDto.CarrerId" For="@(() => ReadUbicacioDto.CarrerId)" Variant="Variant.Filled" Margin="Margin.Normal">
+                <MudSelect T="int" Label="Carrer" MultiSelection="false" Value="@ReadUbicacioDto.CarrerId" For="@(() => ReadUbicacioDto.CarrerId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnCarrerChange">
                     @if (ReadUbicacioDto.PoblacioId > 0)
                     {
                         <MudSelectItem Value="0">Selecciona carrer ...</MudSelectItem>
@@ -118,7 +120,7 @@
                           Variant="Variant.Filled" Margin="Margin.Normal"></MudTextField>
             <MudGrid>
                 <MudItem xs="12" sm="3" md="2">
-                    <MudSelect T="int" Label="Ruta Lectura" MultiSelection="false" Value="@ReadUbicacioDto.RutaLecturaId" For="@(() => ReadUbicacioDto.RutaLecturaId)" Variant="Variant.Filled" Margin="Margin.Normal">
+                    <MudSelect T="int" Label="Ruta Lectura" MultiSelection="false" Value="@ReadUbicacioDto.RutaLecturaId" For="@(() => ReadUbicacioDto.RutaLecturaId)" Variant="Variant.Filled" Margin="Margin.Normal" ValueChanged="OnRutaLecturaChange">
                         <MudSelectItem Value="0">Selecciona ruta lectura ...</MudSelectItem>
                         @foreach (var ruta in RutesLectura)
                         {
@@ -127,7 +129,7 @@
                     </MudSelect>
                 </MudItem>
                 <MudItem xs="12" sm="3" md="2">
-                    <MudNumericField @bind-Value="ReadUbicacioDto.OrdreRutaLectura" Label="Ordre Ruta" Variant="Variant.Filled" Margin="Margin.Normal" Format="N6" Min="0" Max="1000000"/>
+                    <MudNumericField @bind-Value="ReadUbicacioDto.OrdreRutaLectura" For="@(() => ReadUbicacioDto.OrdreRutaLectura)"  Label="Ordre Ruta" Variant="Variant.Filled" Margin="Margin.Normal" Format="N0" Min="0" Max="1000000" />
                 </MudItem>
                 <MudItem xs="12" sm="6" md="8">
                     <MudTextField @bind-Value="ReadUbicacioDto.SituacioComptador" For="@(() => ReadUbicacioDto.SituacioComptador)"
